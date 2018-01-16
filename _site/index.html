@@ -1,140 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
 
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>CarTrawler Native Docs - Aviator</title>
+<meta property="og:title" content="CarTrawler Native Docs" />
+<meta name="description" content="Jekyll template for API documentation." />
+<meta property="og:description" content="Jekyll template for API documentation." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Aviator" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "WebSite",
+"name": "Aviator",
+"headline": "CarTrawler Native Docs",
+"description": "Jekyll template for API documentation.",
+"url": "http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
 
-  <title>Your awesome title</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Aviator logo"></a>
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
 
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
-  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/feed.xml">
-  
-  
-</head>
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
 
-
-  <body>
-
-    <header class="site-header" role="banner">
-
-  <div class="wrapper">
-    
-    
-    <a class="site-title" href="/">Your awesome title</a>
-  
-    
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger">
-          
-            
-            
-          
-            
-            
-            <a class="page-link" href="/about/">About</a>
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-          
-        </div>
-      </nav>
-    
-  </div>
-</header>
-
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-  
-  
-
-
-  <ul class="post-list">
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
+			<div id="sidebar" class="sidebar">
+	
+	
+		
+	
+		
+			<section>
+				<h6>Introduction</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#section_introductionwelcome">
+								Getting Started
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Android</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#section_androidintroduction">
+								Introduction
+							</a>
+						</li>
+					
+						<li>
+							<a href="#section_androidintegration">
+								Integration
+							</a>
+						</li>
+					
+						<li>
+							<a href="#section_androidusage">
+								Usage
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>iOS</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#section_iosintroduction">
+								Introduction
+							</a>
+						</li>
+					
+						<li>
+							<a href="#section_iosintegration">
+								Integration
+							</a>
+						</li>
+					
+						<li>
+							<a href="#section_iosusage">
+								Usage
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
-      </div>
-    </main>
+		</header>
+		<div class="main">
+			
 
-    <footer class="site-footer">
+	
+	
 
-  <div class="wrapper">
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_introductionwelcome">
+						Getting Started
+						
+					</a>
+				</h3>
+				
 
-    <h2 class="footer-heading">Your awesome title</h2>
+				<p>Welcome to CarTrawler native documentation.</p>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            
-              Your awesome title
-            
-            </li>
-            
-            <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
-            
-        </ul>
-      </div>
+<p>This document is designed for those interested in including our native car rental solution into their Android and iOS applications.</p>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/jekyll"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">jekyll</span></a>
+<!-- Our native codebase is still under development and will evolve. -->
 
-          </li>
-          
+<!-- You'll succeed if you do this.
+{: .success }
 
-          
-          <li>
-            <a href="https://twitter.com/jekyllrb"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
-</span><span class="username">jekyllrb</span></a>
+Here's some useful information.
+{: .info }
 
-          </li>
-          
-        </ul>
-      </div>
+Something may not happen if you try and do this.
+{: .warning }
 
-      <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
-      </div>
-    </div>
+Something bad will happen if you do this.
+{: .error } -->
 
-  </div>
+			</section>
 
-</footer>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_androidintroduction">
+						Introduction
+						
+							<span class="endpoint Android"></span>
+						
+					</a>
+				</h3>
+				
+
+				<p>In general we are producing following libraries:</p>
+
+<p><strong>cartrawler-api.jar</strong> – pure Java library, which contains models and business logic. It talks to the CarTrawler API and provides data through high level classes.</p>
+
+<p><strong>cartrawler-pay.aar</strong> - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.</p>
+
+<p><strong>cartrawler-app.aar</strong> – Android library, which contains all presentation and resources (configs, strings, theme, drawables, layout files, etc). It also contains cartrawler-api.jar and cartrawler-pay.aar and uses them.</p>
+
+			</section>
+
+			
+				<section class="right-code">
+					
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_androidintegration">
+						Integration
+						
+							<span class="endpoint Android"></span>
+						
+					</a>
+				</h3>
+				
+
+				<p>In order to integrate and start using our libraries, first make sure the Android SDK versions are matching. Currently we support following versions:</p>
+
+<dl>
+  <dt>minSdkVersion</dt>
+  <dd>16</dd>
+  <dt>targetSdkVersion</dt>
+  <dd>25</dd>
+</dl>
+
+<p>Then check out list of dependencies we provide, and don’t forget to add our repository and its credentials to your gradle config.</p>
+
+<p>Finally include our activity into you app’s manifest and update the proguard config accordinly.</p>
+
+			</section>
+
+			
+				<section class="right-code">
+					<div title="Gradle" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s">"com.rakuten.android:dc-storm:1.0.0@aar"</span>
+<span class="n">compile</span> <span class="s">"com.cartrawler.android:payment-card:0.2.5"</span>
+<span class="n">compile</span> <span class="s">"com.cartrawler.android:car-rental:1.4.9"</span>
+
+<span class="n">maven</span> <span class="o">{</span>
+    <span class="n">url</span> <span class="s">"http://artifactory.cartrawler.com/artifactory/libs-release-local"</span>
+    <span class="n">credentials</span> <span class="o">{</span> <span class="n">username</span> <span class="o">=</span> <span class="s">""</span> <span class="n">password</span> <span class="o">=</span> <span class="s">""</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<div title="Proguard" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">-</span><span class="n">dontwarn</span> <span class="n">sun</span><span class="o">.</span><span class="na">misc</span><span class="o">.**</span>
+
+<span class="o">-</span><span class="n">keepclassmembers</span> <span class="kd">class</span> <span class="nc">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">unsafe</span><span class="o">.*</span><span class="n">ArrayQueue</span><span class="o">*</span><span class="n">Field</span><span class="o">*</span> <span class="o">{</span>
+    <span class="kt">long</span> <span class="n">producerIndex</span><span class="o">;</span>
+    <span class="kt">long</span> <span class="n">consumerIndex</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="o">-</span><span class="n">keepclassmembers</span> <span class="kd">class</span> <span class="nc">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">unsafe</span><span class="o">.</span><span class="na">BaseLinkedQueueProducerNodeRef</span> <span class="o">{</span>
+    <span class="n">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">atomic</span><span class="o">.</span><span class="na">LinkedQueueNode</span> <span class="n">producerNode</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="o">-</span><span class="n">keepclassmembers</span> <span class="kd">class</span> <span class="nc">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">unsafe</span><span class="o">.</span><span class="na">BaseLinkedQueueConsumerNodeRef</span> <span class="o">{</span>
+    <span class="n">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">atomic</span><span class="o">.</span><span class="na">LinkedQueueNode</span> <span class="n">consumerNode</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="o">-</span><span class="n">dontnote</span> <span class="n">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">PlatformDependent</span>
+</code></pre>
+</div>
+
+<div title="Manifest" class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">"cartrawler.core.engines.RentalActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/CartrawlerAppTheme"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_androidusage">
+						Usage
+						
+							<span class="endpoint Android"></span>
+						
+					</a>
+				</h3>
+				
+
+				<p>Now we are ready to start using the SDK.</p>
+
+<p>The simplest form of usage is initializing the standalone booking sequence. You do it in 2 steps: first use the function that we provide to create the intent, then simply launch the activity with it. Here is the list of parameters that our function accepts:</p>
+
+<dl>
+  <dt>production</dt>
+  <dd>switch between test and production endpoints</dd>
+  <dt>requestor</dt>
+  <dd>client id, required to use CarTrawler API</dd>
+  <dt>language</dt>
+  <dd>language code</dd>
+  <dt>country</dt>
+  <dd>country code, can be null</dd>
+  <dt>currency</dt>
+  <dd>currency code, can be null</dd>
+  <dt>user</dt>
+  <dd>user data object (we provide class for it), can be null</dd>
+  <dt>customAttributes</dt>
+  <dd>any additional attributes, custom to particular partner</dd>
+</dl>
+
+			</section>
+
+			
+				<section class="right-code">
+					<div title="Usage" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Context</span> <span class="n">context</span> <span class="o">=</span> <span class="n">getApplicationContext</span><span class="o">();</span>
+    
+<span class="n">Boolean</span> <span class="n">production</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">requestor</span> <span class="o">=</span> <span class="s">"787697"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">language</span> <span class="o">=</span> <span class="s">"EN"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">country</span> <span class="o">=</span> <span class="s">"IE"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">currency</span> <span class="o">=</span> <span class="s">"EUR"</span><span class="o">;</span>
+
+<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">"Title"</span><span class="o">,</span> <span class="err">“</span><span class="n">Name</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Surname</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Email</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Phone</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Address</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">City</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Postcode</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Country</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Flight</span> <span class="n">code</span><span class="err">“</span><span class="o">,</span> <span class="err">“</span><span class="n">Age</span><span class="err">”</span><span class="o">);</span>
+
+<span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customAttributes</span> <span class="o">=</span> <span class="n">Interface</span><span class="o">.</span><span class="na">getCustomAttributes</span><span class="o">();</span>
+
+<span class="n">Intent</span> <span class="n">rentalIntent</span> <span class="o">=</span> <span class="n">Interface</span><span class="o">.</span><span class="na">getRentalIntent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">user</span><span class="o">,</span> <span class="n">requestor</span><span class="o">,</span> <span class="n">production</span><span class="o">,</span> <span class="n">language</span><span class="o">,</span> <span class="n">country</span><span class="o">,</span> <span class="n">currency</span><span class="o">,</span> <span class="n">customAttributes</span><span class="o">);</span>
+<span class="n">startActivity</span><span class="o">(</span><span class="n">rentalIntent</span><span class="o">);</span>
+</code></pre>
+</div>
+
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_iosintroduction">
+						Introduction
+						
+							<span class="endpoint iOS"></span>
+						
+					</a>
+				</h3>
+				
+
+				<p>CarTrawler for iOS supports iOS 8, iOS 9, iOS 10 and iOS 11.</p>
+
+			</section>
+
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_iosintegration">
+						Integration
+						
+							<span class="endpoint iOS"></span>
+						
+					</a>
+				</h3>
+				
+
+				<p>Car Trawler uses a private spec repository to publish libraries.</p>
+
+<p>Include the CarTrawler spec repository and pods in your Podfile and run pod install</p>
+
+			</section>
+
+			
+				<section class="right-code">
+					<p>~~~ swift
+source ‘https://github.com/CocoaPods/Specs.git’
+source ‘https://github.com/cartrawler/cartrawler-ios-pods’</p>
+
+<p>platform :ios, ‘8.0’</p>
+
+<p title="CocoaPods">target ‘MyTarget’ do
+    pod ‘CarTrawlerSDK’, ‘~&gt; 4.1’
+    pod ‘CTPayment’, ‘~&gt; 1.0’
+end</p>
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_iosusage">
+						Usage
+						
+							<span class="endpoint iOS"></span>
+						
+					</a>
+				</h3>
+				
+
+				
+
+			</section>
+
+			
+				<section class="right-code">
+					
+
+				</section>
+			
+		</section>
+	
 
 
-  </body>
-
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
 </html>

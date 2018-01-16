@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Search - Aviator</title>
+<meta property="og:title" content="Search" />
+<meta name="description" content="Jekyll template for API documentation." />
+<meta property="og:description" content="Jekyll template for API documentation." />
+<link rel="canonical" href="http://localhost:4000/search/" />
+<meta property="og:url" content="http://localhost:4000/search/" />
+<meta property="og:site_name" content="Aviator" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "WebPage",
+"headline": "Search",
+"description": "Jekyll template for API documentation.",
+"url": "http://localhost:4000/search/"}</script>
+<!-- End Jekyll SEO tag -->
+
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Aviator logo"></a>
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	
+	
+		
+	
+		
+			<section>
+				<h6>Introduction</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#section_introductionwelcome">
+								Getting Started
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Android</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#section_androidintroduction">
+								Introduction
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#section_androidintegration">
+								Integration
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#section_androidusage">
+								Usage
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>iOS</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#section_iosintroduction">
+								Introduction
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#section_iosintegration">
+								Integration
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#section_iosusage">
+								Usage
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+</div>
+
+		</header>
+		<div class="main">
+			<div class="search-page">
+	<h2>Search Results</h2>
+	
+	<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+	<ul id="search-results"></ul>
+</div>
+
+<script>
+	window.data = {
+		
+			
+		
+			
+				
+					
+						
+						
+						"section-android-integration": {
+							"id": "section-android-integration",
+							"title": "Integration",
+							"category": "section_android",
+							"description": "",
+		  				"type": "Android",
+							"url": "/#section_androidintegration",
+							"content": "In order to integrate and start using our libraries, first make sure the Android SDK versions are matching. Currently we support following versions:\n\n\n  minSdkVersion\n  16\n  targetSdkVersion\n  25\n\n\nThen check out list of dependencies we provide, and don’t forget to add our repository and its credentials to your gradle config.\n\nFinally include our activity into you app’s manifest and update the proguard config accordinly."
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"section-android-introduction": {
+							"id": "section-android-introduction",
+							"title": "Introduction",
+							"category": "section_android",
+							"description": "",
+		  				"type": "Android",
+							"url": "/#section_androidintroduction",
+							"content": "In general we are producing following libraries:\n\ncartrawler-api.jar – pure Java library, which contains models and business logic. It talks to the CarTrawler API and provides data through high level classes.\n\ncartrawler-pay.aar - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.\n\ncartrawler-app.aar – Android library, which contains all presentation and resources (configs, strings, theme, drawables, layout files, etc). It also contains cartrawler-api.jar and cartrawler-pay.aar and uses them."
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"section-android-usage": {
+							"id": "section-android-usage",
+							"title": "Usage",
+							"category": "section_android",
+							"description": "",
+		  				"type": "Android",
+							"url": "/#section_androidusage",
+							"content": "Now we are ready to start using the SDK.\n\nThe simplest form of usage is initializing the standalone booking sequence. You do it in 2 steps: first use the function that we provide to create the intent, then simply launch the activity with it. Here is the list of parameters that our function accepts:\n\n\n  production\n  switch between test and production endpoints\n  requestor\n  client id, required to use CarTrawler API\n  language\n  language code\n  country\n  country code, can be null\n  currency\n  currency code, can be null\n  user\n  user data object (we provide class for it), can be null\n  customAttributes\n  any additional attributes, custom to particular partner"
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"section-introduction-welcome": {
+							"id": "section-introduction-welcome",
+							"title": "Getting Started",
+							"category": "section_introduction",
+							"description": "",
+		  				"type": "",
+							"url": "/#section_introductionwelcome",
+							"content": "Welcome to CarTrawler native documentation.\n\nThis document is designed for those interested in including our native car rental solution into their Android and iOS applications."
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"section-ios-integration": {
+							"id": "section-ios-integration",
+							"title": "Integration",
+							"category": "section_ios",
+							"description": "",
+		  				"type": "iOS",
+							"url": "/#section_iosintegration",
+							"content": "Car Trawler uses a private spec repository to publish libraries.\n\nInclude the CarTrawler spec repository and pods in your Podfile and run pod install"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"section-ios-introduction": {
+							"id": "section-ios-introduction",
+							"title": "Introduction",
+							"category": "section_ios",
+							"description": "",
+		  				"type": "iOS",
+							"url": "/#section_iosintroduction",
+							"content": "CarTrawler for iOS supports iOS 8, iOS 9, iOS 10 and iOS 11."
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"section-ios-usage": {
+							"id": "section-ios-usage",
+							"title": "Usage",
+							"category": "section_ios",
+							"description": "",
+		  				"type": "iOS",
+							"url": "/#section_iosusage",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+	};
+</script>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>
+
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
