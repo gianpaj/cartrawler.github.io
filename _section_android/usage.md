@@ -21,6 +21,13 @@ right_code: |
     startActivity(rentalIntent);
     ~~~
     {: title="Usage" }
+
+    ~~~ xml
+    <color name="CT_ColorPrimary">#2AA9E0</color>
+    <color name="CT_ColorSecondary">#21456D</color>
+    <color name="CT_ColorAccent">#21456D</color>
+    ~~~
+    {: title="Colors" }
 ---
 
 Now we are ready to start using the SDK.
@@ -47,3 +54,5 @@ user
 
 customAttributes
 : any additional attributes, custom to particular partner
+
+You can also customise the color scheme of our engine by setting **CT_ColorPrimary**, **CT_ColorSecondary** and **CT_ColorAccent** values in your app's colors.xml.

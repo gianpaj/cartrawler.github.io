@@ -291,6 +291,8 @@ Something bad will happen if you do this.
   <dd>any additional attributes, custom to particular partner</dd>
 </dl>
 
+<p>You can also customise the color scheme of our engine by setting <strong>CT_ColorPrimary</strong>, <strong>CT_ColorSecondary</strong> and <strong>CT_ColorAccent</strong> values in your app’s colors.xml.</p>
+
 			</section>
 
 			
@@ -309,6 +311,12 @@ Something bad will happen if you do this.
 
 <span class="n">Intent</span> <span class="n">rentalIntent</span> <span class="o">=</span> <span class="n">Interface</span><span class="o">.</span><span class="na">getRentalIntent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">user</span><span class="o">,</span> <span class="n">requestor</span><span class="o">,</span> <span class="n">production</span><span class="o">,</span> <span class="n">language</span><span class="o">,</span> <span class="n">country</span><span class="o">,</span> <span class="n">currency</span><span class="o">,</span> <span class="n">customAttributes</span><span class="o">);</span>
 <span class="n">startActivity</span><span class="o">(</span><span class="n">rentalIntent</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<div title="Colors" class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"CT_ColorPrimary"</span><span class="nt">&gt;</span>#2AA9E0<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"CT_ColorSecondary"</span><span class="nt">&gt;</span>#21456D<span class="nt">&lt;/color&gt;</span>
+<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"CT_ColorAccent"</span><span class="nt">&gt;</span>#21456D<span class="nt">&lt;/color&gt;</span>
 </code></pre>
 </div>
 
