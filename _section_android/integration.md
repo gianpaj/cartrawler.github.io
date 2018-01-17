@@ -44,7 +44,7 @@ right_code: |
 In order to integrate and start using our libraries, first make sure the Android SDK versions are matching. Currently we support following versions:
 
 minSdkVersion
-: 16
+: 19
 
 targetSdkVersion
 : 25
