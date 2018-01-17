@@ -161,13 +161,12 @@
 				</h3>
 				
 
-				<p>In general we are producing following libraries:</p>
+				<p>Our engine supports all Android versions starting from <strong>4.4 KitKat</strong> (sdk version <strong>19</strong>).
+For the partners we are providing following libraries:</p>
 
-<p><strong>cartrawler-api.jar</strong> – pure Java library, which contains models and business logic. It talks to the CarTrawler API and provides data through high level classes.</p>
+<p><strong>car-rental</strong> – Android library containing our engine</p>
 
-<p><strong>cartrawler-pay.aar</strong> - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.</p>
-
-<p><strong>cartrawler-app.aar</strong> – Android library, which contains all presentation and resources (configs, strings, theme, drawables, layout files, etc). It also contains cartrawler-api.jar and cartrawler-pay.aar and uses them.</p>
+<p><strong>payment-card</strong> - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.</p>
 
 			</section>
 
@@ -260,21 +259,19 @@
 
 				<p>Now we are ready to start using the SDK.</p>
 
-<p>The simplest form of usage is initializing the standalone booking sequence. You do it in 2 steps: first use the function that we provide to create the intent, then simply launch the activity with it. Here is the list of parameters that our function accepts:</p>
+<p>The simplest form of usage is initializing the standalone booking sequence. You do it by simply calling the function we provide and passing the required parameters. Here is the list of parameters that our function accepts:</p>
 
 <dl>
+  <dt>clientId</dt>
+  <dd>client id, required to use CarTrawler API</dd>
   <dt>production</dt>
   <dd>switch between test and production endpoints</dd>
-  <dt>requestor</dt>
-  <dd>client id, required to use CarTrawler API</dd>
   <dt>language</dt>
   <dd>language code</dd>
   <dt>country</dt>
   <dd>country code, can be null</dd>
   <dt>currency</dt>
   <dd>currency code, can be null</dd>
-  <dt>user</dt>
-  <dd>user data object (we provide class for it), can be null</dd>
   <dt>customAttributes</dt>
   <dd>any additional attributes, custom to particular partner</dd>
 </dl>
@@ -285,20 +282,15 @@
 
 			
 				<section class="right-code">
-					<div title="Usage" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Context</span> <span class="n">context</span> <span class="o">=</span> <span class="n">getApplicationContext</span><span class="o">();</span>
-    
+					<div title="Usage" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">String</span> <span class="n">clientId</span> <span class="o">=</span> <span class="s">"787697"</span><span class="o">;</span>
 <span class="n">Boolean</span> <span class="n">production</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">requestor</span> <span class="o">=</span> <span class="s">"787697"</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">language</span> <span class="o">=</span> <span class="s">"EN"</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">country</span> <span class="o">=</span> <span class="s">"IE"</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">currency</span> <span class="o">=</span> <span class="s">"EUR"</span><span class="o">;</span>
 
-<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">"Title"</span><span class="o">,</span> <span class="err">“</span><span class="n">Name</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Surname</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Email</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Phone</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Address</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">City</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Postcode</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Country</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Flight</span> <span class="n">code</span><span class="err">“</span><span class="o">,</span> <span class="err">“</span><span class="n">Age</span><span class="err">”</span><span class="o">);</span>
+<span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customAttributes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
 
-<span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customAttributes</span> <span class="o">=</span> <span class="n">Interface</span><span class="o">.</span><span class="na">getCustomAttributes</span><span class="o">();</span>
-
-<span class="n">Intent</span> <span class="n">rentalIntent</span> <span class="o">=</span> <span class="n">Interface</span><span class="o">.</span><span class="na">getRentalIntent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">user</span><span class="o">,</span> <span class="n">requestor</span><span class="o">,</span> <span class="n">production</span><span class="o">,</span> <span class="n">language</span><span class="o">,</span> <span class="n">country</span><span class="o">,</span> <span class="n">currency</span><span class="o">,</span> <span class="n">customAttributes</span><span class="o">);</span>
-<span class="n">startActivity</span><span class="o">(</span><span class="n">rentalIntent</span><span class="o">);</span>
+<span class="n">CartrawlerSDK</span><span class="o">.</span><span class="na">presentCarTrawler</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">clientId</span><span class="o">,</span> <span class="n">production</span><span class="o">,</span> <span class="n">language</span><span class="o">,</span> <span class="n">country</span><span class="o">,</span> <span class="n">currency</span><span class="o">,</span> <span class="n">customAttributes</span><span class="o">));</span>
 </code></pre>
 </div>
 

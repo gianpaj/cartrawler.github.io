@@ -5,10 +5,9 @@ type: Android
 right_code: |
 ---
 
-In general we are producing following libraries:
+Our engine supports all Android versions starting from **4.4 KitKat** (sdk version **19**).
+For the partners we are providing following libraries:
 
-**cartrawler-api.jar** – pure Java library, which contains models and business logic. It talks to the CarTrawler API and provides data through high level classes.
+**car-rental** – Android library containing our engine
 
-**cartrawler-pay.aar** - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.
-
-**cartrawler-app.aar** – Android library, which contains all presentation and resources (configs, strings, theme, drawables, layout files, etc). It also contains cartrawler-api.jar and cartrawler-pay.aar and uses them.
+**payment-card** - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.
