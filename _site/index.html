@@ -350,24 +350,48 @@ Something bad will happen if you do this.
 				</h3>
 				
 
-				<p>Car Trawler uses a private spec repository to publish libraries.</p>
+				<p><strong>CocoaPods</strong></p>
 
 <p>Include the CarTrawler spec repository and pods in your Podfile and run pod install</p>
+
+<p><strong>Carthage</strong></p>
+
+<ol>
+  <li>Add <code class="highlighter-rouge">github "cartrawler/cartrawler-ios-sdk"</code> to your Cartfile.</li>
+  <li>Run carthage update.</li>
+  <li>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> from <code class="highlighter-rouge">Carthage/Build/iOS</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</li>
+</ol>
+
+<p><strong>Manual Installation</strong></p>
+
+<ol>
+  <li><a href="https://github.com/cartrawler/cartrawler-ios-sdk/archive/master.zip">Download Car Trawler for iOS</a> and extract the zip.</li>
+  <li>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</li>
+  <li>Create a new “Run Script Phase” in your app’s target’s “Build Phases” and paste the following snippet in the script text field:</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">bash</span> <span class="s">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"</span>
+    <span class="n">bash</span> <span class="s">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"</span>
+</code></pre>
+</div>
+
+<p>This step is required to work around an <a href="http://www.openradar.me/radar?id=6409498411401216">App Store submission bug</a> when archiving universal binaries.</p>
 
 			</section>
 
 			
 				<section class="right-code">
-					<p>~~~ swift
-source ‘https://github.com/CocoaPods/Specs.git’
-source ‘https://github.com/cartrawler/cartrawler-ios-pods’</p>
+					<div title="Podfile" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">source</span> <span class="err">'</span><span class="nl">https:</span><span class="c1">//github.com/CocoaPods/Specs.git'</span>
+<span class="n">source</span> <span class="err">'</span><span class="nl">https:</span><span class="c1">//github.com/cartrawler/cartrawler-ios-pods'</span>
 
-<p>platform :ios, ‘8.0’</p>
+<span class="n">platform</span> <span class="o">:</span><span class="n">ios</span><span class="o">,</span> <span class="err">'</span><span class="mf">8.0</span><span class="err">'</span>
 
-<p title="CocoaPods">target ‘MyTarget’ do
-    pod ‘CarTrawlerSDK’, ‘~&gt; 4.1’
-    pod ‘CTPayment’, ‘~&gt; 1.0’
-end</p>
+<span class="n">target</span> <span class="err">‘</span><span class="n">MyTarget</span><span class="err">’</span> <span class="k">do</span>
+  <span class="n">pod</span> <span class="err">'</span><span class="n">CarTrawlerSDK</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="o">~&gt;</span> <span class="mf">4.1</span><span class="err">'</span>
+  <span class="n">pod</span> <span class="err">'</span><span class="n">CTPayment</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="o">~&gt;</span> <span class="mf">1.0</span><span class="err">'</span>
+<span class="n">end</span>
+</code></pre>
+</div>
 
 				</section>
 			
@@ -385,13 +409,32 @@ end</p>
 				</h3>
 				
 
-				
+				<p>This is the example of setup and configuration.</p>
 
 			</section>
 
 			
 				<section class="right-code">
-					
+					<div title="Usage" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@import</span> <span class="n">CarTrawlerSDK</span><span class="o">;</span>
+
+<span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span><span class="n">viewDidLoad</span> <span class="o">{</span>
+    <span class="o">[</span><span class="kd">super</span> <span class="n">viewDidLoad</span><span class="o">];</span>
+    <span class="n">self</span><span class="o">.</span><span class="na">carTrawlerSDK</span> <span class="o">=</span> <span class="o">[</span><span class="n">CarTrawlerSDK</span> <span class="k">new</span><span class="o">];</span>
+<span class="o">}</span>
+
+<span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span><span class="n">carRentalButtonTapped</span> <span class="o">{</span>
+    <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">sdk</span> <span class="nl">presentCarTrawler:</span><span class="n">self</span>
+                       <span class="nl">clientID:</span><span class="err">@</span><span class="s">"123456"</span>
+                     <span class="nl">production:</span><span class="n">YES</span>
+                       <span class="nl">language:</span><span class="err">@</span><span class="s">"EN"</span>
+                        <span class="nl">country:</span><span class="err">@</span><span class="s">"IE"</span>
+                       <span class="nl">currency:</span><span class="err">@</span><span class="s">"EUR"</span>
+                           <span class="nl">user:</span><span class="n">nil</span>
+                          <span class="nl">style:</span><span class="n">nil</span>
+               <span class="nl">customAttributes:</span><span class="n">customAttributes</span><span class="o">];</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 				</section>
 			
