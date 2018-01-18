@@ -340,26 +340,55 @@ For the partners we are providing following libraries:</p>
 
 				<p><strong>CocoaPods</strong></p>
 
-<p>Include the CarTrawler spec repository and pods in your Podfile and run pod install</p>
+<ol>
+  <li>Include the CarTrawler <a href="http://guides.cocoapods.org/making/private-cocoapods.html">private spec repository</a> in your podfile:
+    <div class="highlighter-rouge"><pre class="highlight"><code>source 'https://github.com/cartrawler/cartrawler-ios-pods'
+</code></pre>
+    </div>
+  </li>
+  <li>Include the pods in your podfile:
+    <div class="highlighter-rouge"><pre class="highlight"><code>pod 'CarTrawlerSDK',
+pod 'CTPayment'
+</code></pre>
+    </div>
+  </li>
+  <li>From the terminal, run:
+    <div class="highlighter-rouge"><pre class="highlight"><code>pod install
+</code></pre>
+    </div>
+  </li>
+</ol>
 
 <p><strong>Carthage</strong></p>
 
 <ol>
-  <li>Add <code class="highlighter-rouge">github "cartrawler/cartrawler-ios-sdk"</code> to your Cartfile.</li>
-  <li>Run carthage update.</li>
-  <li>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> from <code class="highlighter-rouge">Carthage/Build/iOS</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</li>
+  <li>
+    <p>Add <code class="highlighter-rouge">github "cartrawler/cartrawler-ios-sdk"</code> to your Cartfile.</p>
+  </li>
+  <li>
+    <p>Run carthage update.</p>
+  </li>
+  <li>
+    <p>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> from <code class="highlighter-rouge">Carthage/Build/iOS</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</p>
+  </li>
 </ol>
 
 <p><strong>Manual Installation</strong></p>
 
 <ol>
-  <li><a href="https://github.com/cartrawler/cartrawler-ios-sdk/archive/master.zip">Download Car Trawler for iOS</a> and extract the zip.</li>
-  <li>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</li>
-  <li>Create a new “Run Script Phase” in your app’s target’s “Build Phases” and paste the following snippet in the script text field:</li>
+  <li>
+    <p><a href="https://github.com/cartrawler/cartrawler-ios-sdk/archive/master.zip">Download Car Trawler for iOS</a> and extract the zip.</p>
+  </li>
+  <li>
+    <p>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</p>
+  </li>
+  <li>
+    <p>Create a new “Run Script Phase” in your app’s target’s “Build Phases” and paste the following snippet in the script text field:</p>
+  </li>
 </ol>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">bash</span> <span class="s">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"</span>
-    <span class="n">bash</span> <span class="s">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
+bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"
 </code></pre>
 </div>
 
@@ -369,15 +398,22 @@ For the partners we are providing following libraries:</p>
 
 			
 				<section class="right-code">
-					<div title="Podfile" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">source</span> <span class="err">'</span><span class="nl">https:</span><span class="c1">//github.com/CocoaPods/Specs.git'</span>
-<span class="n">source</span> <span class="err">'</span><span class="nl">https:</span><span class="c1">//github.com/cartrawler/cartrawler-ios-pods'</span>
+					<div title="Podfile" class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+<span class="n">source</span> <span class="s1">'https://github.com/cartrawler/cartrawler-ios-pods'</span>
 
-<span class="n">platform</span> <span class="o">:</span><span class="n">ios</span><span class="o">,</span> <span class="err">'</span><span class="mf">8.0</span><span class="err">'</span>
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'8.0'</span>
 
-<span class="n">target</span> <span class="err">‘</span><span class="n">MyTarget</span><span class="err">’</span> <span class="k">do</span>
-  <span class="n">pod</span> <span class="err">'</span><span class="n">CarTrawlerSDK</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="o">~&gt;</span> <span class="mf">4.1</span><span class="err">'</span>
-  <span class="n">pod</span> <span class="err">'</span><span class="n">CTPayment</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="o">~&gt;</span> <span class="mf">1.0</span><span class="err">'</span>
-<span class="n">end</span>
+<span class="n">target</span> <span class="err">‘</span><span class="no">MyTarget</span><span class="err">’</span> <span class="k">do</span>
+  <span class="n">pod</span> <span class="s1">'CarTrawlerSDK'</span><span class="p">,</span> <span class="s1">'~&gt; 4.1'</span>
+  <span class="n">pod</span> <span class="s1">'CTPayment'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+<div title="Cartfile" class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">github</span> <span class="s2">"cartrawler/cartrawler-ios-sdk"</span>
+</code></pre>
+</div>
+<div title="Manual" class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">bash</span> <span class="s2">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"</span>
+<span class="n">bash</span> <span class="s2">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"</span>
 </code></pre>
 </div>
 
@@ -403,7 +439,13 @@ For the partners we are providing following libraries:</p>
 
 			
 				<section class="right-code">
-					<div title="Usage" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@import</span> <span class="n">CarTrawlerSDK</span><span class="o">;</span>
+					<div title="Objective-C" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@import</span> <span class="n">CarTrawlerSDK</span><span class="o">;</span>
+
+<span class="nd">@interface</span> <span class="n">ClientViewController</span> <span class="o">()</span>
+<span class="nd">@property</span> <span class="o">(</span><span class="n">nonatomic</span><span class="o">,</span> <span class="n">strong</span><span class="o">)</span> <span class="n">CarTrawlerSDK</span> <span class="o">*</span><span class="n">sdk</span><span class="o">;</span>
+<span class="nd">@end</span>
+
+<span class="nd">@implementation</span> <span class="n">ClientViewController</span>
 
 <span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span><span class="n">viewDidLoad</span> <span class="o">{</span>
     <span class="o">[</span><span class="kd">super</span> <span class="n">viewDidLoad</span><span class="o">];</span>
@@ -417,10 +459,31 @@ For the partners we are providing following libraries:</p>
                        <span class="nl">language:</span><span class="err">@</span><span class="s">"EN"</span>
                         <span class="nl">country:</span><span class="err">@</span><span class="s">"IE"</span>
                        <span class="nl">currency:</span><span class="err">@</span><span class="s">"EUR"</span>
-                           <span class="nl">user:</span><span class="n">nil</span>
                           <span class="nl">style:</span><span class="n">nil</span>
-               <span class="nl">customAttributes:</span><span class="n">customAttributes</span><span class="o">];</span>
+               <span class="nl">customAttributes:</span><span class="n">nil</span><span class="o">];</span>
 <span class="o">}</span>
+</code></pre>
+</div>
+<div title="Swift" class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">@import</span> <span class="kt">CarTrawlerSDK</span><span class="p">;</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+<span class="p">[</span><span class="k">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
+<span class="k">self</span><span class="o">.</span><span class="n">carTrawlerSDK</span> <span class="o">=</span> <span class="p">[</span><span class="kt">CarTrawlerSDK</span> <span class="k">new</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">carRentalButtonTapped</span> <span class="p">{</span>
+<span class="p">[</span><span class="k">self</span><span class="o">.</span><span class="n">sdk</span> <span class="nv">presentCarTrawler</span><span class="p">:</span><span class="k">self</span>
+<span class="nv">clientID</span><span class="p">:</span><span class="s">@"123456"</span>
+<span class="nv">production</span><span class="p">:</span><span class="kt">YES</span>
+<span class="nv">language</span><span class="p">:</span><span class="s">@"EN"</span>
+<span class="nv">country</span><span class="p">:</span><span class="s">@"IE"</span>
+<span class="nv">currency</span><span class="p">:</span><span class="s">@"EUR"</span>
+<span class="nv">user</span><span class="p">:</span><span class="kc">nil</span>
+<span class="nv">style</span><span class="p">:</span><span class="kc">nil</span>
+<span class="nv">customAttributes</span><span class="p">:</span><span class="n">customAttributes</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">@end</span>
 </code></pre>
 </div>
 

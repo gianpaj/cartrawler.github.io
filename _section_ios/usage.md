@@ -6,6 +6,12 @@ description:
 right_code: |
     ~~~ java
     @import CarTrawlerSDK;
+    
+    @interface ClientViewController ()
+    @property (nonatomic, strong) CarTrawlerSDK *sdk;
+    @end
+    
+    @implementation ClientViewController
 
     - (void)viewDidLoad {
         [super viewDidLoad];
@@ -19,12 +25,34 @@ right_code: |
                            language:@"EN"
                             country:@"IE"
                            currency:@"EUR"
-                               user:nil
                               style:nil
-                   customAttributes:customAttributes];
+                   customAttributes:nil];
     }
     ~~~
-    {: title="Usage" }
+    {: title="Objective-C" }
+    ~~~ swift
+    @import CarTrawlerSDK;
+    
+    - (void)viewDidLoad {
+    [super viewDidLoad];
+    self.carTrawlerSDK = [CarTrawlerSDK new];
+    }
+    
+    - (void)carRentalButtonTapped {
+    [self.sdk presentCarTrawler:self
+    clientID:@"123456"
+    production:YES
+    language:@"EN"
+    country:@"IE"
+    currency:@"EUR"
+    user:nil
+    style:nil
+    customAttributes:customAttributes];
+    }
+    
+    @end
+    ~~~
+    {: title="Swift" }
 ---
 
 This is the example of setup and configuration.
