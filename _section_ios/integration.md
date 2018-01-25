@@ -17,10 +17,6 @@ right_code: |
     ~~~
     {: title="Podfile" }
     ~~~ ruby
-    github "cartrawler/cartrawler-ios-sdk"
-    ~~~
-    {: title="Cartfile" }
-    ~~~ ruby
     bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
     bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"
     ~~~
