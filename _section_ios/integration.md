@@ -11,7 +11,7 @@ right_code: >-
   source 'https://github.com/cartrawler/cartrawler-ios-pods'
 
 
-  platform :ios, '8.0'
+  platform :ios, '9.0'
 
 
   target ‘MyTarget’ do
