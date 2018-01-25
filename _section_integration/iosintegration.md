@@ -1,42 +1,47 @@
 ---
-title: Integration
-position: 2
+title: iOS
+position: 3
 type: iOS
-description: 
-right_code: |
-    ~~~ ruby
-    source 'https://github.com/CocoaPods/Specs.git'
-    source 'https://github.com/cartrawler/cartrawler-ios-pods'
+description:
+right_code: >-
+  ~~~ ruby
 
-    platform :ios, '8.0'
+  source 'https://github.com/CocoaPods/Specs.git'
 
-    target ‘MyTarget’ do
-      pod 'CarTrawlerSDK', '~> 4.1'
-      pod 'CTPayment', '~> 1.0'
-    end
-    ~~~
-    {: title="Podfile" }
-    ~~~ ruby
-    bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
-    bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"
-    ~~~
-    {: title="Manual" }
+  source 'https://github.com/cartrawler/cartrawler-ios-pods'
+
+
+  platform :ios, '8.0'
+
+
+  target ‘MyTarget’ do
+    pod 'CarTrawlerSDK', '~> 4.1'
+    pod 'CTPayment', '~> 1.0'
+  end
+
+  ~~~
+
+  {: title="Podfile" }
+
+  ~~~ ruby
+
+  bash
+  "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
+
+  bash
+  "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"
+
+  ~~~
+
+  {: title="Manual" }
 ---
+
 
 **CocoaPods**
 
-1. Include the CarTrawler [private spec repository](http://guides.cocoapods.org/making/private-cocoapods.html) in your podfile:
-```
-source 'https://github.com/cartrawler/cartrawler-ios-pods'
-```
-2. Include the pod in your podfile:
-```
-pod 'CarTrawlerSDK'
-```
-3. From the terminal, run:
-```
-pod install
-```
+1. Include the CarTrawler [private spec repository](http://guides.cocoapods.org/making/private-cocoapods.html) in your podfile:`source 'https://github.com/cartrawler/cartrawler-ios-pods'`
+2. Include the pod in your podfile:`pod 'CarTrawlerSDK'`
+3. From the terminal, run:`pod install`
 
 **Manual Installation**
 
@@ -47,8 +52,8 @@ pod install
 3. Create a new "Run Script Phase" in your app’s target’s "Build Phases" and paste the following snippet in the script text field:
 
 ```
-bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
-bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"
+bash "${BUILT\_PRODUCTS\_DIR}/${FRAMEWORKS\_FOLDER\_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
+bash "${BUILT\_PRODUCTS\_DIR}/${FRAMEWORKS\_FOLDER\_PATH}/CTPayment.framework/strip-frameworks.sh"
 ```
 
 This step is required to work around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) when archiving universal binaries.
