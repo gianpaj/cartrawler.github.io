@@ -1,5 +1,5 @@
 ---
-title: Welcomen
+title: Welcome
 position: 1
 ---
 
