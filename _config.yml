@@ -11,11 +11,11 @@ collections:
   section_introduction:
     title: Introduction
     position: 1
-  section_integration:
-    title: Integration
+  section_android:
+    title: Android
     position: 2
-  section_usage:
-    title: Usage
+  section_ios:
+    title: iOS
     position: 3
 gems:
   - jekyll-sitemap
