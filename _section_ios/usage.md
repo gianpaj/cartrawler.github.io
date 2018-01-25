@@ -57,10 +57,10 @@ right_code: |-
 
 CarTrawler for iOS supports iOS 9, iOS 10 and iOS 11.
 
+Code snippets for Objective-C and Swift are provided to the right, and a sample app for both languages is provided with the SDK.
+
 The steps to use the SDK are:
 
 1. Import the header files
 2. Initialise the SDK
-3. Present the SDK view controller
-
-Code snippets for Objective-C and Swift are provided to the right, and a sample app for both languages is provided with the SDK.
+3. Present the SDK view controller with the relevant parameters
