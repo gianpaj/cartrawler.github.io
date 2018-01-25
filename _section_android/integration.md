@@ -1,8 +1,8 @@
 ---
 title: Integration
 position: 1
-type:
-description:
+type: Android
+description: test
 right_code: >-
   ~~~ java
 
