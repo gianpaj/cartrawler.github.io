@@ -68,4 +68,4 @@ right_code: >-
 2. Add our repository. (Daniel to clarify URL)
 3. Add repository credentials to gradle config as shown on the right.
 4. Include activity. (Daniel to clarify name)
-5. Update the proguard config. (Daniel to clarify what is updated
+5. Update the proguard config as shown on the right.
