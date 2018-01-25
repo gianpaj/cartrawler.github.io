@@ -4,8 +4,8 @@ position: 1
 ---
 
 
-Please ensure that you have received the following from a Car Trawler representative.
+Please ensure that you have received the following from a CarTrawler representative.
 {: .present-before-paste}
 
-* Client ID
+* A Client ID
 * Repository Credentials
