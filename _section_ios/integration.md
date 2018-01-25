@@ -39,8 +39,8 @@ right_code: >-
 
 **CocoaPods**
 
-1. Include the CarTrawler private spec repository in your podfile: source 'https://github.com/cartrawler/cartrawler-ios-pods'
-2. Include the pod in your podfile: pod 'CarTrawlerSDK'
+1. Include the CarTrawler private spec repository in your podfile: source 'https://github.com/cartrawler/cartrawler-ios-pods'.
+2. Include the pod in your podfile: pod 'CarTrawlerSDK'.
 3. From the terminal, run: pod install. Note you will have to enter your Github credentials when you run this for the first time.
 
 **Manual Installation**
