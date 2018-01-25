@@ -1,9 +1,9 @@
 ---
-title: Integration
+title: Android
 position: 2
 type: Android
 description:
-right_code: >
+right_code: >-
   ~~~ java
 
   compile "com.rakuten.android:dc-storm:1.0.0@aar"
@@ -64,16 +64,15 @@ right_code: >
 ---
 
 
-Our engine supports all Android versions starting from 4.4 KitKat (sdk version 19). For the partners we are providing following libraries:
+Our engine supports all Android versions starting from 4.4 KitKat (SDK version 19).
 
-car-rental – Android library containing our engine
+The SDK consists of the following libraries:
 
-payment-card - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.
+* car-rental: Car rental flow
+* payment-card: Secure payment form
 
-In order to integrate and start using our libraries, first make sure the Android SDK versions are matching. Currently we support following versions:
-
-<dl><dt>minSdkVersion</dt><dd>19</dd><dt>targetSdkVersion</dt><dd>25</dd></dl>
-
-Then check out list of dependencies we provide, and don’t forget to add our repository and its credentials to your gradle config.
-
-Finally include our activity into you app's manifest and update the proguard config accordinly.
+1. Check out list of dependencies we provide (Daniel to clarify list location)
+2. Add our repository (Daniel to clarify URL)
+3. Add repository credentials to gradle config (Daniel to clarify which credentials)
+4. Include activity (Daniel to clarify name)
+5. Update the proguard config (Daniel to clarify what is updated
