@@ -44,6 +44,6 @@ right_code: >
 
 Usage of the SDK is demonstrated to the right, the parameters are as follows:
 
-<dl><dt>clientId (String)</dt><dd>client id, required to use CarTrawler API</dd><dt>production (Boolean)</dt><dd>switch between test and production endpoints</dd><dt>language (String)</dt><dd>language code</dd><dt>country (String)</dt><dd>country code, can be null</dd><dt>currency (String)</dt><dd>currency code, can be null</dd><dt>customAttributes (Hashmap)</dt><dd>any additional attributes, custom to particular partner</dd></dl>
+<dl><dt>clientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>production</dt><dd>A boolean to switch between test and production endpoints. Default is test.</dd><dt>language</dt><dd>A language code to switch between languages. Default is "en".</dd><dt>country</dt><dd>A country code, such as "IE". Can be null. Default is the device location if not provided.</dd><dt>currency</dt><dd>A currency code, such as "USD". Can be null. Default is "EUR".</dd><dt>customAttributes</dt><dd>A hash map of attributes, custom to a particular partner.</dd></dl>
 
 You can also customise the color scheme of our engine by setting **CT\_ColorPrimary**, **CT\_ColorSecondary** and **CT\_ColorAccent** values in your app's colors.xml file.
