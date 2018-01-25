@@ -3,48 +3,47 @@ title: Usage
 position: 3
 type: Android
 description:
-right_code: |
-    ~~~ java
-    String clientId = "787697";
-    Boolean production = false;
-    String language = "EN";
-    String country = "IE";
-    String currency = "EUR";
+right_code: >
+  ~~~ java
 
-    HashMap<String, String> customAttributes = new HashMap<String, String>();
+  String clientId = "787697";
 
-    CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country, currency, customAttributes));
-    ~~~
-    {: title="Usage" }
+  Boolean production = false;
 
-    ~~~ xml
-    <color name="CT_ColorPrimary">#2AA9E0</color>
-    <color name="CT_ColorSecondary">#21456D</color>
-    <color name="CT_ColorAccent">#21456D</color>
-    ~~~
-    {: title="Colors" }
+  String language = "EN";
+
+  String country = "IE";
+
+  String currency = "EUR";
+
+
+  HashMap<String, String> customAttributes = new HashMap<String, String>();
+
+
+  CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country,
+  currency, customAttributes));
+
+  ~~~
+
+  {: title="Usage" }
+
+
+  ~~~ xml
+
+  <color name="CT_ColorPrimary">#2AA9E0</color>
+
+  <color name="CT_ColorSecondary">#21456D</color>
+
+  <color name="CT_ColorAccent">#21456D</color>
+
+  ~~~
+
+  {: title="Colors" }
 ---
 
-Now we are ready to start using the SDK.
 
-The simplest form of usage is initializing the standalone booking sequence. You do it by simply calling the function we provide and passing the required parameters. Here is the list of parameters that our function accepts:
+Usage of the SDK is demonstrated to the right, the parameters are as follows:
 
-clientId
-: client id, required to use CarTrawler API
+<dl><dt>clientId (String)</dt><dd>client id, required to use CarTrawler API</dd><dt>production (Boolean)</dt><dd>switch between test and production endpoints</dd><dt>language (String)</dt><dd>language code</dd><dt>country (String)</dt><dd>country code, can be null</dd><dt>currency (String)</dt><dd>currency code, can be null</dd><dt>customAttributes (Hashmap)</dt><dd>any additional attributes, custom to particular partner</dd></dl>
 
-production
-: switch between test and production endpoints
-
-language
-: language code
-
-country
-: country code, can be null
-
-currency
-: currency code, can be null
-
-customAttributes
-: any additional attributes, custom to particular partner
-
-You can also customise the color scheme of our engine by setting **CT_ColorPrimary**, **CT_ColorSecondary** and **CT_ColorAccent** values in your app's colors.xml.
+You can also customise the color scheme of our engine by setting **CT\_ColorPrimary**, **CT\_ColorSecondary** and **CT\_ColorAccent** values in your app's colors.xml file.
