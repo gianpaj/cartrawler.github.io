@@ -11,10 +11,10 @@ collections:
   section_introduction:
     title: Introduction
     position: 1
-  section_android:
+  section_integration:
     title: Integration
     position: 2
-  section_ios:
+  section_usage:
     title: Usage
     position: 3
 gems:
