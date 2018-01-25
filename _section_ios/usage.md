@@ -31,26 +31,25 @@ right_code: |-
   ~~~
   {: title="Objective-C" }
   ~~~ swift
-  @import CarTrawlerSDK;
+  import CarTrawlerSDK 
 
-  - (void)viewDidLoad {
-  [super viewDidLoad];
-  self.carTrawlerSDK = [CarTrawlerSDK new];
-  }
+      let carTrawlerSDK = CarTrawlerSDK()
 
-  - (void)carRentalButtonTapped {
-  [self.sdk presentCarTrawler:self
-  clientID:@"123456"
-  production:YES
-  language:@"EN"
-  country:@"IE"
-  currency:@"EUR"
-  user:nil
-  style:nil
-  customAttributes:customAttributes];
-  }
-
-  @end
+      @IBAction func carRentalButtonTapped(_ sender: Any) {
+          let customAttributes = ["offlineMode": false,
+                                  "loggingEnabled": true]
+          
+          let style = customStyle()
+          
+          carTrawlerSDK.presentCarTrawler(self,
+                                          clientID: "123456",
+                                          production: true,
+                                          language: "EN",
+                                          country: "IE",
+                                          currency: "EUR",
+                                          style: style,
+                                          customAttributes: customAttributes)
+      }
   ~~~
   {: title="Swift" }
 ---
