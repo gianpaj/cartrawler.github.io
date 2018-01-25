@@ -2,7 +2,7 @@
 title: Integration
 position: 1
 type: Android
-description: Supports all versions starting from 4.4 KitKat (SDK version 19)
+description: Supports Android 4.4 KitKat (SDK version 19) and above
 right_code: >-
   ~~~ java
 
