@@ -64,9 +64,7 @@ right_code: >-
 ---
 
 
-&nbsp;
-
-1. Check out list of dependencies we provide (Daniel to clarify list location)
+1. Check out the list of dependencies we provide (Daniel to clarify list location)
 2. Add our repository (Daniel to clarify URL)
 3. Add repository credentials to gradle config (Daniel to clarify which credentials)
 4. Include activity (Daniel to clarify name)
