@@ -1,6 +1,6 @@
 ---
 title: Welcome
-position: 0
+position: 1
 ---
 
 
