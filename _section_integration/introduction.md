@@ -1,7 +1,7 @@
 ---
 title: Introduction
 position: 1
-type: Android
+type:
 right_code:
 ---
 
