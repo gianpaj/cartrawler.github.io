@@ -12,10 +12,10 @@ collections:
     title: Introduction
     position: 1
   section_android:
-    title: Android
+    title: Integration
     position: 2
   section_ios:
-    title: iOS
+    title: Usage
     position: 3
 gems:
   - jekyll-sitemap
