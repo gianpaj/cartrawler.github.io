@@ -1,7 +1,7 @@
 ---
-title: Android
+title: Integration
 position: 2
-type: Android
+type:
 description:
 right_code: >-
   ~~~ java
