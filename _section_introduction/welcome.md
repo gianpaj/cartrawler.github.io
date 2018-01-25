@@ -8,4 +8,4 @@ Please ensure that you have received the following from a CarTrawler representat
 {: .present-before-paste}
 
 * A Client ID
-* Repository Credentials
+* CarTrawler Repository Credentials
