@@ -1,9 +1,11 @@
 ---
-title: Welcome
-position: 0
+title: Prerequisites
+position: 1
 ---
 
 
-Welcome to the CarTrawler Native documentation.
+Please ensure that you have received the following from a Car Trawler representative.
+{: .present-before-paste}
 
-Here you'll find everything you need to install the CarTrawler SDKs and start accepting car rental bookings in your Android and iOS apps.
+* Client ID
+* Repository Credentials
