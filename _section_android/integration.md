@@ -2,7 +2,7 @@
 title: Integration
 position: 1
 type: Android
-description:
+description: Supports all versions starting from 4.4 KitKat (SDK version 19)
 right_code: >-
   ~~~ java
 
@@ -64,12 +64,7 @@ right_code: >-
 ---
 
 
-Our engine supports all Android versions starting from 4.4 KitKat (SDK version 19).
-
-The SDK consists of the following libraries:
-
-* car-rental: Car rental flow
-* payment-card: Secure payment form
+&nbsp;
 
 1. Check out list of dependencies we provide (Daniel to clarify list location)
 2. Add our repository (Daniel to clarify URL)
