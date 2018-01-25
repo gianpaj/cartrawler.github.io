@@ -30,7 +30,7 @@ right_code: |-
   }
   ~~~
   {: title="Objective-C" }
-  ~~~ swift
+  ~~~ java
   import CarTrawlerSDK 
 
       let carTrawlerSDK = CarTrawlerSDK()
@@ -55,4 +55,12 @@ right_code: |-
 ---
 
 
-CarTrawler for iOS supports iOS 8, iOS 9, iOS 10 and iOS 11.
+CarTrawler for iOS supports iOS 9, iOS 10 and iOS 11.
+{: .present-before-paste}
+
+Code snippets for Objective-C and Swift are provided to the right, and a sample app for both languages is provided with the SDK.
+{: .present-before-paste}
+
+1. Import the SDK header files{: .present-before-paste}
+2. Initialise the SDK{: .present-before-paste}
+3. Present the SDK view controller{: .present-before-paste}
