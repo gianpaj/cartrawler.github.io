@@ -61,7 +61,7 @@ The steps to use the SDK are:
 
 1. Import the header files
 2. Initialise the SDK
-3. Present the SDK view controller with the required parameters
+3. Present the SDK with the required parameters
 
 Usage is demonstrated in the code snippets for Objective-C and Swift to the right, and in a sample app provided with the SDK. The parameters are as follows:
 
