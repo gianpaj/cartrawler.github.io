@@ -1,10 +1,11 @@
 ---
-title: Getting Started
+title: Welcome
 position: 1
 ---
 
-Welcome to CarTrawler native documentation.
 
-This document is designed for those interested in including our native car rental solution into their Android and iOS applications.
+Welcome to the CarTrawler Native documentation!
 
-![screenshot](../images/screen.gif)
+Here you'll find everything you need to install the CarTrawler SDKs and start accepting car rental bookings in your Android and iOS apps.
+
+&nbsp;
