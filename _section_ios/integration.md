@@ -33,24 +33,14 @@ right_code: |
 ```
 source 'https://github.com/cartrawler/cartrawler-ios-pods'
 ```
-2. Include the pods in your podfile:
+2. Include the pod in your podfile:
 ```
-pod 'CarTrawlerSDK',
-pod 'CTPayment'
+pod 'CarTrawlerSDK'
 ```
 3. From the terminal, run:
 ```
 pod install
 ```
-
-**Carthage**
-
-1. Add `github "cartrawler/cartrawler-ios-sdk"` to your Cartfile.
-
-2. Run carthage update.
-
-3. Go to your Xcode project's "General" settings. Drag `CarTrawlerSDK.framework` from `Carthage/Build/iOS` to the "Embedded Binaries" section. Make sure “Copy items if needed” is selected and click Finish.
-
 
 **Manual Installation**
 
