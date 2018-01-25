@@ -1,6 +1,6 @@
 ---
 title: Prerequisites
-position: '2'
+position:
 type:
 description:
 right_code:
