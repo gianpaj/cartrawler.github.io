@@ -65,9 +65,6 @@ The steps to use the SDK are:
 2. Initialise the SDK
 3. Present the SDK view controller with the relevant parameters
 
-Parameters:
+Usage of the SDK is demonstrated in the code snippets for Objective-C and Swift to the right, and in a sample app provided with the SDK. The parameters are as follows:
 
 <dl><dt>presentingViewController</dt><dd>The view controller, from which the SDK will be presented</dd><dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>production</dt><dd>A boolean to switch between test and production endpoints.</dd><dt>language</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd><dt>country</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd><dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd><dt>style</dt><dd>An optional custom style object, used to set the color scheme and fonts of the SDK. Please ensure any custom fonts used are included in your main bundle</dd><dt>customAttributes</dt><dd>A dictionary of attributes, custom to a particular partner.</dd></dl>
-
-
-
