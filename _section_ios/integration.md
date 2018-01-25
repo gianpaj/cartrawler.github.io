@@ -15,8 +15,7 @@ right_code: >-
 
 
   target ‘MyTarget’ do
-    pod 'CarTrawlerSDK', '~> 4.1'
-    pod 'CTPayment', '~> 1.0'
+    pod 'CarTrawlerSDK', '~> 5.0.0'
   end
 
   ~~~
