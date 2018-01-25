@@ -1,5 +1,5 @@
 ---
-title: Android
+title: iOS
 position: 2
 type: iOS
 description:
@@ -55,7 +55,5 @@ right_code: |-
   {: title="Swift" }
 ---
 
-
-&nbsp;
 
 CarTrawler for iOS supports iOS 8, iOS 9, iOS 10 and iOS 11.
