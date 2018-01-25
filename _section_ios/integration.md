@@ -1,5 +1,5 @@
 ---
-title: iOS
+title: Integration
 position: 3
 type: iOS
 description:
@@ -52,8 +52,8 @@ right_code: >-
 3. Create a new "Run Script Phase" in your app’s target’s "Build Phases" and paste the following snippet in the script text field:
 
 ```
-bash "${BUILT\_PRODUCTS\_DIR}/${FRAMEWORKS\_FOLDER\_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
-bash "${BUILT\_PRODUCTS\_DIR}/${FRAMEWORKS\_FOLDER\_PATH}/CTPayment.framework/strip-frameworks.sh"
+bash "${BUILT\\\_PRODUCTS\\\_DIR}/${FRAMEWORKS\\\_FOLDER\\\_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
+bash "${BUILT\\\_PRODUCTS\\\_DIR}/${FRAMEWORKS\\\_FOLDER\\\_PATH}/CTPayment.framework/strip-frameworks.sh"
 ```
 
 This step is required to work around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) when archiving universal binaries.
