@@ -15,7 +15,7 @@ right_code: |-
 
   - (void)viewDidLoad {
       [super viewDidLoad];
-      self.carTrawlerSDK = [CarTrawlerSDK new];
+      self.sdk = [CarTrawlerSDK new];
   }
 
   - (void)carRentalButtonTapped {
