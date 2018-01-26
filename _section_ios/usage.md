@@ -36,10 +36,6 @@ right_code: |-
       let carTrawlerSDK = CarTrawlerSDK()
 
       @IBAction func carRentalButtonTapped(_ sender: Any) {
-          let customAttributes = ["offlineMode": false,
-                                  "loggingEnabled": true]
-          
-          let style = customStyle()
           
           carTrawlerSDK.presentCarTrawler(self,
                                           clientID: "123456",
@@ -47,8 +43,8 @@ right_code: |-
                                           language: "EN",
                                           country: "IE",
                                           currency: "EUR",
-                                          style: style,
-                                          customAttributes: customAttributes)
+                                          style: nil,
+                                          customAttributes: nil)
       }
   ~~~
   {: title="Swift" }
