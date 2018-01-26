@@ -6,7 +6,7 @@ description: Supports Android 4.4 KitKat (SDK version 19) and above
 right_code: >-
   ~~~ java
 
-  //Car trawler dependancies
+  //Car trawler dependencies
 
   implementation "com.cartrawler.android:payment-card:0.2.5"
 
@@ -98,7 +98,7 @@ right_code: >-
 ---
 
 
-1. Add the necessary gradle configuration to the app modules build.gradle (see Gradle tab on the right)
-2. Add our maven repository and enter the artifactory credentials (see Gradle tab on the right)
-3. Include activity cartrawler.core.engines.RentalActivity (see manifest tab on the right)
+1. Add the necessary gradle configuration to the app modules build.gradle (see Gradle tab on the right).
+2. Add our maven repository and enter the artifactory credentials (see Gradle tab on the right).
+3. Include activity cartrawler.core.engines.RentalActivity (see manifest tab on the right).
 4. If you are using proguard, update the proguard config as shown on the right.
