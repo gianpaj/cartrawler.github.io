@@ -10,7 +10,7 @@ right_code: >-
 
   compile "com.cartrawler.android:payment-card:0.2.5"
 
-  compile "com.cartrawler.android:car-rental:1.4.9"
+  compile "com.cartrawler.android:car-rental:5.0.0"
 
 
   maven {
