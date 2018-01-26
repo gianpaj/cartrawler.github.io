@@ -44,6 +44,6 @@ right_code: >-
 
 **Manual Installation**
 
-1. [Download Car Trawler for iOS](https://github.com/cartrawler/cartrawler-ios-sdk/archive/master.zip) and extract the zip.
+1. Download [CarTrawlerSDK](https://github.com/cartrawler/cartrawler-ios-sdk/archive/master.zip)&nbsp;and [CTPayment](https://github.com/cartrawler/cartrawler-ios-payment/archive/master.zip) libraries and extract the zip files.
 2. Go to your Xcode project's "General" settings. Drag CarTrawlerSDK.framework to the "Embedded Binaries" section. Make sure "Copy items if needed" is selected and click Finish.
 3. Create a new "Run Script Phase" in your app’s target’s "Build Phases" and paste the snippet found in the Manual tab on the right in the script text field. This step is required to work around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) when archiving universal binaries.
