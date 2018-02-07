@@ -46,4 +46,11 @@ Usage of the SDK is&nbsp;demonstrated to the right, the parameters are as follow
 
 <dl><dt>clientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>production</dt><dd>A boolean to switch between test and production endpoints. Default is test.</dd><dt>language</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd><dt>country</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd><dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd><dt>customAttributes</dt><dd>A hash map of attributes, custom to a particular partner.</dd></dl>
 
+Custom Attributes:
+
+<dl>
+  <dt>loyaltyEnabled</dt><dd>A boolean key to enable loyalty field in the payment form</dd>
+  <dt>customProgramID</dt><dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
+</dl>
+
 You may also customise the color scheme by setting **CT\_ColorPrimary**, **CT\_ColorSecondary** and **CT\_ColorAccent** values in your app's colors.xml file.
