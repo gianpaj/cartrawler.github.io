@@ -53,4 +53,4 @@ Custom Attributes:
   <dt>customProgramID</dt><dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
 </dl>
 
-You may also customise the color scheme by setting **CT\_ColorPrimary**, **CT\_ColorSecondary** and **CT\_ColorAccent** values in your app's colors.xml file.
+You may also customise the color scheme by setting **CT\_ColorPrimary**, **CT\_ColorSecondary** and **CT\_ColorAccent** values in your app's colors.xml file.  You can also update the status color by overriding the theme and setting the **android:statusBarColor** property
