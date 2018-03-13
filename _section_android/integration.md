@@ -90,7 +90,7 @@ right_code: >-
   ~~~ xml
 
   <activity android:name="cartrawler.core.engines.RentalActivity"
-  android:theme="@style/CartrawlerAppTheme" />
+  android:theme="@style/YourThemeExtendingCTAppTheme" />
 
   ~~~
 
