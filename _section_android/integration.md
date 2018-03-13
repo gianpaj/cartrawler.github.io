@@ -10,7 +10,7 @@ right_code: >-
 
   implementation "com.cartrawler.android:payment-card:0.2.5"
 
-  implementation "com.cartrawler.android:car-rental:5.0.0"
+  implementation "com.cartrawler.android:car-rental:+" //please use the version number sent to you by the CT team
 
 
   //RX Android
