@@ -30,15 +30,15 @@ right_code: >
 
   ~~~ xml
 
-  <color name="CT_ColorPrimary">#2AA9E0</color>
-
-  <color name="CT_ColorSecondary">#21456D</color>
-
-  <color name="CT_ColorAccent">#21456D</color>
+  <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
+        <item name="colorPrimaryDark">#2AA9E0</item>
+        <item name="colorPrimary">#21456D</item>
+        <item name="colorAccent">#21456D</item>
+  </style>
 
   ~~~
 
-  {: title="Colors" }
+  {: title="Theme" }
 ---
 
 
@@ -51,6 +51,8 @@ Custom Attributes:
 <dl>
   <dt>loyaltyEnabled</dt><dd>A boolean key to enable loyalty field in the payment form</dd>
   <dt>customProgramID</dt><dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
+  <dt>flightNumberRequired</dt><dd>A String boolean value that enables or disables the flight number being required (default value is true), Example: "true"</dd>
+  <dt>membershipID</dt><dd>A String value that is used to pre-populate the loyalty field</dd>
 </dl>
 
-You may also customise the color scheme by setting **CT\_ColorPrimary**, **CT\_ColorSecondary** and **CT\_ColorAccent** values in your app's colors.xml file.  You can also update the status color by overriding the theme and setting the **android:statusBarColor** property
+You will need to create a theme that extends the **CTAppTheme** and set the values for the **colorPrimaryDark**, **colorPrimary** and **colorAccent** attributes.  **android:statusBarColor** can also be set to update the status bar color.
