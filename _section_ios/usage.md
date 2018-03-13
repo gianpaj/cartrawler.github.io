@@ -31,12 +31,12 @@ right_code: |-
   ~~~
   {: title="Objective-C" }
   ~~~ java
-  import CarTrawlerSDK 
+  import CarTrawlerSDK
 
       let carTrawlerSDK = CarTrawlerSDK()
 
       @IBAction func carRentalButtonTapped(_ sender: Any) {
-          
+
           carTrawlerSDK.presentCarTrawler(self,
                                           clientID: "123456",
                                           production: true,
@@ -74,4 +74,8 @@ Custom Attributes:
   <dd>A boolean key to enable loyalty field in the payment form</dd>
   <dt>customProgramID</dt>
   <dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
+  <dt>membershipID</dt>
+  <dd>A String value that represents the membershipID , it will be pre populated in the Payment Form, Example: "123"</dd>
+  <dt>flightNumberRequired</dt>
+  <dd>A boolean key to enable Flight Number as required field in the Payment Form. Default : 1 </dd>
 </dl>
