@@ -75,7 +75,7 @@ Custom Attributes:
   <dt>customProgramID</dt>
   <dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
   <dt>membershipID</dt>
-  <dd>A String value that represents the membershipID , it will be pre populated in the Payment Form, Example: "123"</dd>
+  <dd>A String value that represents the membershipID, it will be pre populated in the Payment Form. Example: "123"</dd>
   <dt>flightNumberRequired</dt>
-  <dd>A boolean key to enable Flight Number as required field in the Payment Form. Default : 1 </dd>
+  <dd>A boolean key to enable Flight Number as a required field in the Payment Form. Default : 1 </dd>
 </dl>
