@@ -1,8 +1,10 @@
 ---
-title: CarTrawler Native SDK Documentation
+title: Test
+permalink: /ondemand/
 ---
 
-{% assign sorted_collections = site.collections | sort: "position" | where: 'product', 'nativesdk' %}
+
+{% assign sorted_collections = site.collections | sort: "position" | where: 'product', 'ondemand' %}
 {% for collection in sorted_collections %}
 	{% assign sorted_docs = collection.docs | sort: "position" %}
 	{% for doc in sorted_docs %}

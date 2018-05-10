@@ -7,16 +7,25 @@ url:
 google_analytics_key:
 permalink: pretty
 
+collections_dir: _collections
 collections:
   section_introduction:
     title: Introduction
     position: 1
+    product: nativesdk
   section_android:
     title: Android
     position: 2
+    product: nativesdk
   section_ios:
     title: iOS
     position: 3
+    product: nativesdk
+  ondemand_android:
+    title: "On demand android"
+    position: 3
+    product: ondemand
+
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag

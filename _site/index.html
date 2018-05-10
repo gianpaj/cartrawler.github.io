@@ -8,10 +8,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="/js/main.js"></script>
 		<!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>CarTrawler Native Docs - CarTrawler</title>
-<meta property="og:title" content="CarTrawler Native Docs" />
-<meta name="description" content="CarTrawler native documentation" />
-<meta property="og:description" content="CarTrawler native documentation" />
+<title>CarTrawler Native SDK Documentation - CarTrawler</title>
+<meta property="og:title" content="CarTrawler Native SDK Documentation" />
+<meta name="description" content="CarTrawler Native SDK Documentation" />
+<meta property="og:description" content="CarTrawler Native SDK Documentation" />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="CarTrawler" />
@@ -19,8 +19,8 @@
 {"@context": "http://schema.org",
 "@type": "WebSite",
 "name": "CarTrawler",
-"headline": "CarTrawler Native Docs",
-"description": "CarTrawler native documentation",
+"headline": "CarTrawler Native SDK Documentation",
+"description": "CarTrawler Native SDK Documentation",
 "url": "http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
@@ -32,87 +32,77 @@
 				<button type="button" class="open-nav" id="open-nav"></button>
 			</h1>
 
-			<form action="/search/" method="get">
-				<input type="text" name="q" id="search-input" placeholder="Search">
-				<input type="submit" value="Search" style="display: none;">
-			</form>
-
 			<div id="sidebar" class="sidebar">
 	
-	
 		
-	
-		
-			<section>
-				<h6>Introduction</h6>
-				<ul>
-					
-					
-						<li>
-							<a href="#section_introductionwelcome">
-								Getting Started
-							</a>
-						</li>
-					
-				</ul>
-			</section>
-		
-	
-		
-			<section>
-				<h6>Android</h6>
-				<ul>
-					
-					
-						<li>
-							<a href="#section_androidintroduction">
-								Introduction
-							</a>
-						</li>
-					
-						<li>
-							<a href="#section_androidintegration">
-								Integration
-							</a>
-						</li>
-					
-						<li>
-							<a href="#section_androidusage">
-								Usage
-							</a>
-						</li>
-					
-				</ul>
-			</section>
-		
-	
-		
-			<section>
-				<h6>iOS</h6>
-				<ul>
-					
-					
-						<li>
-							<a href="#section_iosintroduction">
-								Introduction
-							</a>
-						</li>
-					
-						<li>
-							<a href="#section_iosintegration">
-								Integration
-							</a>
-						</li>
-					
-						<li>
-							<a href="#section_iosusage">
-								Usage
-							</a>
-						</li>
-					
-				</ul>
-			</section>
-		
+
+  
+    <section>
+      <h6>Introduction</h6>
+      <ul>
+        
+        
+          <li>
+            <a href="#section_introductionprerequisites">
+              Welcome
+            </a>
+          </li>
+        
+          <li>
+            <a href="#section_introductionwelcome">
+              Prerequisites
+            </a>
+          </li>
+        
+      </ul>
+    </section>
+  
+
+  
+    <section>
+      <h6>Android</h6>
+      <ul>
+        
+        
+          <li>
+            <a href="#section_androidintegration">
+              Integration
+            </a>
+          </li>
+        
+          <li>
+            <a href="#section_androidusage">
+              Usage
+            </a>
+          </li>
+        
+      </ul>
+    </section>
+  
+
+  
+    <section>
+      <h6>iOS</h6>
+      <ul>
+        
+        
+          <li>
+            <a href="#section_iosintegration">
+              Integration
+            </a>
+          </li>
+        
+          <li>
+            <a href="#section_iosusage">
+              Usage
+            </a>
+          </li>
+        
+      </ul>
+    </section>
+  
+
+
 	
 </div>
 
@@ -122,24 +112,41 @@
 
 	
 	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="section_introductionprerequisites">
+						Welcome
+						
+					</a>
+				</h3>
+				
 
-	
+				<p>Welcome to the CarTrawler Native SDK documentation.</p>
+
+<p>Here you’ll find everything you need to integrate the SDKs and start accepting car rental bookings in your Android and iPhone apps.</p>
+
+			</section>
+
+			
+		</section>
 	
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
 					<a id="section_introductionwelcome">
-						Getting Started
+						Prerequisites
 						
 					</a>
 				</h3>
 				
 
-				<p>Welcome to CarTrawler native documentation.</p>
+				<p class="present-before-paste">Please ensure that you have received the following from a CarTrawler representative.</p>
 
-<p>This document is designed for those interested in including our native car rental solution into their Android and iOS applications.</p>
-
-<p><img src="../images/screen.gif" alt="screenshot" /></p>
+<ul>
+  <li>A Client ID</li>
+  <li>CarTrawler Repository Credentials</li>
+</ul>
 
 			</section>
 
@@ -148,35 +155,6 @@
 	
 
 	
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="section_androidintroduction">
-						Introduction
-						
-							<span class="endpoint Android"></span>
-						
-					</a>
-				</h3>
-				
-
-				<p>Our engine supports all Android versions starting from <strong>4.4 KitKat</strong> (sdk version <strong>19</strong>).
-For the partners we are providing following libraries:</p>
-
-<p><strong>car-rental</strong> – Android library containing our engine</p>
-
-<p><strong>payment-card</strong> - separate Android library, which provides logic and interface for native card payments to CarTrawler API. It’s hosted and included separately for PCI compliance reasons.</p>
-
-			</section>
-
-			
-				<section class="right-code">
-					
-
-				</section>
-			
-		</section>
 	
 		<section class="doc-content">
 			<section class="left-docs">
@@ -189,36 +167,52 @@ For the partners we are providing following libraries:</p>
 					</a>
 				</h3>
 				
+					<p class="description">Supports Android 4.2 Jellybean (SDK version 17) and above</p>
+				
 
-				<p>In order to integrate and start using our libraries, first make sure the Android SDK versions are matching. Currently we support following versions:</p>
-
-<dl>
-  <dt>minSdkVersion</dt>
-  <dd>19</dd>
-  <dt>targetSdkVersion</dt>
-  <dd>25</dd>
-</dl>
-
-<p>Then check out list of dependencies we provide, and don’t forget to add our repository and its credentials to your gradle config.</p>
-
-<p>Finally include our activity into you app’s manifest and update the proguard config accordinly.</p>
+				<ol>
+  <li>Add the necessary gradle configuration to the app modules build.gradle (see Gradle tab on the right).</li>
+  <li>Add our maven repository and enter the artifactory credentials (see Gradle tab on the right).</li>
+  <li>Create a theme that extends the <strong>CTAppTheme</strong>.</li>
+  <li>Include activity cartrawler.core.engines.RentalActivity (see Manifest tab on the right).</li>
+  <li>If you are using proguard, update the proguard config as shown on the right.</li>
+</ol>
 
 			</section>
 
 			
 				<section class="right-code">
-					<div title="Gradle" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="s">"com.rakuten.android:dc-storm:1.0.0@aar"</span>
-<span class="n">compile</span> <span class="s">"com.cartrawler.android:payment-card:0.2.5"</span>
-<span class="n">compile</span> <span class="s">"com.cartrawler.android:car-rental:1.4.9"</span>
+					<div title="Gradle" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Car trawler dependencies</span>
+<span class="n">implementation</span> <span class="s">"com.cartrawler.android:payment-card:0.2.5"</span>
+<span class="n">implementation</span> <span class="s">"com.cartrawler.android:car-rental:+"</span> <span class="c1">//please use the version number sent to you by the CT team</span>
+
+<span class="c1">//RX Android</span>
+<span class="n">implementation</span> <span class="err">'</span><span class="n">io</span><span class="o">.</span><span class="na">reactivex</span><span class="o">:</span><span class="nl">rxandroid:</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">1</span><span class="err">'</span>
+
+<span class="c1">//Android Support</span>
+<span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">support</span><span class="o">:</span><span class="n">cardview</span><span class="o">-</span><span class="nl">v7:</span><span class="mf">26.1</span><span class="o">.</span><span class="mi">0</span><span class="err">'</span>
+<span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">support</span><span class="o">:</span><span class="nl">design:</span><span class="mf">26.1</span><span class="o">.</span><span class="mi">0</span><span class="err">'</span>
+
+<span class="c1">//Retrofit</span>
+<span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">squareup</span><span class="o">.</span><span class="na">retrofit2</span><span class="o">:</span><span class="n">converter</span><span class="o">-</span><span class="nl">gson:</span><span class="mf">2.3</span><span class="o">.</span><span class="mi">0</span><span class="err">'</span>
+
+<span class="c1">//Glide</span>
+<span class="n">implementation</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">bumptech</span><span class="o">.</span><span class="na">glide</span><span class="o">:</span><span class="nl">glide:</span><span class="mf">3.8</span><span class="o">.</span><span class="mi">0</span><span class="err">'</span>
+
+<span class="c1">//Room</span>
+<span class="n">implementation</span> <span class="s">"android.arch.persistence.room:runtime:1.0.0"</span>
+<span class="n">annotationProcessor</span> <span class="s">"android.arch.persistence.room:compiler:1.0.0"</span>
+
+<span class="c1">//Validator</span>
+<span class="n">implementation</span> <span class="err">'</span><span class="n">commons</span><span class="o">-</span><span class="nl">validator:</span><span class="n">commons</span><span class="o">-</span><span class="nl">validator:</span><span class="mf">1.5</span><span class="o">.</span><span class="mi">1</span><span class="err">'</span>
 
 <span class="n">maven</span> <span class="o">{</span>
     <span class="n">url</span> <span class="s">"http://artifactory.cartrawler.com/artifactory/libs-release-local"</span>
-    <span class="n">credentials</span> <span class="o">{</span> <span class="n">username</span> <span class="o">=</span> <span class="s">""</span> <span class="n">password</span> <span class="o">=</span> <span class="s">""</span> <span class="o">}</span>
+    <span class="n">credentials</span> <span class="o">{</span> <span class="n">username</span> <span class="o">=</span> <span class="s">"your_username_here"</span> <span class="n">password</span> <span class="o">=</span> <span class="s">"your_password_here"</span> <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div title="Proguard" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="o">-</span><span class="n">dontwarn</span> <span class="n">sun</span><span class="o">.</span><span class="na">misc</span><span class="o">.**</span>
+<div title="Proguard" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span><span class="n">dontwarn</span> <span class="n">sun</span><span class="o">.</span><span class="na">misc</span><span class="o">.**</span>
 
 <span class="o">-</span><span class="n">keepclassmembers</span> <span class="kd">class</span> <span class="nc">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">unsafe</span><span class="o">.*</span><span class="n">ArrayQueue</span><span class="o">*</span><span class="n">Field</span><span class="o">*</span> <span class="o">{</span>
     <span class="kt">long</span> <span class="n">producerIndex</span><span class="o">;</span>
@@ -234,12 +228,10 @@ For the partners we are providing following libraries:</p>
 <span class="o">}</span>
 
 <span class="o">-</span><span class="n">dontnote</span> <span class="n">rx</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">PlatformDependent</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div title="Manifest" class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">"cartrawler.core.engines.RentalActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/CartrawlerAppTheme"</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+<div title="Manifest" class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">"cartrawler.core.engines.RentalActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/YourThemeExtendingCTAppTheme"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 				</section>
 			
@@ -257,48 +249,42 @@ For the partners we are providing following libraries:</p>
 				</h3>
 				
 
-				<p>Now we are ready to start using the SDK.</p>
+				<p>Usage of the SDK is demonstrated to the right, the parameters are as follows:</p>
 
-<p>The simplest form of usage is initializing the standalone booking sequence. You do it by simply calling the function we provide and passing the required parameters. Here is the list of parameters that our function accepts:</p>
+<dl><dt>clientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>production</dt><dd>A boolean to switch between test and production endpoints. Default is test.</dd><dt>language</dt><dd>An optional language code to switch between languages, NOTE: this field will be removed from the interface in the future and needs to be passed in as null</dd><dt>country</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd><dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd><dt>customAttributes</dt><dd>A hash map of attributes, custom to a particular partner.</dd></dl>
+
+<p>Custom Attributes:</p>
 
 <dl>
-  <dt>clientId</dt>
-  <dd>client id, required to use CarTrawler API</dd>
-  <dt>production</dt>
-  <dd>switch between test and production endpoints</dd>
-  <dt>language</dt>
-  <dd>language code</dd>
-  <dt>country</dt>
-  <dd>country code, can be null</dd>
-  <dt>currency</dt>
-  <dd>currency code, can be null</dd>
-  <dt>customAttributes</dt>
-  <dd>any additional attributes, custom to particular partner</dd>
+  <dt>loyaltyEnabled</dt><dd>A boolean key to enable loyalty field in the payment form</dd>
+  <dt>customProgramID</dt><dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
+  <dt>flightNumberRequired</dt><dd>A String boolean value that enables or disables the flight number being required (default value is true), Example: "true"</dd>
+  <dt>membershipID</dt><dd>A String value that is used to pre-populate the loyalty field</dd>
 </dl>
 
-<p>You can also customise the color scheme of our engine by setting <strong>CT_ColorPrimary</strong>, <strong>CT_ColorSecondary</strong> and <strong>CT_ColorAccent</strong> values in your app’s colors.xml.</p>
+<p>You will need to create a theme that extends the <strong>CTAppTheme</strong> and set the values for the <strong>colorPrimaryDark</strong>, <strong>colorPrimary</strong> and <strong>colorAccent</strong> attributes.  <strong>android:statusBarColor</strong> can also be set to update the status bar color.</p>
 
 			</section>
 
 			
 				<section class="right-code">
-					<div title="Usage" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">String</span> <span class="n">clientId</span> <span class="o">=</span> <span class="s">"787697"</span><span class="o">;</span>
+					<div title="Usage" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">clientId</span> <span class="o">=</span> <span class="s">"787697"</span><span class="o">;</span>
 <span class="n">Boolean</span> <span class="n">production</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">language</span> <span class="o">=</span> <span class="s">"EN"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">language</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span> <span class="c1">//Language is to be deprecated in the library interface</span>
 <span class="n">String</span> <span class="n">country</span> <span class="o">=</span> <span class="s">"IE"</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">currency</span> <span class="o">=</span> <span class="s">"EUR"</span><span class="o">;</span>
 
 <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customAttributes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
 
 <span class="n">CartrawlerSDK</span><span class="o">.</span><span class="na">presentCarTrawler</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">clientId</span><span class="o">,</span> <span class="n">production</span><span class="o">,</span> <span class="n">language</span><span class="o">,</span> <span class="n">country</span><span class="o">,</span> <span class="n">currency</span><span class="o">,</span> <span class="n">customAttributes</span><span class="o">));</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div title="Colors" class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"CT_ColorPrimary"</span><span class="nt">&gt;</span>#2AA9E0<span class="nt">&lt;/color&gt;</span>
-<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"CT_ColorSecondary"</span><span class="nt">&gt;</span>#21456D<span class="nt">&lt;/color&gt;</span>
-<span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">"CT_ColorAccent"</span><span class="nt">&gt;</span>#21456D<span class="nt">&lt;/color&gt;</span>
-</code></pre>
-</div>
+<div title="Theme" class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"YourThemeExtendingCTAppTheme"</span> <span class="na">parent=</span><span class="s">"CTAppTheme"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"colorPrimaryDark"</span><span class="nt">&gt;</span>#2AA9E0<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"colorPrimary"</span><span class="nt">&gt;</span>#21456D<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"colorAccent"</span><span class="nt">&gt;</span>#21456D<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
 
 				</section>
 			
@@ -306,25 +292,6 @@ For the partners we are providing following libraries:</p>
 	
 
 	
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="section_iosintroduction">
-						Introduction
-						
-							<span class="endpoint iOS"></span>
-						
-					</a>
-				</h3>
-				
-
-				<p>CarTrawler for iOS supports iOS 8, iOS 9, iOS 10 and iOS 11.</p>
-
-			</section>
-
-			
-		</section>
 	
 		<section class="doc-content">
 			<section class="left-docs">
@@ -337,85 +304,41 @@ For the partners we are providing following libraries:</p>
 					</a>
 				</h3>
 				
+					<p class="description">Supports iOS 9, iOS 10 and iOS 11</p>
+				
 
 				<p><strong>CocoaPods</strong></p>
 
 <ol>
-  <li>Include the CarTrawler <a href="http://guides.cocoapods.org/making/private-cocoapods.html">private spec repository</a> in your podfile:
-    <div class="highlighter-rouge"><pre class="highlight"><code>source 'https://github.com/cartrawler/cartrawler-ios-pods'
-</code></pre>
-    </div>
-  </li>
-  <li>Include the pods in your podfile:
-    <div class="highlighter-rouge"><pre class="highlight"><code>pod 'CarTrawlerSDK',
-pod 'CTPayment'
-</code></pre>
-    </div>
-  </li>
-  <li>From the terminal, run:
-    <div class="highlighter-rouge"><pre class="highlight"><code>pod install
-</code></pre>
-    </div>
-  </li>
-</ol>
-
-<p><strong>Carthage</strong></p>
-
-<ol>
-  <li>
-    <p>Add <code class="highlighter-rouge">github "cartrawler/cartrawler-ios-sdk"</code> to your Cartfile.</p>
-  </li>
-  <li>
-    <p>Run carthage update.</p>
-  </li>
-  <li>
-    <p>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> from <code class="highlighter-rouge">Carthage/Build/iOS</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</p>
-  </li>
+  <li>Include the CarTrawler private spec repository in your podfile: source ‘https://github.com/cartrawler/cartrawler-ios-pods’.</li>
+  <li>Include the pod in your podfile: pod ‘CarTrawlerSDK’.</li>
+  <li>From the terminal, run: pod install. Note you will have to enter your Github credentials when you run this for the first time.</li>
 </ol>
 
 <p><strong>Manual Installation</strong></p>
 
 <ol>
-  <li>
-    <p><a href="https://github.com/cartrawler/cartrawler-ios-sdk/archive/master.zip">Download Car Trawler for iOS</a> and extract the zip.</p>
-  </li>
-  <li>
-    <p>Go to your Xcode project’s “General” settings. Drag <code class="highlighter-rouge">CarTrawlerSDK.framework</code> to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</p>
-  </li>
-  <li>
-    <p>Create a new “Run Script Phase” in your app’s target’s “Build Phases” and paste the following snippet in the script text field:</p>
-  </li>
+  <li>Download the <a href="https://github.com/cartrawler/cartrawler-ios-sdk/archive/master.zip">CarTrawlerSDK</a> and <a href="https://github.com/cartrawler/cartrawler-ios-payment/archive/master.zip">CTPayment</a> libraries and extract the zip files.</li>
+  <li>Go to your Xcode project’s “General” settings. Drag CarTrawlerSDK.framework and CTPayment.framework to the “Embedded Binaries” section. Make sure “Copy items if needed” is selected and click Finish.</li>
+  <li>Create a new “Run Script Phase” in your app’s target’s “Build Phases” and paste the snippet found in the Manual tab on the right in the script text field. This step is required to work around an <a href="http://www.openradar.me/radar?id=6409498411401216">App Store submission bug</a> when archiving universal binaries.</li>
 </ol>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"
-bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"
-</code></pre>
-</div>
-
-<p>This step is required to work around an <a href="http://www.openradar.me/radar?id=6409498411401216">App Store submission bug</a> when archiving universal binaries.</p>
 
 			</section>
 
 			
 				<section class="right-code">
-					<div title="Podfile" class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+					<div title="Podfile" class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
 <span class="n">source</span> <span class="s1">'https://github.com/cartrawler/cartrawler-ios-pods'</span>
 
-<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'8.0'</span>
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'9.0'</span>
 
 <span class="n">target</span> <span class="err">‘</span><span class="no">MyTarget</span><span class="err">’</span> <span class="k">do</span>
-  <span class="n">pod</span> <span class="s1">'CarTrawlerSDK'</span><span class="p">,</span> <span class="s1">'~&gt; 4.1'</span>
-  <span class="n">pod</span> <span class="s1">'CTPayment'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+  <span class="n">pod</span> <span class="s1">'CarTrawlerSDK'</span><span class="p">,</span> <span class="s1">'~&gt; 5.0.0'</span>
 <span class="k">end</span>
-</code></pre>
-</div>
-<div title="Cartfile" class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">github</span> <span class="s2">"cartrawler/cartrawler-ios-sdk"</span>
-</code></pre>
-</div>
-<div title="Manual" class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">bash</span> <span class="s2">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"</span>
+</code></pre></div></div>
+<div title="Manual" class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bash</span> <span class="s2">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarTrawlerSDK.framework/strip-frameworks.sh"</span>
 <span class="n">bash</span> <span class="s2">"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-frameworks.sh"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 				</section>
 			
@@ -433,13 +356,42 @@ bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-
 				</h3>
 				
 
-				<p>This is the example of setup and configuration.</p>
+				<p>The steps to use the SDK are:</p>
+
+<ol>
+  <li>Import the header files.</li>
+  <li>Initialise the SDK.</li>
+  <li>Present the SDK with the required parameters.</li>
+</ol>
+
+<p>Usage of the SDK is demonstrated to the right, the parameters are as follows:</p>
+
+<dl>
+
+  <dt>presentingVC</dt><dd>Your view controller from which the SDK will be presented.</dd><dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>production</dt><dd>A boolean to switch between test and production endpoints.</dd><dt>language</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd><dt>country</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd><dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd><dt>style</dt><dd>An optional custom style object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
+  <dt>customAttributes</dt>
+  <dd>A dictionary of attributes, custom to a particular partner.</dd>
+
+</dl>
+
+<p>Custom Attributes:</p>
+
+<dl>
+  <dt>loyaltyEnabled</dt>
+  <dd>A boolean key to enable loyalty field in the payment form</dd>
+  <dt>customProgramID</dt>
+  <dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
+  <dt>membershipID</dt>
+  <dd>A String value that represents the membershipID, it will be pre populated in the Payment Form. Example: "123"</dd>
+  <dt>flightNumberRequired</dt>
+  <dd>A boolean key to enable Flight Number as a required field in the Payment Form. Default : 1 </dd>
+</dl>
 
 			</section>
 
 			
 				<section class="right-code">
-					<div title="Objective-C" class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@import</span> <span class="n">CarTrawlerSDK</span><span class="o">;</span>
+					<div title="Objective-C" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@import</span> <span class="n">CarTrawlerSDK</span><span class="o">;</span>
 
 <span class="nd">@interface</span> <span class="n">ClientViewController</span> <span class="o">()</span>
 <span class="nd">@property</span> <span class="o">(</span><span class="n">nonatomic</span><span class="o">,</span> <span class="n">strong</span><span class="o">)</span> <span class="n">CarTrawlerSDK</span> <span class="o">*</span><span class="n">sdk</span><span class="o">;</span>
@@ -449,7 +401,7 @@ bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-
 
 <span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span><span class="n">viewDidLoad</span> <span class="o">{</span>
     <span class="o">[</span><span class="kd">super</span> <span class="n">viewDidLoad</span><span class="o">];</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">carTrawlerSDK</span> <span class="o">=</span> <span class="o">[</span><span class="n">CarTrawlerSDK</span> <span class="k">new</span><span class="o">];</span>
+    <span class="n">self</span><span class="o">.</span><span class="na">sdk</span> <span class="o">=</span> <span class="o">[</span><span class="n">CarTrawlerSDK</span> <span class="k">new</span><span class="o">];</span>
 <span class="o">}</span>
 
 <span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span><span class="n">carRentalButtonTapped</span> <span class="o">{</span>
@@ -462,30 +414,23 @@ bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPayment.framework/strip-
                           <span class="nl">style:</span><span class="n">nil</span>
                <span class="nl">customAttributes:</span><span class="n">nil</span><span class="o">];</span>
 <span class="o">}</span>
-</code></pre>
-</div>
-<div title="Swift" class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">@import</span> <span class="kt">CarTrawlerSDK</span><span class="p">;</span>
+</code></pre></div></div>
+<div title="Swift" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">CarTrawlerSDK</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
-<span class="p">[</span><span class="k">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
-<span class="k">self</span><span class="o">.</span><span class="n">carTrawlerSDK</span> <span class="o">=</span> <span class="p">[</span><span class="kt">CarTrawlerSDK</span> <span class="k">new</span><span class="p">];</span>
-<span class="p">}</span>
+    <span class="n">let</span> <span class="n">carTrawlerSDK</span> <span class="o">=</span> <span class="n">CarTrawlerSDK</span><span class="o">()</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">carRentalButtonTapped</span> <span class="p">{</span>
-<span class="p">[</span><span class="k">self</span><span class="o">.</span><span class="n">sdk</span> <span class="nv">presentCarTrawler</span><span class="p">:</span><span class="k">self</span>
-<span class="nv">clientID</span><span class="p">:</span><span class="s">@"123456"</span>
-<span class="nv">production</span><span class="p">:</span><span class="kt">YES</span>
-<span class="nv">language</span><span class="p">:</span><span class="s">@"EN"</span>
-<span class="nv">country</span><span class="p">:</span><span class="s">@"IE"</span>
-<span class="nv">currency</span><span class="p">:</span><span class="s">@"EUR"</span>
-<span class="nv">user</span><span class="p">:</span><span class="kc">nil</span>
-<span class="nv">style</span><span class="p">:</span><span class="kc">nil</span>
-<span class="nv">customAttributes</span><span class="p">:</span><span class="n">customAttributes</span><span class="p">];</span>
-<span class="p">}</span>
+    <span class="nd">@IBAction</span> <span class="n">func</span> <span class="nf">carRentalButtonTapped</span><span class="o">(</span><span class="n">_</span> <span class="nl">sender:</span> <span class="n">Any</span><span class="o">)</span> <span class="o">{</span>
 
-<span class="kd">@end</span>
-</code></pre>
-</div>
+        <span class="n">carTrawlerSDK</span><span class="o">.</span><span class="na">presentCarTrawler</span><span class="o">(</span><span class="n">self</span><span class="o">,</span>
+                                        <span class="nl">clientID:</span> <span class="s">"123456"</span><span class="o">,</span>
+                                        <span class="nl">production:</span> <span class="kc">true</span><span class="o">,</span>
+                                        <span class="nl">language:</span> <span class="s">"EN"</span><span class="o">,</span>
+                                        <span class="nl">country:</span> <span class="s">"IE"</span><span class="o">,</span>
+                                        <span class="nl">currency:</span> <span class="s">"EUR"</span><span class="o">,</span>
+                                        <span class="nl">style:</span> <span class="n">nil</span><span class="o">,</span>
+                                        <span class="nl">customAttributes:</span> <span class="n">nil</span><span class="o">)</span>
+    <span class="o">}</span>
+</code></pre></div></div>
 
 				</section>
 			
