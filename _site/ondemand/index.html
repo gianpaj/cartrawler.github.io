@@ -8,8 +8,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="/js/main.js"></script>
 		<!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>Test - CarTrawler</title>
-<meta property="og:title" content="Test" />
+<title>Cartrawler OnDemand SDK - CarTrawler</title>
+<meta property="og:title" content="Cartrawler OnDemand SDK" />
 <meta name="description" content="CarTrawler Native SDK Documentation" />
 <meta property="og:description" content="CarTrawler Native SDK Documentation" />
 <link rel="canonical" href="http://localhost:4000/ondemand/" />
@@ -18,7 +18,7 @@
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "WebPage",
-"headline": "Test",
+"headline": "Cartrawler OnDemand SDK",
 "description": "CarTrawler Native SDK Documentation",
 "url": "http://localhost:4000/ondemand/"}</script>
 <!-- End Jekyll SEO tag -->
@@ -37,13 +37,55 @@
 
   
     <section>
-      <h6>On demand android</h6>
+      <h6>iOS</h6>
       <ul>
         
         
           <li>
-            <a href="/#ondemand_androidindex">
-              Title
+            <a href="/#ondemand_iosintroduction">
+              Introduction
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#integration">
+              Integration
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#ondemand_iosProject configuration">
+              Project configuration
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#ondemand_iosCODSdk Initialisation">
+              CODSDK Initialization
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#ondemand_iosOpening COD View controllers">
+              COD View Controllers
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#ondemand_iosOpening COD Views">
+              Opening COD Views
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#ondemand_iosRegistering COD View Delegate">
+              COD View Delegate
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#ondemand_iosAdditional properties">
+              Additional Properties
             </a>
           </li>
         
@@ -64,16 +106,429 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="ondemand_androidindex">
-						Title
+					<a id="ondemand_iosintroduction">
+						Introduction
 						
 					</a>
 				</h3>
 				
 
-				<h1 id="test">Test</h1>
+				<h2 id="cartrawler-confidential">CarTrawler Confidential</h2>
 
-<h2 id="whatever">whatever</h2>
+<p>This document is confidential and shared under a non-disclosure agreement. If you need to share the document or parts of it with external parties (such as outsourced software development companies), it is your responsibility to ensure that these parties are covered with a non-disclosure agreement and understand the confidential nature of this document.</p>
+
+<h1 id="codsdk-client-integration">CODSDK Client Integration</h1>
+
+<p>CarTrawler On-Demand SDK (“CODSDK”) is a client framework and a set of tools that enables quick and easy integration of CarTrawler on-demand taxi services (“COD”) into CarTrawler Partner mobile apps.</p>
+
+<p>The framework provides a native mobile app plugin with easy and intuitive functionality for the entire on-demand taxi booking user flow with the following main functions:</p>
+
+<ul>
+  <li>Searching available taxis at user’s location with ASAP pickup time</li>
+  <li>Displaying available cars, their estimated time of arrival, and pricing</li>
+  <li>Making bookings with credit card and Partner loyalty program membership points</li>
+  <li>Tracking the on-going order and car arrival</li>
+  <li>Viewing driver and car details</li>
+  <li>Reviewing ride and payment details</li>
+  <li>Rating the service</li>
+</ul>
+
+<p>The client framework is distributed as a dynamic iOS Framework and Android library that Partner mobile application development teams can embed into their into their native iOS and Android apps. The framework provides complete functionality and UIs that can be invoked by the Partner embedding apps (hereinafter referred as “Partner App”) as appropriate.</p>
+
+<h2 id="implementation-technology">Implementation Technology</h2>
+
+<p>The CarTrawler On-Demand client and CODSDK has been implemented as native mobile application component using Facebook’s React Native technology. For more details, see <a href="https://facebook.github.io/react-native/">https://facebook.github.io/react-native/</a>).</p>
+
+<h2 id="codsdk-system-requirements">CODSDK System Requirements</h2>
+
+<h3 id="ios">iOS</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Area</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">iOS version</td>
+      <td style="text-align: left">iOS 8.0 or later on iPhone</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Memory footprint</td>
+      <td style="text-align: left">~9 MB (iOS, armv64) (1)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>1) Please note that the SDK is distributed as iOS Universal framework, containing binary code for both iOS Simulator (i386, x86_64) and iOS devices (armv7, armv7s, arm64). The unnecessary architectures are stripped out automatically when building for production, keeping the on-device memory footprint of CODSDK below 10 MB.</p>
+
+			</section>
+
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="integration">
+						Integration
+						
+					</a>
+				</h3>
+				
+
+				<p>CODSDK has been implemented as iOS dynamic Framework that needs to be included with the embedding application.</p>
+
+<ol>
+  <li>Drag <code class="highlighter-rouge">CODSDK.framework</code> from Finder to the <code class="highlighter-rouge">Embedded Binaries</code> section of your project target settings.</li>
+</ol>
+
+<p><img src="./images/1.png" alt="Image 1" /></p>
+
+<ol>
+  <li>Add a new <code class="highlighter-rouge">Run Script Phase</code> to your target build phases, after the <code class="highlighter-rouge">Embed/Copy Frameworks</code> build phase. The script to be run should be configured as below. The CODSDK framework has been built as a Universal Framework that contains binary slices for multiple architectures, including i386/x86_64 for iOS Simulator on OS X. In order to submit the application to Apple AppStore review process, the unnecessary binary targets need to be stripped from the framework. See 
+<a href="http://www.openradar.me/radar?id=6409498411401216">http://www.openradar.me/radar?id=6409498411401216</a>
+for more details.</li>
+</ol>
+
+<p><img src="./images/2.png" alt="Image 2" /></p>
+
+<ol>
+  <li>Import CODSDK header files using <code class="highlighter-rouge">#import &lt;CODSDK/CODSDK.h&gt;</code> to your source files using CODSDK.</li>
+</ol>
+
+			</section>
+
+			
+				<section class="right-code">
+					<div title="Xcode bash script" class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bash <span class="s2">"</span><span class="k">${</span><span class="nv">BUILT_PRODUCTS_DIR</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">FRAMEWORKS_FOLDER_PATH</span><span class="k">}</span><span class="s2">/CODSDK.framework/strip-frameworks.sh"</span>
+
+</code></pre></div></div>
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ondemand_iosProject configuration">
+						Project configuration
+						
+					</a>
+				</h3>
+				
+
+				<p>Make sure the following application settings have been applied in your project:</p>
+
+<ol>
+  <li>Info.plist includes the following configuration items:</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Item</th>
+      <th style="text-align: left">Value</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Supported interface orientations</td>
+      <td style="text-align: left">Portrait</td>
+      <td style="text-align: left">CODSDK supports portait only</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NSLocationWhenInUseUsageDescription</td>
+      <td style="text-align: left">Determine user location</td>
+      <td style="text-align: left">Use of location service</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NSAllowsArbitraryLoads</td>
+      <td style="text-align: left">YES</td>
+      <td style="text-align: left">Allow use of HTTP requests (test only)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LSApplicationQueriesSchemes</td>
+      <td style="text-align: left">comgooglemaps, careem</td>
+      <td style="text-align: left">For “view destination” feature, for careem deep link support</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CODBuildEnvironment</td>
+      <td style="text-align: left">Demo</td>
+      <td style="text-align: left">Use COD demo/test environment</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>In your application seetings “Capabilities”, turn on support for “Maps”</li>
+</ol>
+
+<p><img src="./images/3.png" alt="Image 3" /></p>
+
+			</section>
+
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ondemand_iosCODSdk Initialisation">
+						CODSDK Initialization
+						
+					</a>
+				</h3>
+				
+
+				<p>CODSDK must be initialised before any of the views can be opened. Call <code class="highlighter-rouge">[CODManager sharedManager]</code> to obtain a reference to a CODManager instance. This object is responsible of mediating actions between the views and controllers within COD application.</p>
+
+<p>A typical place to initialise <code class="highlighter-rouge">CODManager</code> is in your application delegates init method. Parameter <code class="highlighter-rouge">launchOptions</code> is required to pass possible launch parameters (e.g. deep-linkin URL params) to the <code class="highlighter-rouge">CODManager</code>.</p>
+
+<p>After the COD manager has been succesfully initialised, the <code class="highlighter-rouge">CODManager</code> interface can be used to open the COD as normal view object, or as a view controller.</p>
+
+			</section>
+
+			
+				<section class="right-code">
+					<div title="CODSDK launch example" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">-</span> <span class="o">(</span><span class="n">BOOL</span><span class="o">)</span><span class="nl">application:</span><span class="o">(</span><span class="n">UIApplication</span> <span class="o">*)</span><span class="n">application</span> <span class="nl">didFinishLaunchingWithOptions:</span><span class="o">(</span><span class="n">NSDictionary</span> <span class="o">*)</span><span class="n">launchOptions</span> <span class="o">{</span>
+      <span class="o">[[</span><span class="n">CODManager</span> <span class="n">sharedManager</span><span class="o">]</span> <span class="nl">initWithOptions:</span><span class="n">launchOptions</span><span class="o">];</span>
+      <span class="o">...</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ondemand_iosOpening COD View controllers">
+						COD View Controllers
+						
+					</a>
+				</h3>
+				
+
+				<p><code class="highlighter-rouge">CODVIewController</code> is a iOS UIKIt <code class="highlighter-rouge">UIViewController</code> subclass that can be used to create a complete view controller to manage the lifecycle of the booking UI. The view controllers can be embedded into a navigation view controllers, but if done so, the embedding view should hide its navigation bar as CODSDK booking view maintains its own navigation bar.</p>
+
+<p>The first parameter <code class="highlighter-rouge">moduleName</code> shall be used to indicate the main entry point for CODSDK. This value is assigned to you by CarTrawler.</p>
+
+<p>The second parameter <code class="highlighter-rouge">initialProperties</code> is a <code class="highlighter-rouge">NSDictionary</code> containing any additional properties to be passed to the CODSDK. See “Additional Properties” below.</p>
+
+			</section>
+
+			
+				<section class="right-code">
+					<div title="Opeing CODView Controllers" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">CODManager</span> <span class="o">*</span><span class="n">manager</span> <span class="o">=</span> <span class="o">[</span><span class="n">CODManager</span> <span class="n">sharedManager</span><span class="o">];</span>
+  <span class="o">[</span><span class="n">manager</span> <span class="nl">initWithOptions:</span><span class="n">launchOptions</span><span class="o">];</span>
+
+  <span class="c1">// Instantiate COD view controller</span>
+  <span class="n">CODViewController</span><span class="o">*</span> <span class="n">viewController</span> <span class="o">=</span> <span class="o">[</span><span class="n">manager</span> <span class="nl">codViewControllerWithModuleName:</span><span class="err">@</span><span class="s">"&lt;module name&gt;"</span> <span class="nl">initialProperties:</span><span class="n">nil</span><span class="o">];</span>
+
+  <span class="c1">// Hide the current navigation bar</span>
+  <span class="n">self</span><span class="o">.</span><span class="na">navigationController</span><span class="o">.</span><span class="na">navigationBar</span><span class="o">.</span><span class="na">hidden</span> <span class="o">=</span> <span class="n">YES</span><span class="o">;</span>
+
+  <span class="c1">// Display the COD view controller</span>
+  <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">navigationController</span> <span class="nl">pushViewController:</span><span class="n">viewController</span> <span class="nl">animated:</span><span class="n">YES</span><span class="o">];</span>
+</code></pre></div></div>
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ondemand_iosOpening COD Views">
+						Opening COD Views
+						
+					</a>
+				</h3>
+				
+
+				<p>Alyternatively, if the hosting application wants more fina-grained control over the COD view contents, the CODSDK can be used to open CODSDK as a iOS UIKit <code class="highlighter-rouge">UIView</code>. In this case, the hosting application is responsible of maintaining the <code class="highlighter-rouge">CODView</code> object and presenting it to the user. Please note the following considerations:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">CODView</code> maintains its own navigation bar and the hosting app should hide its navigation bar to preven duplicate UI elements.</li>
+  <li><code class="highlighter-rouge">CODView</code> has been designed to be used as full-screen UI element</li>
+  <li>Only one instance of <code class="highlighter-rouge">CODView</code>should be open at the time</li>
+</ol>
+
+<p>An example of opening the COD View is on the right -&gt;</p>
+
+<p>The   <code class="highlighter-rouge">moduleName</code>   and   <code class="highlighter-rouge">initialProperties</code>   parameters are defined as above.</p>
+
+			</section>
+
+			
+				<section class="right-code">
+					<div title="Opening COD View" class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">UIView</span> <span class="o">*</span><span class="n">rootView</span> <span class="o">=</span> <span class="o">[</span><span class="n">manager</span> <span class="nl">codViewWithModuleName:</span><span class="err">@</span><span class="s">"&lt;module name&gt;"</span> <span class="nl">initialProperties:</span><span class="n">nil</span><span class="o">];</span>
+
+<span class="n">self</span><span class="o">.</span><span class="na">window</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIWindow</span> <span class="n">alloc</span><span class="o">]</span> <span class="nl">initWithFrame:</span><span class="o">[</span><span class="n">UIScreen</span> <span class="n">mainScreen</span><span class="o">].</span><span class="na">bounds</span><span class="o">];</span>
+<span class="n">UIViewController</span> <span class="o">*</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIViewController</span> <span class="n">alloc</span><span class="o">]</span> <span class="n">init</span><span class="o">];</span>
+<span class="n">rootViewController</span><span class="o">.</span><span class="na">view</span> <span class="o">=</span> <span class="n">rootView</span><span class="o">;</span>
+<span class="n">self</span><span class="o">.</span><span class="na">window</span><span class="o">.</span><span class="na">rootViewController</span> <span class="o">=</span> <span class="n">rootViewController</span><span class="o">;</span>
+<span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">window</span> <span class="n">makeKeyAndVisible</span><span class="o">];</span>
+</code></pre></div></div>
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ondemand_iosRegistering COD View Delegate">
+						COD View Delegate
+						
+					</a>
+				</h3>
+				
+
+				<p>In order to receive events (callbacks) from the COD view, the hosting application may register itself as a delegate for the <code class="highlighter-rouge">CODManager</code>. The currently supported callbacks are:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">didLoadCODView</code> called after the COD view or view controller has been loaded sucesfully.</li>
+  <li><code class="highlighter-rouge">didFailToLoadCODView</code> called if there was an unrecoverable error during the COD view or view controller loading</li>
+  <li><code class="highlighter-rouge">shouldCloseCODViewWithReason:(CODViewCloseReason)reason</code> called when the COD view or view controller needs to be closed (typically as a response to an user interaction)</li>
+</ol>
+
+<p>See <code class="highlighter-rouge">CODSDK/CODManagerDelegate.h</code> for more details.</p>
+
+
+			</section>
+
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="ondemand_iosAdditional properties">
+						Additional Properties
+						
+					</a>
+				</h3>
+				
+
+				<p>Additional properties may be specified when opening CODSDK views. The properties may be related to communicating user profile details from the embedding application to the CODSDK, or they may be related to providing contextual information for the taxi booking flow, e.g. destination address/airport if known.</p>
+
+<p>The following properties are supported. All properties are optional:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Property name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">user</td>
+      <td style="text-align: left">NSDictionary</td>
+      <td style="text-align: center">No (1)</td>
+      <td style="text-align: left">User details</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">user.firstName</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">First name</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">user.lastName</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Last name</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">user.email</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: left">email</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">user.phone</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">phone</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">user.phoneVerified</td>
+      <td style="text-align: left">BOOL</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: left">true if phone number has been verified</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">membership</td>
+      <td style="text-align: left">NSDictionary</td>
+      <td style="text-align: center">No (2)</td>
+      <td style="text-align: left">User loyalty program membership details</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">membership.userId</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">Yes (3)</td>
+      <td style="text-align: left">Loyalty program user id</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">membership.password</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">Yes (3)</td>
+      <td style="text-align: left">Loyalty program password</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">membership.authToken</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">Yes (3)</td>
+      <td style="text-align: left">Loyalty program auth token</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">payment</td>
+      <td style="text-align: left">NSDictionary</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: left">Payment details</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">paymentToken</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: left">Payment token to be used in CC payments</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">booking</td>
+      <td style="text-align: left">NSDictionary</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: left">Booking details</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">booking.destinationAddress</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: left">Destination address</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">booking.destinationIATA</td>
+      <td style="text-align: left">NSString</td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: left">IATA of the destination airport</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>(1) If specified, user on-boarding screens/process will be omitted and a user profile is automatically created for the user.</p>
+
+<p>(2) If specified, no loyalty program authentiation screen is displayed.</p>
+
+<p>(3) Either userId and password or authToken is required.</p>
 
 			</section>
 

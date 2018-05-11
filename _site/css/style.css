@@ -6,6 +6,9 @@ body, .main {
   box-sizing: border-box;
   min-height: 100vh; }
 
+img {
+  width: 100%; }
+
 html {
   font-size: 62.5%;
   color: #474a54;
