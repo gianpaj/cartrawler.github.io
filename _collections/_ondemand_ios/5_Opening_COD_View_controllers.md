@@ -19,7 +19,7 @@ right_code: |-
   {: title="Opeing CODView Controllers" }
 ---
 
-`CODVIewController` is a iOS UIKIt `UIViewController` subclass that can be used to create a complete view controller to manage the lifecycle of the booking UI. The view controllers can be embedded into a navigation view controllers, but if done so, the embedding view should hide its navigation bar as CODSDK booking view maintains its own navigation bar.
+`CODVIewController` is a iOS UIKIt `UIViewController` subclass that can be used to create a complete view controller to manage the lifecycle of the booking UI. The view controllers can be embedded into a navigation view controller, but if done so, the embedding view should hide its navigation bar as CODSDK booking view maintains its own navigation bar.
 
 The first parameter `moduleName` shall be used to indicate the main entry point for CODSDK. This value is assigned to you by CarTrawler.
 
