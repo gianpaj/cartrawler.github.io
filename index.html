@@ -1,7 +1,8 @@
 ---
 title: CarTrawler Native SDK Documentation
 ---
-{% assign sorted_collections = site.collections | sort: "position" %}
+
+{% assign sorted_collections = site.collections | sort: "position" | where: 'product', 'nativesdk' %}
 {% for collection in sorted_collections %}
 	{% assign sorted_docs = collection.docs | sort: "position" %}
 	{% for doc in sorted_docs %}
