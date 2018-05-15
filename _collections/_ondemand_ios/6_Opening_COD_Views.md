@@ -15,7 +15,7 @@ right_code: |-
   {: title="Opening COD View" }
 ---
 
-Alyternatively, if the hosting application wants more fina-grained control over the COD view contents, the CODSDK can be used to open CODSDK as a iOS UIKit `UIView`. In this case, the hosting application is responsible of maintaining the `CODView` object and presenting it to the user. Please note the following considerations:
+Alyternatively, if the hosting application wants more fine-grained control over the COD view contents, the CODSDK can be used to open CODSDK as a iOS UIKit `UIView`. In this case, the hosting application is responsible of maintaining the `CODView` object and presenting it to the user. Please note the following considerations:
 
 1. `CODView` maintains its own navigation bar and the hosting app should hide its navigation bar to preven duplicate UI elements.
 2. `CODView` has been designed to be used as full-screen UI element
