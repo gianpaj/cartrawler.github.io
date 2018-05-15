@@ -28,6 +28,6 @@ The following properties are supported. All properties are optional:
 
 (1) If specified, user on-boarding screens/process will be omitted and a user profile is automatically created for the user.
 
-(2) If specified, no loyalty program authentiation screen is displayed.
+(2) If specified, no loyalty program authentication screen is displayed.
 
 (3) Either userId and password or authToken is required.
