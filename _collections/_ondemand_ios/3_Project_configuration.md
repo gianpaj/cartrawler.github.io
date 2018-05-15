@@ -10,7 +10,7 @@ Make sure the following application settings have been applied in your project:
 
 |Item                             |Value                              |Description                              |
 |:--------------------------------|:----------------------------------|:----------------------------------------|
-|Supported interface orientations |Portrait                           |CODSDK supports portait only             |
+|Supported interface orientations |Portrait                           |CODSDK supports portrait only             |
 |NSLocationWhenInUseUsageDescription|Determine user location          |Use of location service                  |
 |NSAllowsArbitraryLoads           |YES                                |Allow use of HTTP requests (test only)   |
 |LSApplicationQueriesSchemes      |comgooglemaps, careem              |For "view destination" feature, for careem deep link support|
