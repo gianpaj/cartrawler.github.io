@@ -16,6 +16,6 @@ Make sure the following application settings have been applied in your project:
 |LSApplicationQueriesSchemes      |comgooglemaps, careem              |For "view destination" feature, for careem deep link support|
 |CODBuildEnvironment              |Demo                               |Use COD demo/test environment            |
 
-2. In your application seetings "Capabilities", turn on support for "Maps"
+2. In your application settings "Capabilities", turn on support for "Maps"
 
 ![Image 3](./images/3.png)
