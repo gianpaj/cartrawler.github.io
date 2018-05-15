@@ -21,6 +21,6 @@ The framework provides a native mobile app plugin with easy and intuitive functi
 - Reviewing ride and payment details
 - Rating the service
 
-The client framework is distributed as a dynamic iOS Framework and Android library that Partner mobile application development teams can embed into their into their native iOS and Android apps. The framework provides complete functionality and UIs that can be invoked by the Partner embedding apps (hereinafter referred as "Partner App") as appropriate.
+The client framework is distributed as a dynamic iOS Framework that Partner mobile application development teams can embed into their into their native iOS application. The framework provides complete functionality and UIs that can be invoked by the Partner embedding apps (hereinafter referred as "Partner App") as appropriate. Android coming soon!
 
 
