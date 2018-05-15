@@ -1,6 +1,7 @@
 ---
 title: Opening COD Views
 position: 6
+permalink: /ondemand/
 right_code: |-
   ~~~ java
   UIView *rootView = [manager codViewWithModuleName:@"<module name>" initialProperties:nil];

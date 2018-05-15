@@ -24,3 +24,18 @@ for more details.
 ![Image 2](./images/2.png)
 
 3. Import CODSDK header files using `#import <CODSDK/CODSDK.h>` to your source files using CODSDK.
+
+## Implementation Technology
+
+The CarTrawler On-Demand client and CODSDK has been implemented as native mobile application component using Facebook's React Native technology. For more details, see [https://facebook.github.io/react-native/](https://facebook.github.io/react-native/)).
+
+## CODSDK System Requirements
+
+### iOS
+
+|Area                   |Description                          |
+|:----------------------|:------------------------------------|
+|iOS version            |iOS 8.0 or later on iPhone           |
+|Memory footprint       |~15 MB (iOS, armv64) (1)              |
+
+1) Please note that the SDK is distributed as iOS Universal framework, containing binary code for both iOS Simulator (i386, x86_64) and iOS devices (armv7, armv7s, arm64). The unnecessary architectures are stripped out automatically when building for production, keeping the on-device memory footprint of CODSDK below 10 MB.

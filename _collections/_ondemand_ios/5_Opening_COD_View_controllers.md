@@ -1,6 +1,7 @@
 ---
 title: COD View Controllers
 position: 5
+permalink: /ondemand/
 right_code: |-
   ~~~ java
     CODManager *manager = [CODManager sharedManager];

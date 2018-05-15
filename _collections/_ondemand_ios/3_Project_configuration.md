@@ -1,5 +1,6 @@
 ---
 title: Project configuration
+permalink: /ondemand/
 position: 3
 ---
 

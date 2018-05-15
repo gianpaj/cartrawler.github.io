@@ -1,6 +1,7 @@
 ---
 title: CODSDK Initialization
 position: 4
+permalink: /ondemand/
 right_code: |-
   ~~~ java
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

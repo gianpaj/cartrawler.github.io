@@ -1,6 +1,7 @@
 ---
 title: COD View Delegate
-position: 6
+position: 7
+permalink: /ondemand/
 ---
 
 In order to receive events (callbacks) from the COD view, the hosting application may register itself as a delegate for the `CODManager`. The currently supported callbacks are:

@@ -1,5 +1,6 @@
 ---
 title: Introduction
+permalink: /ondemand/
 position: 1
 ---
 ## CarTrawler Confidential
@@ -23,19 +24,3 @@ The framework provides a native mobile app plugin with easy and intuitive functi
 The client framework is distributed as a dynamic iOS Framework and Android library that Partner mobile application development teams can embed into their into their native iOS and Android apps. The framework provides complete functionality and UIs that can be invoked by the Partner embedding apps (hereinafter referred as "Partner App") as appropriate.
 
 
-
-
-## Implementation Technology
-
-The CarTrawler On-Demand client and CODSDK has been implemented as native mobile application component using Facebook's React Native technology. For more details, see [https://facebook.github.io/react-native/](https://facebook.github.io/react-native/)).
-
-## CODSDK System Requirements
-
-### iOS
-
-|Area                   |Description                          |
-|:----------------------|:------------------------------------|
-|iOS version            |iOS 8.0 or later on iPhone           |
-|Memory footprint       |~9 MB (iOS, armv64) (1)              |
-
-1) Please note that the SDK is distributed as iOS Universal framework, containing binary code for both iOS Simulator (i386, x86_64) and iOS devices (armv7, armv7s, arm64). The unnecessary architectures are stripped out automatically when building for production, keeping the on-device memory footprint of CODSDK below 10 MB.

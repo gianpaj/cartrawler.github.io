@@ -1,6 +1,7 @@
 ---
 title: Additional Properties
-position: 7
+position: 8
+permalink: /ondemand/
 ---
 
 Additional properties may be specified when opening CODSDK views. The properties may be related to communicating user profile details from the embedding application to the CODSDK, or they may be related to providing contextual information for the taxi booking flow, e.g. destination address/airport if known.
