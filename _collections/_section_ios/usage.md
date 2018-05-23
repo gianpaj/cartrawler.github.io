@@ -5,22 +5,23 @@ type: iOS
 description:
 right_code: |-
   ~~~ java
+  #import "ViewController.h"
   @import CarTrawlerSDK;
 
-  @interface ClientViewController ()
+  @interface ViewController ()
   @property (nonatomic, strong) CarTrawlerSDK *sdk;
   @end
 
-  @implementation ClientViewController
+  @implementation ViewController
 
   - (void)viewDidLoad {
       [super viewDidLoad];
       self.sdk = [CarTrawlerSDK new];
   }
 
-  - (void)carRentalButtonTapped {
+  - (IBAction)carRentalButtonTapped {
       [self.sdk presentCarTrawler:self
-                         clientID:@"123456"
+                         clientID:@"787697"
                        production:YES
                          language:@"EN"
                           country:@"IE"
@@ -28,6 +29,9 @@ right_code: |-
                             style:nil
                  customAttributes:nil];
   }
+  
+  @end
+  
   ~~~
   {: title="Objective-C" }
   ~~~ java
