@@ -13,12 +13,12 @@ collections:
     title: Introduction
     position: 1
     product: nativesdk
-  section_android:
-    title: Android
-    position: 2
-    product: nativesdk
   section_ios:
     title: iOS
+    position: 2
+    product: nativesdk
+  section_android:
+    title: Android
     position: 3
     product: nativesdk
   ondemand_ios:
