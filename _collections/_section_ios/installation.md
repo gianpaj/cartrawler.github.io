@@ -1,5 +1,5 @@
 ---
-title: Integration
+title: Installation
 position: 0
 type: iOS
 description: 'Supports iOS 9, iOS 10 and iOS 11'
