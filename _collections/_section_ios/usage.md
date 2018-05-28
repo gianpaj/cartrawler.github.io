@@ -21,7 +21,7 @@ right_code: |-
 
   - (IBAction)carRentalButtonTapped {
       [self.sdk presentCarTrawler:self
-                         clientID:@"787697"
+                         clientID:@"105614"
                        production:YES
                          language:@"EN"
                           country:@"IE"
@@ -42,7 +42,7 @@ right_code: |-
       @IBAction func carRentalButtonTapped(_ sender: Any) {
 
           carTrawlerSDK.presentCarTrawler(self,
-                                          clientID: "123456",
+                                          clientID: "105614",
                                           production: true,
                                           language: "EN",
                                           country: "IE",
