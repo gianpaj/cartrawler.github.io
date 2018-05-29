@@ -19,12 +19,16 @@ right_code: |-
                                                    sandBox:NO];
   }
 
+#pragma mark - Stand Alone
+
   - (IBAction)presentStandAlone:(id)sender {
     [[CarTrawlerSDK sharedInstance] presentStandAloneFromViewController:self
                                                               country:@"IE"
                                                              currency:@"EUR"
                                                              language:@"EN"];
   }
+
+#pragma mark - In Path
 
   @end
 
@@ -45,12 +49,16 @@ right_code: |-
 
     }
 
+    //MARK: Stand Alone
+
     @IBAction func presentStandAlone(_ sender: Any) {
       carTrawlerSDK.presentStandAlone(from : self,
                                              country: "IE",
                                              currency: "EUR",
                                              language: "EN")
     }
+
+    //MARK: In Path
 
   ```
   {: title="Swift" }
