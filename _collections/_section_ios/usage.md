@@ -11,6 +11,8 @@ right_code: |-
 
   @implementation ViewController
 
+  //MARK: Setup
+
   - (void)viewDidLoad {
       [super viewDidLoad];
       [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614"
@@ -19,7 +21,7 @@ right_code: |-
                                                    sandBox:NO];
   }
 
-#pragma mark - Stand Alone
+  //MARK: Stand Alone
 
   - (IBAction)presentStandAlone:(id)sender {
     [[CarTrawlerSDK sharedInstance] presentStandAloneFromViewController:self
@@ -28,7 +30,8 @@ right_code: |-
                                                              language:@"EN"];
   }
 
-#pragma mark - In Path
+  //MARK: In Path
+
 
   @end
 
@@ -39,6 +42,8 @@ right_code: |-
   import CarTrawlerSDK
 
     let carTrawlerSDK = CarTrawlerSDK.sharedInstance()
+
+    //MARK: Setup
 
     override func viewDidLoad() {
       super.viewDidLoad()
