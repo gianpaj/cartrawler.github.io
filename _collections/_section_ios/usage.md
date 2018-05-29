@@ -4,8 +4,7 @@ position: 2
 type: iOS
 description:
 right_code: |-
-  ```objective-c
-
+```objective-c
   #import "ViewController.h"
   #import "CarTrawlerSDK.h"
 
@@ -17,11 +16,9 @@ right_code: |-
   }
 
   @end
-
-  ```
+  ```  
   {: title="Objective-C" }
-  ``` swift
-
+  ```swift
   import CarTrawlerSDK
 
     let carTrawlerSDK = CarTrawlerSDK.sharedInstance()
