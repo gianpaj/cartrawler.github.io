@@ -6,29 +6,21 @@ description:
 right_code: |-
   ~~~ java
   #import "ViewController.h"
-  @import CarTrawlerSDK;
+  #import CarTrawlerSDK;
 
   @interface ViewController ()
-  @property (nonatomic, strong) CarTrawlerSDK *sdk;
   @end
 
   @implementation ViewController
 
   - (void)viewDidLoad {
       [super viewDidLoad];
-      self.sdk = [CarTrawlerSDK new];
+      [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614"
+                                        customParameters:nil
+                                                   style:nil
+                                                 sandBox:NO];
   }
 
-  - (IBAction)carRentalButtonTapped {
-      [self.sdk presentCarTrawler:self
-                         clientID:@"105614"
-                       production:YES
-                         language:@"EN"
-                          country:@"IE"
-                         currency:@"EUR"
-                            style:nil
-                 customAttributes:nil];
-  }
 
   @end
 
@@ -37,19 +29,16 @@ right_code: |-
   ~~~ java
   import CarTrawlerSDK
 
-      let carTrawlerSDK = CarTrawlerSDK()
+      let carTrawlerSDK = CarTrawlerSDK.sharedInstance()
 
-      @IBAction func carRentalButtonTapped(_ sender: Any) {
+      override func viewDidLoad() {
+          super.viewDidLoad()
 
-          carTrawlerSDK.presentCarTrawler(self,
-                                          clientID: "105614",
-                                          production: true,
-                                          language: "EN",
-                                          country: "IE",
-                                          currency: "EUR",
-                                          style: nil,
-                                          customAttributes: nil)
-      }
+          self.carTrawlerSDK?.setupSDK(withClientID: "105614",
+                                               customParameters: nil,
+                                               style: nil,
+                                               sandBox: false)
+      }                                              
   ~~~
   {: title="Swift" }
 ---
