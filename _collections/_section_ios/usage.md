@@ -47,20 +47,14 @@ right_code: |-
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      carTrawlerSDK.setupSDK(withClientID: "105614",
-                             customParameters: nil,
-                             style: nil,
-                             sandBox:false)
+      carTrawlerSDK.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox:false)
 
     }
 
     //MARK: Stand Alone
 
     @IBAction func presentStandAlone(_ sender: Any) {
-      carTrawlerSDK.presentStandAlone(from : self,
-                                             country: "IE",
-                                             currency: "EUR",
-                                             language: "EN")
+      carTrawlerSDK.presentStandAlone(from : self, country: "IE", currency: "EUR", language: "EN")
     }
 
     //MARK: In Path
