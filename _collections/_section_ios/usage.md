@@ -4,41 +4,33 @@ position: 2
 type: iOS
 description:
 right_code: |-
-  ~~~ objective-c
+  ~~~ java
+
   #import "ViewController.h"
   #import "CarTrawlerSDK.h"
-
-  @interface ViewController ()
-  @end
 
   @implementation ViewController
 
   - (void)viewDidLoad {
       [super viewDidLoad];
-      [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614"
-                                        customParameters:nil
-                                                   style:nil
-                                                 sandBox:NO];
+      [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614" customParameters:nil style:nil sandBox:NO];
   }
-
 
   @end
 
   ~~~
   {: title="Objective-C" }
-  ~~~ swift
+  ~~~ java
+
   import CarTrawlerSDK
 
-      let carTrawlerSDK = CarTrawlerSDK.sharedInstance()
+    let carTrawlerSDK = CarTrawlerSDK.sharedInstance()
 
-      override func viewDidLoad() {
-          super.viewDidLoad()
-
-          self.carTrawlerSDK?.setupSDK(withClientID: "105614",
-                                               customParameters: nil,
-                                               style: nil,
-                                               sandBox: false)
-      }                                              
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      self.carTrawlerSDK?.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox: false)
+    }
+                                                  
   ~~~
   {: title="Swift" }
 ---
