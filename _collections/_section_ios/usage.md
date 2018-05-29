@@ -13,14 +13,17 @@ right_code: |-
 
   - (void)viewDidLoad {
       [super viewDidLoad];
-      [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614" customParameters:nil style:nil sandBox:NO];
+      [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614"
+                                          customParameters:nil
+                                                     style:nil
+                                                   sandBox:NO];
   }
 
   - (IBAction)presentStandAlone:(id)sender {
-      [[CarTrawlerSDK sharedInstance] presentStandAlone:self
-                                                country:@"IE"
-                                               currency:@"EUR"
-                                               language:@"EN"];
+    [[CarTrawlerSDK sharedInstance] presentStandAloneFromViewController:self
+                                                              country:@"IE"
+                                                             currency:@"EUR"
+                                                             language:@"EN"];
   }
 
   @end
@@ -35,14 +38,18 @@ right_code: |-
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      carTrawlerSDK?.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox: false)
+      carTrawlerSDK.setupSDK(withClientID: "105614",
+                             customParameters: nil,
+                             style: nil,
+                             sandBox:false)
+
     }
 
     @IBAction func presentStandAlone(_ sender: Any) {
-      carTrawlerSDK.presentStandAlone(self.view,
-                                      country: "IE",
-                                      currency: "EUR",
-                                      language: "EN")
+      carTrawlerSDK.presentStandAlone(from : self,
+                                             country: "IE",
+                                             currency: "EUR",
+                                             language: "EN")
     }
 
   ```
