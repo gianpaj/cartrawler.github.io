@@ -4,7 +4,7 @@ position: 2
 type: iOS
 description:
 right_code: |-
-  ```objetive-c
+  ```objective-c
 
   #import "ViewController.h"
   #import "CarTrawlerSDK.h"
@@ -28,7 +28,7 @@ right_code: |-
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      self.carTrawlerSDK?.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox: false)
+      carTrawlerSDK?.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox: false)
     }
 
   ```
