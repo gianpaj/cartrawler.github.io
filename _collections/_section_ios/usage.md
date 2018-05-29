@@ -4,7 +4,7 @@ position: 2
 type: iOS
 description:
 right_code: |-
-  ~~~ java
+  ```objetive-c
 
   #import "ViewController.h"
   #import "CarTrawlerSDK.h"
@@ -18,9 +18,9 @@ right_code: |-
 
   @end
 
-  ~~~
+  ```
   {: title="Objective-C" }
-  ~~~ java
+  ``` swift
 
   import CarTrawlerSDK
 
@@ -30,8 +30,8 @@ right_code: |-
       super.viewDidLoad()
       self.carTrawlerSDK?.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox: false)
     }
-                                                  
-  ~~~
+
+  ```
   {: title="Swift" }
 ---
 
