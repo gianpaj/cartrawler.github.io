@@ -16,6 +16,13 @@ right_code: |-
       [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614" customParameters:nil style:nil sandBox:NO];
   }
 
+  - (IBAction)presentStandAlone:(id)sender {
+      [[CarTrawlerSDK sharedInstance] presentStandAlone:self
+                                                country:@"IE"
+                                               currency:@"EUR"
+                                               language:@"EN"];
+  }
+
   @end
 
   ```
@@ -29,6 +36,13 @@ right_code: |-
     override func viewDidLoad() {
       super.viewDidLoad()
       carTrawlerSDK?.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox: false)
+    }
+
+    @IBAction func presentStandAlone(_ sender: Any) {
+      carTrawlerSDK.presentStandAlone(self.view,
+                                      country: "IE",
+                                      currency: "EUR",
+                                      language: "EN")
     }
 
   ```
