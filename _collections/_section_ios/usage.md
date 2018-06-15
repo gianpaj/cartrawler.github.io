@@ -26,15 +26,14 @@ CarTrawlerSDK.sharedInstance().initialiseSDK(with: style, customParameters: nil,
   
   ```
   {: title="In Path" }
-  
 ---
 
 
 The steps to use the SDK are:
 
-1. Import the header files.
-2. Initialise the SDK.
-3. Present the SDK with the required parameters.
+1. Import and initialise the SDK
+2. Initialise the SDK
+3. Present the SDK
 
 Initialisation of the SDK
 
