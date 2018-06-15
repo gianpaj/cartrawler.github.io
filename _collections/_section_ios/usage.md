@@ -4,53 +4,62 @@ position: 2
 type: iOS
 description:
 right_code: |-
-  ~~~ java
-  #import "ViewController.h"
-  @import CarTrawlerSDK;
+  ``` ruby
 
-  @interface ViewController ()
-  @property (nonatomic, strong) CarTrawlerSDK *sdk;
-  @end
+  #import "ViewController.h"
+  #import "CarTrawlerSDK.h"
 
   @implementation ViewController
 
+  //MARK: Setup
+
   - (void)viewDidLoad {
       [super viewDidLoad];
-      self.sdk = [CarTrawlerSDK new];
+      [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614"
+                                          customParameters:nil
+                                                     style:nil
+                                                   sandBox:NO];
   }
 
-  - (IBAction)carRentalButtonTapped {
-      [self.sdk presentCarTrawler:self
-                         clientID:@"105614"
-                       production:YES
-                         language:@"EN"
-                          country:@"IE"
-                         currency:@"EUR"
-                            style:nil
-                 customAttributes:nil];
+  //MARK: Stand Alone
+
+  - (IBAction)presentStandAlone:(id)sender {
+    [[CarTrawlerSDK sharedInstance] presentStandAloneFromViewController:self
+                                                              country:@"IE"
+                                                             currency:@"EUR"
+                                                             language:@"EN"];
   }
+
+  //MARK: In Path
+
 
   @end
 
-  ~~~
+  ```
   {: title="Objective-C" }
-  ~~~ java
+  ``` swift
+
   import CarTrawlerSDK
 
-      let carTrawlerSDK = CarTrawlerSDK()
+    let carTrawlerSDK = CarTrawlerSDK.sharedInstance()
 
-      @IBAction func carRentalButtonTapped(_ sender: Any) {
+    //MARK: Setup
 
-          carTrawlerSDK.presentCarTrawler(self,
-                                          clientID: "105614",
-                                          production: true,
-                                          language: "EN",
-                                          country: "IE",
-                                          currency: "EUR",
-                                          style: nil,
-                                          customAttributes: nil)
-      }
-  ~~~
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      carTrawlerSDK.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox:false)
+
+    }
+
+    //MARK: Stand Alone
+
+    @IBAction func presentStandAlone(_ sender: Any) {
+      carTrawlerSDK.presentStandAlone(from : self, country: "IE", currency: "EUR", language: "EN")
+    }
+
+    //MARK: In Path
+
+  ```
   {: title="Swift" }
 ---
 
