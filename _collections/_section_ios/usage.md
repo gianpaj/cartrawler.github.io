@@ -6,7 +6,7 @@ description:
 right_code: |-
   ``` swift
 
-  CarTrawlerSDK.sharedInstance().initialiseSDK(with: style, customParameters: nil, production: false)
+  CarTrawlerSDK.sharedInstance().initialiseSDK(with: nil, customParameters: nil, production: false)
 
   ```
   {: title="App Delegate" }
