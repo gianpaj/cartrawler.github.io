@@ -24,11 +24,11 @@ right_code: |-
   // Call this to navigate to the in path flow
   CarTrawlerSDK.sharedInstance().presentInPath(from: self)
   
-  // Call this to remove an added vehicle, and trigger a best daily rate fetch
-  CarTrawlerSDK.sharedInstance().removeVehicle()
-  
   // Call this to refresh the best daily rate
   CarTrawlerSDK.sharedInstance().refreshInPath()
+  
+  // Call this to remove an added vehicle, and trigger a best daily rate refresh
+  CarTrawlerSDK.sharedInstance().removeVehicle()
   
   ```
   {: title="In Path" }
@@ -71,36 +71,35 @@ right_code: |-
 
 The steps to use the SDK are:
 
-1. Import the header files.
-2. Initialise the SDK.
-3. Present the SDK with the required parameters.
+1. Initialise the SDK in App Delegate
+2. Present the SDK in either stand alone or in path mode
 
 Initialisation of the SDK
 
 <dl>
-<dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
-<dt>customParameters</dt><dd>A dictionary of parameters, custom to a particular partner.</dd>
-<dt>style</dt><dd>An optional custom style object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
-<dt>isSandboxMode</dt><dd>A boolean to switch between test and production endpoints.</dd>
+
+<dt>style</dt><dd>An optional style object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
+<dt>customParameters</dt><dd>A dictionary of parameters, custom to a particular partner, see below for options.</dd>
+<dt>production</dt><dd>A boolean to switch between endpoints, true is production, false is test.</dd>
 </dl>
 
-Usage of the SDK (StandAlone Mode) is demonstrated to the right, the parameters are as follows:
+Present Stand Alone:
 
 <dl>
 
-  <dt>presentingViewController</dt><dd>Your view controller from which the SDK will be presented.</dd>  
-  <dt>country</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
-  <dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
-  <dt>language</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>presentingViewController</dt><dd>Your view controller from which the SDK will be presented.</dd>
+  <dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
+  <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
+  <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
+  <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
 
 </dl>
 
-Usage of the SDK (InPath Mode) is demonstrated to the right, the parameters are as follows:
+Add In Path Card - See code to right for available methods and callbacks for in path
 
 <dl>
 
-  <dt>containerView</dt><dd>Your view from which your application will display the widget.</dd>  
-  <dt>parentViewController</dt><dd>Your view controller from which the SDK will be presented (Delegate).</dd>  
+  <dt>containerView</dt><dd>Your view from which your application will display the in path widget.</dd>
   <dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
   <dt>customerCountry</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
@@ -109,7 +108,7 @@ Usage of the SDK (InPath Mode) is demonstrated to the right, the parameters are 
   <dt>pickupDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
   <dt>flightNumber</dt><dd>An optional Flight Number, suck as "Flight 123".</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
-
+  <dt>delegate</dt><dd>A delegate for in path callbacks</dd>
 
 </dl>
 
