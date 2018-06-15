@@ -24,12 +24,6 @@ right_code: |-
   {: title="In Path" }
   ``` swift
   
-  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView, clientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
-  
-  ```
-  {: title="In Path" }
-  ``` swift
-  
   func didTapCrossSellCard() {
   CarTrawlerSDK.sharedInstance().presentInPath(from: self)
   }
@@ -61,7 +55,7 @@ right_code: |-
   }
   
   ```
-  {: title="In Path Delegate" }
+  {: title="Delegate" }
 ---
 
 
