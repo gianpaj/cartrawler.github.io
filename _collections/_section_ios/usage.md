@@ -4,63 +4,29 @@ position: 2
 type: iOS
 description:
 right_code: |-
-  ``` ruby
-
-  #import "ViewController.h"
-  #import "CarTrawlerSDK.h"
-
-  @implementation ViewController
-
-  //MARK: Setup
-
-  - (void)viewDidLoad {
-      [super viewDidLoad];
-      [[CarTrawlerSDK sharedInstance] setupSDKWithClientID:@"105614"
-                                          customParameters:nil
-                                                     style:nil
-                                                   sandBox:NO];
-  }
-
-  //MARK: Stand Alone
-
-  - (IBAction)presentStandAlone:(id)sender {
-    [[CarTrawlerSDK sharedInstance] presentStandAloneFromViewController:self
-                                                              country:@"IE"
-                                                             currency:@"EUR"
-                                                             language:@"EN"];
-  }
-
-  //MARK: In Path
-
-
-  @end
-
-  ```
-  {: title="Objective-C" }
   ``` swift
 
-  import CarTrawlerSDK
-
-    let carTrawlerSDK = CarTrawlerSDK.sharedInstance()
-
-    //MARK: Setup
-
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      carTrawlerSDK.setupSDK(withClientID: "105614", customParameters: nil, style: nil, sandBox:false)
-
-    }
-
-    //MARK: Stand Alone
-
-    @IBAction func presentStandAlone(_ sender: Any) {
-      carTrawlerSDK.presentStandAlone(from : self, country: "IE", currency: "EUR", language: "EN")
-    }
-
-    //MARK: In Path
+let primaryColor = UIColor.blue;
+let secondaryColor = UIColor.black;
+let accentColor = UIColor.yellow;
+let style = CTStyle.init(primaryColor: primaryColor, secondaryColor: secondaryColor, accentColor: accentColor, regularFont: nil, boldFont: nil, italicFont: nil)
+CarTrawlerSDK.sharedInstance().initialiseSDK(with: style, customParameters: nil, production: false)
 
   ```
-  {: title="Swift" }
+  {: title="App Delegate" }
+  ``` swift
+
+  CarTrawlerSDK.sharedInstance().presentStandAlone(from: self, clientID: "105614", countryCode: "IE", currencyCode: "EUR", languageCode: "EN", passengers: nil)
+
+  ```
+  {: title="Standalone" }
+  ``` swift
+  
+  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView, clientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
+  
+  ```
+  {: title="In Path" }
+  
 ---
 
 
