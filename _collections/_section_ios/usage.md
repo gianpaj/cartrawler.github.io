@@ -34,34 +34,34 @@ right_code: |-
   {: title="In Path" }
   ``` swift
   
+  // Called when the in path card is tapped. We suggest to present the in path flow at this time.
   func didTapCrossSellCard() {
-  CarTrawlerSDK.sharedInstance().presentInPath(from: self)
+    CarTrawlerSDK.sharedInstance().presentInPath(from: self)
   }
   
+  // Called when best daily rate received
   func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
-  // Update best daily rate label
   }
   
+  // Called when best daily rate fails
   func didFailToReceiveBestDailyRate() {
-  // Handle best daily rate error
   }
   
-  // Required
+  // Required. Called when user wants to add in path booking to their flight booking.
   func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle) {
+    print("\(request)")
   
-  print("\(request)")
+    print("Total \(vehicle.totalCost)")
+    print("Insurance \(vehicle.insuranceCost)")
   
-  print("Total \(vehicle.totalCost)")
-  print("Insurance \(vehicle.insuranceCost)")
+    print("Vehicle Name \(vehicle.vehicleName)")
+    print("Vehicle First Name \(vehicle.firstName)")
+    print("Vehicle LastName \(vehicle.lastName)")
   
-  print("Vehicle Name \(vehicle.vehicleName)")
-  print("Vehicle First Name \(vehicle.firstName)")
-  print("Vehicle LastName \(vehicle.lastName)")
-  
-  print("*** PAYNOW: \(vehicle.payNowPrice)\n" ,
-  "*** PAYLATER: \(vehicle.payLaterPrice)\n" ,
-  "*** PAYDESK: \(vehicle.payAtDeskPrice)\n" ,
-  "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
+    print("*** PAYNOW: \(vehicle.payNowPrice)\n" ,
+    "*** PAYLATER: \(vehicle.payLaterPrice)\n" ,
+    "*** PAYDESK: \(vehicle.payAtDeskPrice)\n" ,
+    "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
   }
   
   ```
