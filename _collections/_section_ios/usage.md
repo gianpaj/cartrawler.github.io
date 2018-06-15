@@ -6,11 +6,7 @@ description:
 right_code: |-
   ``` swift
 
-let primaryColor = UIColor.blue;
-let secondaryColor = UIColor.black;
-let accentColor = UIColor.yellow;
-let style = CTStyle.init(primaryColor: primaryColor, secondaryColor: secondaryColor, accentColor: accentColor, regularFont: nil, boldFont: nil, italicFont: nil)
-CarTrawlerSDK.sharedInstance().initialiseSDK(with: style, customParameters: nil, production: false)
+  CarTrawlerSDK.sharedInstance().initialiseSDK(with: style, customParameters: nil, production: false)
 
   ```
   {: title="App Delegate" }
@@ -19,21 +15,15 @@ CarTrawlerSDK.sharedInstance().initialiseSDK(with: style, customParameters: nil,
   CarTrawlerSDK.sharedInstance().presentStandAlone(from: self, clientID: "105614", countryCode: "IE", currencyCode: "EUR", languageCode: "EN", passengers: nil)
 
   ```
-  {: title="Standalone" }
-  ``` swift
-  
-  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView, clientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
-  
-  ```
-  {: title="In Path" }
+  {: title="Stand Alone" }
 ---
 
 
 The steps to use the SDK are:
 
-1. Import and initialise the SDK
-2. Initialise the SDK
-3. Present the SDK
+1. Import the header files.
+2. Initialise the SDK.
+3. Present the SDK with the required parameters.
 
 Initialisation of the SDK
 
