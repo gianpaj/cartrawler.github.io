@@ -16,6 +16,52 @@ right_code: |-
 
   ```
   {: title="Stand Alone" }
+  ``` swift
+  
+  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView, clientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
+  
+  ```
+  {: title="In Path" }
+  ``` swift
+  
+  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView, clientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
+  
+  ```
+  {: title="In Path" }
+  ``` swift
+  
+  func didTapCrossSellCard() {
+  CarTrawlerSDK.sharedInstance().presentInPath(from: self)
+  }
+  
+  func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
+  // Update best daily rate label
+  }
+  
+  func didFailToReceiveBestDailyRate() {
+  // Handle best daily rate error
+  }
+  
+  // Required
+  func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle) {
+  
+  print("\(request)")
+  
+  print("Total \(vehicle.totalCost)")
+  print("Insurance \(vehicle.insuranceCost)")
+  
+  print("Vehicle Name \(vehicle.vehicleName)")
+  print("Vehicle First Name \(vehicle.firstName)")
+  print("Vehicle LastName \(vehicle.lastName)")
+  
+  print("*** PAYNOW: \(vehicle.payNowPrice)\n" ,
+  "*** PAYLATER: \(vehicle.payLaterPrice)\n" ,
+  "*** PAYDESK: \(vehicle.payAtDeskPrice)\n" ,
+  "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
+  }
+  
+  ```
+  {: title="In Path Delegate" }
 ---
 
 
