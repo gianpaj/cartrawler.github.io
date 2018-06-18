@@ -18,8 +18,11 @@ right_code: |-
   {: title="Stand Alone" }
   ``` swift
   
-  // Call this to add the in path card, and trigger a best daily rate fetch
-  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView, clientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
+  // Call this to initialise in path
+  CarTrawlerSDK.sharedInstance().initialiseInPath(withClientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
+  
+  // Call this to add the in path card
+  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView)
   
   // Call this to navigate to the in path flow
   CarTrawlerSDK.sharedInstance().presentInPath(from: self)
