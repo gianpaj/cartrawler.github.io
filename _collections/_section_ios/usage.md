@@ -30,7 +30,7 @@ right_code: |-
                  customAttributes:nil];
   }
 
-  - (void)initializeGroundTransportationInPathWithClientId:(nonnull NSString *)clientId
+  <!-- - (void)initializeGroundTransportationInPathWithClientId:(nonnull NSString *)clientId
 									   pickupAirportIATACode:(nonnull NSString *)pickupAirportIATACode
 									  dropoffAirportIATACode:(nonnull NSString *)dropoffAirportIATACode
 										  pickupDateTime:(nonnull NSDate *)pickupDateTime
@@ -38,7 +38,7 @@ right_code: |-
 											languageCode:(nonnull NSString *)languageCode
 											 countryCode:(nullable NSString *)countryCode
 									   passengerQuantity:(nullable NSNumber *)passengerQuantity
-												delegate:(nullable id <CarTrawlerSDKDelegate>)delegate;
+												delegate:(nullable id <CarTrawlerSDKDelegate>)delegate; -->
 
   @end
 
@@ -61,7 +61,7 @@ right_code: |-
                                           customAttributes: nil)
       }
 
-      carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: (Constants.Parameters.gtPartnerId), pickupAirportIATACode: Constants.Parameters.iataPickupLocation, dropoffAirportIATACode: Constants.Parameters.iataDropoffLocationCode, pickupDateTime: pickUpDate, currencyCode: (settingsService?.currencyItem.parm)!, languageCode: (settingsService?.languageItem.parm)!, countryCode: (settingsService?.countryItem.parm)!, passengerQuantity: 1, delegate: self)
+      <!-- carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: (Constants.Parameters.gtPartnerId), pickupAirportIATACode: Constants.Parameters.iataPickupLocation, dropoffAirportIATACode: Constants.Parameters.iataDropoffLocationCode, pickupDateTime: pickUpDate, currencyCode: (settingsService?.currencyItem.parm)!, languageCode: (settingsService?.languageItem.parm)!, countryCode: (settingsService?.countryItem.parm)!, passengerQuantity: 1, delegate: self) -->
   ~~~
   {: title="Swift" }
 ---
