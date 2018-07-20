@@ -50,6 +50,8 @@ right_code: |-
                                           style: nil,
                                           customAttributes: nil)
       }
+
+      carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: (Constants.Parameters.gtPartnerId), pickupAirportIATACode: Constants.Parameters.iataPickupLocation, dropoffAirportIATACode: Constants.Parameters.iataDropoffLocationCode, pickupDateTime: pickUpDate, currencyCode: (settingsService?.currencyItem.parm)!, languageCode: (settingsService?.languageItem.parm)!, countryCode: (settingsService?.countryItem.parm)!, passengerQuantity: 1, delegate: self)
   ~~~
   {: title="Swift" }
 ---
