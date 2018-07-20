@@ -68,7 +68,18 @@ right_code: |-
   }
   
   ```
+  
+  {: title="Ground Transportation InPath"}
+  ``` swift
+  
+  carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: (Constants.Parameters.gtPartnerId), pickupAirportIATACode: Constants.Parameters.iataPickupLocation, dropoffAirportIATACode: Constants.Parameters.iataDropoffLocationCode, pickupDateTime: pickUpDate, currencyCode: (settingsService?.currencyItem.parm)!, languageCode: (settingsService?.languageItem.parm)!, countryCode: (settingsService?.countryItem.parm)!, passengerQuantity: 1, delegate: self)
+  
+  ```
+  
   {: title="Delegate" }
+  ``` swift
+  
+   ```
 ---
 
 
@@ -133,3 +144,27 @@ Custom Attributes:
   <dt>VisitorId</dt>
   <dd>A String value that represents the Visitor ID </dd>
 </dl>
+
+Ground Transportation InPath:
+
+<dl>
+<dt>clientID</dt>
+<dd>Your client ID, required to use the CarTrawler Ground Transportation InPath.</dd>
+<dt>pickupAirportIATACode</dt>
+<dd>An required IATA code for pickup airport.</dd>
+<dt>dropoffAirportIATACode</dt>
+<dd>An required IATA code for dropoff airport.</dd>
+<dt>pickupDateTime</dt>
+<dd>Date and time for required service.</dd>
+<dt>currencyCode</dt>
+<dd>An required currency code, such as "USD". Default is "EUR" if not provided.</dd>
+<dt>languageCode</dt>
+<dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
+<dt>countryCode</dt>
+<dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
+<dt>passengerQuantity</dt>
+<dd>Quantity of passengers</dd>
+<dt>delegate</dt>
+<dd>Your class that will handle callback methods</dd>
+</dl>
+
