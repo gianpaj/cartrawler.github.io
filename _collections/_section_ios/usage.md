@@ -130,8 +130,6 @@ Custom Attributes:
   <dd>A String value that represents the Visitor ID </dd>
 </dl>
 
-</dl>
-
 Ground Transportation InPath:
 
 <dl>
