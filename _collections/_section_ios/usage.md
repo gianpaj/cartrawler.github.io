@@ -68,11 +68,7 @@ right_code: |-
   }
   
   ```
-  {: title="Delegate" }
-  ``` swift
   
-   ```
-   
   {: title="Ground Transportation InPath"}
   ``` swift
   
@@ -83,6 +79,11 @@ right_code: |-
   countryCode: (settingsService?.countryItem.parm)!, passengerQuantity: 1, delegate: self)
   
   ```
+  
+  {: title="Delegate" }
+  ``` swift
+  
+   ```
 ---
 
 
