@@ -30,7 +30,18 @@ right_code: |-
                  customAttributes:nil];
   }
 
+  - (void)initializeGroundTransportationInPathWithClientId:(nonnull NSString *)clientId
+  									   pickupAirportIATACode:(nonnull NSString *)pickupAirportIATACode
+  									  dropoffAirportIATACode:(nonnull NSString *)dropoffAirportIATACode
+  										  pickupDateTime:(nonnull NSDate *)pickupDateTime
+  											currencyCode:(nonnull NSString *)currencyCode
+  											languageCode:(nonnull NSString *)languageCode
+  											 countryCode:(nullable NSString *)countryCode
+  									   passengerQuantity:(nullable NSNumber *)passengerQuantity
+  												delegate:(nullable id <CarTrawlerSDKDelegate>)delegate;
+                          
   @end
+
   ~~~
   {: title="Objective-C" }
   ~~~ java
