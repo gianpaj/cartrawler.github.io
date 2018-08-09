@@ -17,68 +17,93 @@ right_code: |-
   ```
   {: title="Stand Alone" }
   ``` swift
-  
+
   // Call this to initialise in path
   CarTrawlerSDK.sharedInstance().initialiseInPath(withClientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
-  
+
   // Call this to add the in path card
   CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView)
-  
+
   // Call this to navigate to the in path flow
   CarTrawlerSDK.sharedInstance().presentInPath(from: self)
-  
+
   // Call this to refresh the best daily rate
   CarTrawlerSDK.sharedInstance().refreshInPath()
-  
+
   // Call this to remove an added vehicle, and trigger a best daily rate refresh
   CarTrawlerSDK.sharedInstance().removeVehicle()
-  
+
   ```
   {: title="In Path" }
   ``` swift
-  
+
   // Called when the in path card is tapped. We suggest to present the in path flow at this time.
   func didTapCrossSellCard() {
     CarTrawlerSDK.sharedInstance().presentInPath(from: self)
   }
-  
+
   // Called when best daily rate received
   func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
   }
-  
+
   // Called when best daily rate fails
   func didFailToReceiveBestDailyRate() {
   }
-  
+
   // Required. Called when user wants to add in path booking to their flight booking.
   func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle) {
     print("\(request)")
-  
+
     print("Total \(vehicle.totalCost)")
     print("Insurance \(vehicle.insuranceCost)")
-  
+
     print("Vehicle Name \(vehicle.vehicleName)")
     print("Vehicle First Name \(vehicle.firstName)")
     print("Vehicle LastName \(vehicle.lastName)")
-  
+
     print("*** PAYNOW: \(vehicle.payNowPrice)\n" ,
     "*** PAYLATER: \(vehicle.payLaterPrice)\n" ,
     "*** PAYDESK: \(vehicle.payAtDeskPrice)\n" ,
     "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
   }
-  
+
   ```
-  
+
   {: title="Ground Transportation InPath"}
   ``` swift
-  
-  carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: (Constants.Parameters.gtPartnerId), pickupAirportIATACode: Constants.Parameters.iataPickupLocation, dropoffAirportIATACode: Constants.Parameters.iataDropoffLocationCode, pickupDateTime: pickUpDate, currencyCode: (settingsService?.currencyItem.parm)!, languageCode: (settingsService?.languageItem.parm)!, countryCode: (settingsService?.countryItem.parm)!, passengerQuantity: 1, delegate: self)
-  
+
+  carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: "105614",
+                                                      pickupAirportIATACode: "DUB",
+                                                      dropoffAirportIATACode: "ALC",
+                                                      pickupDateTime: 2018-08-10 10:24:17 +0000,
+                                                      currencyCode: "EUR",
+                                                      languageCode: "EN",
+                                                      countryCode: "IE",
+                                                      passengerQuantity: 1,
+                                                      delegate: self)
+
+  // Call this to add grandTransportation Card                                                  
+  func didTapGroundTransportationCard() {
+  }
+
+  // Called when received best daily rates
+  func didReceiveGroundTransportationBestDailyRate(_ price: NSNumber, currency: String) {
+  }
+
+  // Called when fails to receive best daily rates
+  func didFailToReceiveGroundTransportationBestDailyRate() {
+        print("Error on Ground Transportation request")
+  }
+
+  // Called when payment payload is received 
+  func didProduceGT(inPathPaymentRequest request: [AnyHashable : Any], vehicle: GTInPathVehicle) {
+  }
+
   ```
-  
+
   {: title="Delegate" }
   ``` swift
-  
+
    ```
 ---
 
@@ -167,4 +192,3 @@ Ground Transportation InPath:
 <dt>delegate</dt>
 <dd>Your class that will handle callback methods</dd>
 </dl>
-
