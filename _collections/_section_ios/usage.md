@@ -19,13 +19,11 @@ right_code: |-
   ``` swift
 
   // Call this to navigate to the in path flow
-  func didTapGroundTransportationCard() {
-      self.presenter?.navigateToGroundTransportationInPath()
+  func didTapGroundTransportationCard() {  
   }
 
   // Called when best daily rate received
   func didReceiveGroundTransportationBestDailyRate(_ price: NSNumber, currency: String) {
-      self.groundTransportationWidgetLabel.text = ("Cars from \(currency) \(price)")
   }
 
   // Called when best daily rate fails
@@ -35,9 +33,20 @@ right_code: |-
 
   // Create Ground Transportation payment payload
   func didProduceGT(inPathPaymentRequest request: [AnyHashable : Any], vehicle: GTInPathVehicle) {
-      self.removeGroundTransportationButton.isHidden = false
-      self.groundTransportationWidgetLabel.text = "\(vehicle.totalCost!) EUR"
+    print("\(request)")
+    print("\(vehicle)")
   }
+
+  // Refreshes the Ground Transportation in path search.
+  // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
+  // The SDK must be initialised, and the In Path card added before calling this method
+  func refreshGroundTransportation(){
+  }
+
+  // Removes an added Ground Transportation if selected
+  func removeGroundTransportation(){
+  }
+
 
   ```
   {: title="InPath Delegate (GROUND TRANSPORTATION)" }
@@ -73,6 +82,16 @@ right_code: |-
     "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
   }
 
+  // Refreshes the in path search.
+  // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
+  // The SDK must be initialised, and the In Path card added before calling this method
+  func refreshInPath(){
+  }
+
+  // Removes an added vehicle if selected
+  func removeVehicle(){
+  }
+
   ```
 
   {: title="InPath Delegate (RENTAL)"}
@@ -87,10 +106,6 @@ right_code: |-
                                                       countryCode: "IE",
                                                       passengerQuantity: 1,
                                                       delegate: self)
-
-  // Call this to add grandTransportation Card                                                  
-  func didTapGroundTransportationCard() {
-  }
 
   // Called when received best daily rates
   func didReceiveGroundTransportationBestDailyRate(_ price: NSNumber, currency: String) {
