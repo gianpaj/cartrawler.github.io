@@ -18,23 +18,29 @@ right_code: |-
   {: title="Stand Alone" }
   ``` swift
 
-  // Call this to initialise in path
-  CarTrawlerSDK.sharedInstance().initialiseInPath(withClientID: "105614", currency: "EUR", customerCountry: "IE", languageCode: "EN", iataCode: "ALC", pickupDate: pickUpDate, return: nil, flightNumber: "FL123", passengers: nil, delegate: self)
-
-  // Call this to add the in path card
-  CarTrawlerSDK.sharedInstance().addInPathCard(to: containerView)
-
   // Call this to navigate to the in path flow
-  CarTrawlerSDK.sharedInstance().presentInPath(from: self)
+  func didTapGroundTransportationCard() {
+      self.presenter?.navigateToGroundTransportationInPath()
+  }
 
-  // Call this to refresh the best daily rate
-  CarTrawlerSDK.sharedInstance().refreshInPath()
+  // Called when best daily rate received
+  func didReceiveGroundTransportationBestDailyRate(_ price: NSNumber, currency: String) {
+      self.groundTransportationWidgetLabel.text = ("Cars from \(currency) \(price)")
+  }
 
-  // Call this to remove an added vehicle, and trigger a best daily rate refresh
-  CarTrawlerSDK.sharedInstance().removeVehicle()
+  // Called when best daily rate fails
+  func didFailToReceiveGroundTransportationBestDailyRate() {
+      print("Error on Ground Transportation request")
+  }
+
+  // Create Ground Transportation payment payload
+  func didProduceGT(inPathPaymentRequest request: [AnyHashable : Any], vehicle: GTInPathVehicle) {
+      self.removeGroundTransportationButton.isHidden = false
+      self.groundTransportationWidgetLabel.text = "\(vehicle.totalCost!) EUR"
+  }
 
   ```
-  {: title="In Path" }
+  {: title="InPath Delegate (GROUND TRANSPORTATION)" }
   ``` swift
 
   // Called when the in path card is tapped. We suggest to present the in path flow at this time.
@@ -69,7 +75,7 @@ right_code: |-
 
   ```
 
-  {: title="Ground Transportation InPath"}
+  {: title="InPath Delegate (RENTAL)"}
   ``` swift
 
   carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: "105614",
@@ -179,11 +185,11 @@ Custom Attributes:
   <dd>A String value that represents the Visitor ID </dd>
 </dl>
 
-Ground Transportation InPath:
+InPath Delegate (RENTAL):
 
 <dl>
 <dt>clientID</dt>
-<dd>Your client ID, required to use the CarTrawler Ground Transportation InPath.</dd>
+<dd>Your client ID, required to use the CarTrawler InPath Delegate (RENTAL).</dd>
 <dt>pickupAirportIATACode</dt>
 <dd>An required IATA code for pickup airport.</dd>
 <dt>dropoffAirportIATACode</dt>
