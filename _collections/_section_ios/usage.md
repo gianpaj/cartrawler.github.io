@@ -95,8 +95,17 @@ right_code: |-
         print("Error on Ground Transportation request")
   }
 
-  // Called when payment payload is received 
+  // Called when payment payload is received
   func didProduceGT(inPathPaymentRequest request: [AnyHashable : Any], vehicle: GTInPathVehicle) {
+  }
+
+
+  // Returns Rental Card to the client
+  func getRentalCard()-> UIView {
+  }
+
+  // Returns Ground Transportation card to the client
+  func getGroundTransportationCard() -> UIView{
   }
 
   ```
