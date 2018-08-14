@@ -18,52 +18,42 @@ right_code: |-
   {: title="Stand Alone" }
   ``` swift
 
-  // Call this to navigate to the in path flow
-  func didTapGroundTransportationCard() {  
-  }
-
-  // Called when best daily rate received
-  func didReceiveGroundTransportationBestDailyRate(_ price: NSNumber, currency: String) {
-  }
-
-  // Called when best daily rate fails
-  func didFailToReceiveGroundTransportationBestDailyRate() {
-      print("Error on Ground Transportation request")
-  }
-
-  // Create Ground Transportation payment payload
-  func didProduceGT(inPathPaymentRequest request: [AnyHashable : Any], vehicle: GTInPathVehicle) {
-    print("\(request)")
-    print("\(vehicle)")
-  }
-
   // Refreshes the Ground Transportation in path search.
   // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
   // The SDK must be initialised, and the In Path card added before calling this method
   func refreshGroundTransportation(){
   }
 
+  // Returns Ground Transportation card to the client
+  func getGroundTransportationCard() -> UIView{
+  }
+
   // Removes an added Ground Transportation if selected
   func removeGroundTransportation(){
   }
-
 
   ```
   {: title="InPath Delegate (GROUND TRANSPORTATION)" }
   ``` swift
 
-  // Called when the in path card is tapped. We suggest to present the in path flow at this time.
-  func didTapCrossSellCard() {
-    CarTrawlerSDK.sharedInstance().presentInPath(from: self)
+  // Returns Rental Card to the client
+  func getRentalCard()-> UIView {
   }
 
-  // Called when best daily rate received
-  func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
+  // Refreshes the in path search.
+  // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
+  // The SDK must be initialised, and the In Path card added before calling this method
+  func refreshInPath(){
   }
 
-  // Called when best daily rate fails
-  func didFailToReceiveBestDailyRate() {
+  // Removes an added vehicle if selected
+  func removeVehicle(){
   }
+
+  ```
+
+  {: title="InPath Delegate (RENTAL)"}
+  ``` swift
 
   // Required. Called when user wants to add in path booking to their flight booking.
   func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle) {
@@ -82,30 +72,28 @@ right_code: |-
     "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
   }
 
-  // Refreshes the in path search.
-  // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
-  // The SDK must be initialised, and the In Path card added before calling this method
-  func refreshInPath(){
+  // Called when the in path card is tapped. We suggest to present the in path flow at this time.
+  func didTapCrossSellCard() {
+    CarTrawlerSDK.sharedInstance().presentInPath(from: self)
   }
 
-  // Removes an added vehicle if selected
-  func removeVehicle(){
+  // Called when best daily rate received
+  func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
   }
 
-  ```
+  // Called when best daily rate fails
+  func didFailToReceiveBestDailyRate() {
+  }
 
-  {: title="InPath Delegate (RENTAL)"}
-  ``` swift
+  // Create Ground Transportation payment payload
+  func didProduceGT(inPathPaymentRequest request: [AnyHashable : Any], vehicle: GTInPathVehicle) {
+    print("\(vehicle.totalCost!) EUR"))
+  }
 
-  carTrawlerSDK?.initializeGroundTransportationInPath(withClientId: "105614",
-                                                      pickupAirportIATACode: "DUB",
-                                                      dropoffAirportIATACode: "ALC",
-                                                      pickupDateTime: 2018-08-10 10:24:17 +0000,
-                                                      currencyCode: "EUR",
-                                                      languageCode: "EN",
-                                                      countryCode: "IE",
-                                                      passengerQuantity: 1,
-                                                      delegate: self)
+  // Call this to navigate to the in path flow
+  func didTapGroundTransportationCard() {  
+  }
+
 
   // Called when received best daily rates
   func didReceiveGroundTransportationBestDailyRate(_ price: NSNumber, currency: String) {
@@ -114,19 +102,6 @@ right_code: |-
   // Called when fails to receive best daily rates
   func didFailToReceiveGroundTransportationBestDailyRate() {
         print("Error on Ground Transportation request")
-  }
-
-  // Called when payment payload is received
-  func didProduceGT(inPathPaymentRequest request: [AnyHashable : Any], vehicle: GTInPathVehicle) {
-  }
-
-
-  // Returns Rental Card to the client
-  func getRentalCard()-> UIView {
-  }
-
-  // Returns Ground Transportation card to the client
-  func getGroundTransportationCard() -> UIView{
   }
 
   ```
