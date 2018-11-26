@@ -9,3 +9,5 @@ Please ensure that you have received the following from a CarTrawler representat
 
 * A Client ID
 * CarTrawler Repository Credentials
+* Artifactory Crendentials (Android)
+* Dedicated Slack channel for support while integrating
