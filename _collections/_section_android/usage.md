@@ -50,7 +50,7 @@ right_code: >
      android:screenOrientation="portrait"
      android:theme="@style/YourThemeExtendingCTAppTheme" />
   
-  //Note: we do not support landscape and it is required that the orientation is fixed to portrait
+  //Note: We do not support landscape and it is required that the orientation is fixed to portrait
 
   
   
