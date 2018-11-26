@@ -5,6 +5,14 @@ type: Android
 description: Supports Android 4.2 Jellybean (SDK version 17) and above
 right_code: >-
   ~~~ java
+  
+  //Java 8 Support
+  android {
+     compileOptions {
+         sourceCompatibility 1.8
+         targetCompatibility 1.8
+     }
+  }
 
   //Car trawler dependencies
 

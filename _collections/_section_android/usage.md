@@ -30,11 +30,30 @@ right_code: >
 
   ~~~ xml
 
+  //Create a theme that extends the CTAppTheme and implement the colorPrimaryDark, colorPrimary and colorAccent attributes.  See example below:
+
   <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
-        <item name="colorPrimaryDark">#2AA9E0</item>
-        <item name="colorPrimary">#21456D</item>
-        <item name="colorAccent">#21456D</item>
+        <item name="colorPrimary">#039be5</item>
+        <item name="CTPrimaryColor">#039be5</item>
+        <item name="colorPrimaryDark">#FF01579B</item>
+        <item name="CTSecondaryColor">#FF01579B</item>
+        <item name="colorAccent">#FF2E7D32</item>
+        <item name="CTAccentColor">#FF2E7D32</item>
   </style>
+  
+  Android Manifest
+  Add the CartrawlerActivity to the Android manifest and set the theme as the theme created in the previous step.  See example below:
+  
+  <activity
+     android:name="cartrawler.core.base.CartrawlerActivity"
+     android:windowSoftInputMode="adjustResize"
+     android:screenOrientation="portrait"
+     android:theme="@style/YourThemeExtendingCTAppTheme" />
+  
+  //Note: we do not support landscape and it is required that the orientation is fixed to portrait
+
+  
+  
 
   ~~~
 
