@@ -5,6 +5,7 @@ type: Android
 description:
 right_code: >
   ~~~ java
+   
    String clientId = "787697";
    Boolean production = false;
    String language = null; //Language is to be deprecated in the library interface
@@ -15,10 +16,10 @@ right_code: >
    
    CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country, currency, customAttributes));
                    
-   ~~~
+  ~~~
 
    
-   {: title="Rental" }
+  {: title="Rental" }
           
           
   ~~~ java      
@@ -76,9 +77,9 @@ right_code: >
               .startRentalStandalone(activity = this, requestCode = 123)
 
 
-   ~~~     
+  ~~~     
 
-   {: title="Ground Transfer" }
+  {: title="Ground Transfer" }
                     
   ~~~ java
               
@@ -100,25 +101,25 @@ right_code: >
                     .setVisitorId(visitorId = "123")
                     .startGroundTransferInPath(activity = this, requestCode = 123)
     
-   ~~~     
+  ~~~     
    
    {: title="Theme" }
         
         
-     ~~~ xml
+  ~~~ xml
         
-          //Create a theme that extends the CTAppTheme and implement the colorPrimaryDark, colorPrimary and colorAccent attributes.  See example below:
+    //Create a theme that extends the CTAppTheme and implement the colorPrimaryDark, colorPrimary and colorAccent attributes.  See example below:
         
-          <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
-                <item name="colorPrimary">#039be5</item>
-                <item name="CTPrimaryColor">#039be5</item>
-                <item name="colorPrimaryDark">#FF01579B</item>
-                <item name="CTSecondaryColor">#FF01579B</item>
-                <item name="colorAccent">#FF2E7D32</item>
-                <item name="CTAccentColor">#FF2E7D32</item>
-          </style>
+      <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
+            <item name="colorPrimary">#039be5</item>
+            <item name="CTPrimaryColor">#039be5</item>
+            <item name="colorPrimaryDark">#FF01579B</item>
+            <item name="CTSecondaryColor">#FF01579B</item>
+            <item name="colorAccent">#FF2E7D32</item>
+            <item name="CTAccentColor">#FF2E7D32</item>
+      </style>
         
-      ~~~
+  ~~~
    
   {: title="Usage" }
 ---
