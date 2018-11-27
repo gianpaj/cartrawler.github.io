@@ -76,7 +76,6 @@ right_code: >
               .setVisitorId(visitorId = "123")
               .startRentalStandalone(activity = this, requestCode = 123)
 
-
   ~~~     
 
   {: title="Ground Transfer" }
