@@ -133,7 +133,7 @@ Usage of the SDK is&nbsp;demonstrated to the right, the parameters are as follow
     <dt>country</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
     <dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
     <dt>customAttributes</dt><dd>A hash map of attributes, custom to a particular partner.</dd>
-</dl>
+    </dl>
 
 Custom Attributes:
 
