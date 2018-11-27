@@ -18,9 +18,7 @@ right_code: >
                    
   ~~~
 
-   
-  {: title="Rental" }
-          
+  {: title="Rental" }     
           
   ~~~ java      
   
@@ -103,8 +101,7 @@ right_code: >
   ~~~     
    
    {: title="Theme" }
-        
-        
+           
   ~~~ xml
         
     //Create a theme that extends the CTAppTheme and implement the colorPrimaryDark, colorPrimary and colorAccent attributes.  See example below:
