@@ -5,59 +5,113 @@ type: Android
 description:
 right_code: >
   ~~~ java
+   //Passanger
+   new CartrawlerSDKPassenger(
+                   "firstname",
+                   "lastName",
+                   "email",
+                   "phoneCountryCode",
+                   "phoneNumber",
+                   "Address",
+                   "City",
+                   "Postcode",
+                   "Country",
+                   "Flight Number",
+                   "Age");
+  
+ 
+     
+   ~~~
 
-  String clientId = "787697";
+   
+   {: title="Rental" }
+          
+          
+  ~~~ java      
+     //InPath
+         try {
+            CartrawlerSDK.Builder()
+                     .setRentalInPathClientId(clientId = "1234")
+                     .setAccountId(accountId = "123")
+                     .setCountry(twoLetterISOCountry = "IE")
+                     .setCurrency(currency = "EUR")
+                     .setDropOffTime(dropOffDateTime = GregorianCalendar())
+                     .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
+                     .setFlightNumberRequired(required = true)
+                     .setLogging(logging = true)
+                     .setLoyalty(loyaltyProgramId = "LoyaltyId", membershipNumber = "123")
+                     .setOrderId(orderId = "123")
+                     .setPassenger(ctPassenger = cartrawlerSDKPassenger)
+                     .setPickupLocation(iataAirportCode = "YXJ")
+                     .setPickupTime(pickupDateTime = GregorianCalendar())
+                     .setVisitorId(visitorId = "123")
+                     .startRentalInPath(activity = this, requestCode = 123)
+            } catch (cartrawlerSDKIncorrectArgument: CartrawlerSDK.IncorrectArgument) {
+               cartrawlerSDKIncorrectArgument.printStackTrace()
+            }
+        
+            
+     //Standalone (Regular)
+       CartrawlerSDK.Builder()
+              .setRentalStandAloneClientId(clientId = "1234")
+              .setAccountId(accountId = "123")
+              .setCountry(twoLetterISOCountry = "IE")
+              .setCurrency(currency = "EUR")
+              .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
+              .setFlightNumberRequired(required = true)
+              .setLogging(logging = true)
+              .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
+              .setOrderId(orderId = "123")
+              .setPassenger(ctPassenger = cartrawlerSDKPassenger)
+              .setVisitorId(visitorId = "123")
+              .startRentalStandalone(activity = this, requestCode = 123)
 
-  Boolean production = false;
 
-  String language = null; //Language is to be deprecated in the library interface
+   ~~~     
 
-  String country = "IE";
-
-  String currency = "EUR";
-
-
-  HashMap<String, String> customAttributes = new HashMap<String, String>();
-
-
-  CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country,
-  currency, customAttributes));
-
-  ~~~
-
+   {: title="Ground Transfer" }
+                    
+  ~~~ java
+              
+         //InPath
+             CartrawlerSDK.Builder()
+                    .setGroundTransferInPathClientId(clientId = "1234")
+                    .setAccountId(accountId = "123")
+                    .setCountry(twoLetterISOCountry = "IE")
+                    .setCurrency(currency = "EUR")
+                    .setDropOffTime(dropOffDateTime = GregorianCalendar())
+                    .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
+                    .setFlightNumberRequired(required = true)
+                    .setLogging(logging = true)
+                    .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
+                    .setOrderId(orderId = "123")
+                    .setPassenger(ctPassenger = cartrawlerSDKPassenger)
+                    .setPickupLocation(iataAirportCode = "YXJ")
+                    .setPickupTime(pickupDateTime = GregorianCalendar())
+                    .setVisitorId(visitorId = "123")
+                    .startGroundTransferInPath(activity = this, requestCode = 123)
+    
+   ~~~     
+   
+   {: title="Theme" }
+        
+        
+     ~~~ xml
+        
+          //Create a theme that extends the CTAppTheme and implement the colorPrimaryDark, colorPrimary and colorAccent attributes.  See example below:
+        
+          <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
+                <item name="colorPrimary">#039be5</item>
+                <item name="CTPrimaryColor">#039be5</item>
+                <item name="colorPrimaryDark">#FF01579B</item>
+                <item name="CTSecondaryColor">#FF01579B</item>
+                <item name="colorAccent">#FF2E7D32</item>
+                <item name="CTAccentColor">#FF2E7D32</item>
+          </style>
+        
+      ~~~
+   
   {: title="Usage" }
-
-
-  ~~~ xml
-
-  //Create a theme that extends the CTAppTheme and implement the colorPrimaryDark, colorPrimary and colorAccent attributes.  See example below:
-
-  <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
-        <item name="colorPrimary">#039be5</item>
-        <item name="CTPrimaryColor">#039be5</item>
-        <item name="colorPrimaryDark">#FF01579B</item>
-        <item name="CTSecondaryColor">#FF01579B</item>
-        <item name="colorAccent">#FF2E7D32</item>
-        <item name="CTAccentColor">#FF2E7D32</item>
-  </style>
-  
-  Android Manifest
-  Add the CartrawlerActivity to the Android manifest and set the theme as the theme created in the previous step.  See example below:
-  
-  <activity
-     android:name="cartrawler.core.base.CartrawlerActivity"
-     android:windowSoftInputMode="adjustResize"
-     android:screenOrientation="portrait"
-     android:theme="@style/YourThemeExtendingCTAppTheme" />
-  
-  //Note: We do not support landscape and it is required that the orientation is fixed to portrait view
-
-  
-  
-
-  ~~~
-
-  {: title="Theme" }
 ---
 
 
