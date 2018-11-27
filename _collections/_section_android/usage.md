@@ -5,22 +5,16 @@ type: Android
 description:
 right_code: >
   ~~~ java
-   //Passanger
-   new CartrawlerSDKPassenger(
-                   "firstname",
-                   "lastName",
-                   "email",
-                   "phoneCountryCode",
-                   "phoneNumber",
-                   "Address",
-                   "City",
-                   "Postcode",
-                   "Country",
-                   "Flight Number",
-                   "Age");
-  
- 
-     
+   String clientId = "787697";
+   Boolean production = false;
+   String language = null; //Language is to be deprecated in the library interface
+   String country = "IE";
+   String currency = "EUR";
+   
+   HashMap<String, String> customAttributes = new HashMap<String, String>();
+   
+   CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country, currency, customAttributes));
+                   
    ~~~
 
    
@@ -28,6 +22,21 @@ right_code: >
           
           
   ~~~ java      
+  
+     //Passanger
+            new CartrawlerSDKPassenger(
+                             "firstname",
+                             "lastName",
+                             "email",
+                             "phoneCountryCode",
+                             "phoneNumber",
+                             "Address",
+                             "City",
+                             "Postcode",
+                             "Country",
+                             "Flight Number",
+                             "Age");
+  
      //InPath
          try {
             CartrawlerSDK.Builder()
