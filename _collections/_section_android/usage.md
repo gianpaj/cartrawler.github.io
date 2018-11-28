@@ -4,27 +4,25 @@ position: 3
 type: Android
 description:
 right_code: >
-  ~~~ java
-   
-   String clientId = "787697";
-   Boolean production = false;
-   String language = null; //Language is to be deprecated in the library interface
-   String country = "IE";
-   String currency = "EUR";
-   
-   HashMap<String, String> customAttributes = new HashMap<String, String>();
-   
-   CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country, currency, customAttributes));
-                   
+  ~~~java
+    String clientId = "787697";
+    Boolean production = false;
+    String language = null; //Language is to be deprecated in the library interface
+    String country = "IE";
+    String currency = "EUR";
+
+    HashMap<String, String> customAttributes = new HashMap<String, String>();
+
+    CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country, currency, customAttributes));
   ~~~
 
-  {: title="Rental" }     
-          
-  ~~~ java      
-  
+  {: title="Usage" }
+
+  ~~~java      
+
      //Passanger
             new CartrawlerSDKPassenger(
-                             "firstname",
+              "firstname",
                              "lastName",
                              "email",
                              "phoneCountryCode",
@@ -35,10 +33,10 @@ right_code: >
                              "Country",
                              "Flight Number",
                              "Age");
-  
+
      //InPath
          try {
-            CartrawlerSDK.Builder()
+           CartrawlerSDK.Builder()
                      .setRentalInPathClientId(clientId = "1234")
                      .setAccountId(accountId = "123")
                      .setCountry(twoLetterISOCountry = "IE")
@@ -55,7 +53,7 @@ right_code: >
                      .setVisitorId(visitorId = "123")
                      .startRentalInPath(activity = this, requestCode = 123)
             } catch (cartrawlerSDKIncorrectArgument: CartrawlerSDK.IncorrectArgument) {
-               cartrawlerSDKIncorrectArgument.printStackTrace()
+              cartrawlerSDKIncorrectArgument.printStackTrace()
             }
         
             
@@ -73,12 +71,11 @@ right_code: >
               .setPassenger(ctPassenger = cartrawlerSDKPassenger)
               .setVisitorId(visitorId = "123")
               .startRentalStandalone(activity = this, requestCode = 123)
+  ~~~
 
-  ~~~     
+  {: title="Rental" }
 
-  {: title="Ground Transfer" }
-                    
-  ~~~ java
+  ~~~java
               
          //InPath
              CartrawlerSDK.Builder()
@@ -97,12 +94,11 @@ right_code: >
                     .setPickupTime(pickupDateTime = GregorianCalendar())
                     .setVisitorId(visitorId = "123")
                     .startGroundTransferInPath(activity = this, requestCode = 123)
-    
-  ~~~     
-   
-   {: title="Theme" }
-           
-  ~~~ xml
+  ~~~    
+
+  {: title="Ground Transfer" }
+
+  ~~~xml
         
     //Create a theme that extends the CTAppTheme and implement the colorPrimaryDark, colorPrimary and colorAccent attributes.  See example below:
         
@@ -114,12 +110,10 @@ right_code: >
             <item name="colorAccent">#FF2E7D32</item>
             <item name="CTAccentColor">#FF2E7D32</item>
       </style>
-        
   ~~~
-   
-  {: title="Usage" }
----
 
+  {: title="Theme" }
+---
 
 Usage of the SDK is&nbsp;demonstrated to the right, the parameters are as follows:
 
@@ -141,4 +135,4 @@ Custom Attributes:
   <dt>membershipID</dt><dd>A String value that is used to pre-populate the loyalty field</dd>
 </dl>
 
-You will need to create a theme that extends the **CTAppTheme** and set the values for the **colorPrimaryDark**, **colorPrimary** and **colorAccent** attributes.  **android:statusBarColor** can also be set to update the status bar color.
+You will need to create a theme that extends the **CTAppTheme** and set the values for the **colorPrimaryDark**, **colorPrimary** and **colorAccent** attributes. **android:statusBarColor** can also be set to update the status bar color.
