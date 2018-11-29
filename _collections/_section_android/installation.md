@@ -111,5 +111,5 @@ right_code: >-
 1. Add the necessary gradle configuration for dependencies and repository to the app modules build.gradle file (see Gradle tab on the right).
 2. Add our maven repository and enter the artifactory credentials (see Gradle tab on the right).
 3. Create a theme that extends the **CTAppTheme**.
-4. Include activity cartrawler.core.engines.RentalActivity (see Manifest tab on the right).
+4. Include activity cartrawler.core.base.CartrawlerActivity (see Manifest tab on the right).
 5. If you are using proguard, update the proguard config as shown on the right.
