@@ -150,7 +150,7 @@ Add In Path Card - See code to right for available methods and callbacks for in 
   <dt>airportCode</dt><dd>An optional IATA code.</dd>
   <dt>pickupDate</dt><dd>An required Pickup Date.</dd>
   <dt>pickupDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
-  <dt>flightNumber</dt><dd>An optional Flight Number, suck as "Flight 123".</dd>
+  <dt>flightNumber</dt><dd>An optional Flight Number, such as "Flight 123".</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>A delegate for in path callbacks</dd>
 
