@@ -5,15 +5,21 @@ type: Android
 description:
 right_code: >
   ~~~java
-    String clientId = "787697";
-    Boolean production = false;
-    String language = null; //Language is to be deprecated in the library interface
-    String country = "IE";
-    String currency = "EUR";
-
-    HashMap<String, String> customAttributes = new HashMap<String, String>();
-
-    CartrawlerSDK.presentCarTrawler(this, clientId, production, language, country, currency, customAttributes));
+  
+    //Standalone (Rental)
+           CartrawlerSDK.Builder()
+                  .setRentalStandAloneClientId(clientId = "1234")
+                  .setAccountId(accountId = "123")
+                  .setCountry(twoLetterISOCountry = "IE")
+                  .setCurrency(currency = "EUR")
+                  .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
+                  .setFlightNumberRequired(required = true)
+                  .setLogging(logging = true)
+                  .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
+                  .setOrderId(orderId = "123")
+                  .setPassenger(ctPassenger = cartrawlerSDKPassenger)
+                  .setVisitorId(visitorId = "123")
+                  .startRentalStandalone(activity = this, requestCode = 123)
   ~~~
 
   {: title="Usage" }
@@ -55,25 +61,9 @@ right_code: >
             } catch (cartrawlerSDKIncorrectArgument: CartrawlerSDK.IncorrectArgument) {
               cartrawlerSDKIncorrectArgument.printStackTrace()
             }
-        
-            
-     //Standalone (Regular)
-       CartrawlerSDK.Builder()
-              .setRentalStandAloneClientId(clientId = "1234")
-              .setAccountId(accountId = "123")
-              .setCountry(twoLetterISOCountry = "IE")
-              .setCurrency(currency = "EUR")
-              .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
-              .setFlightNumberRequired(required = true)
-              .setLogging(logging = true)
-              .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
-              .setOrderId(orderId = "123")
-              .setPassenger(ctPassenger = cartrawlerSDKPassenger)
-              .setVisitorId(visitorId = "123")
-              .startRentalStandalone(activity = this, requestCode = 123)
   ~~~
 
-  {: title="Rental" }
+  {: title="Rental (InPath)" }
 
   ~~~java
               
@@ -96,7 +86,7 @@ right_code: >
                     .startGroundTransferInPath(activity = this, requestCode = 123)
   ~~~    
 
-  {: title="Ground Transfer" }
+  {: title="Ground Transfer (InPath)" }
 
   ~~~xml
         
@@ -135,4 +125,4 @@ Custom Attributes:
   <dt>membershipID</dt><dd>A String value that is used to pre-populate the loyalty field</dd>
 </dl>
 
-You will need to create a theme that extends the **CTAppTheme** and set the values for the **colorPrimaryDark**, **colorPrimary** and **colorAccent** attributes. **android:statusBarColor** can also be set to update the status bar color.
+You will need to create a theme that extends the **CTAppTheme** and set the values for the **colorPrimaryDark**, **colorPrimary** and **colorAccent** attributes. **android:statusBarColor** can also be set to update the status bar color. (see Theme tab on the right)
