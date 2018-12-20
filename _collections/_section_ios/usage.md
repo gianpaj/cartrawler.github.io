@@ -15,7 +15,25 @@ right_code: |-
   CarTrawlerSDK.sharedInstance().presentStandAlone(from: self, clientID: "105614", countryCode: "IE", currencyCode: "EUR", languageCode: "EN", passengers: nil)
 
   ```
-  {: title="Stand Alone" }
+  {: title="Standalone" }
+  
+  ``` swift
+  
+  CarTrawlerSDK.sharedInstance().presentStandAlone(from: self,
+  						        clientID: "105614",
+  						        countryCode: "IE",
+  						        currencyCode: "EUR",
+  						        languageCode: "EN",
+  						        pickupDate: Date(),
+  						        dropOffDate: Date(),
+  						        pickupLocationID: "11", // Dublin airport code
+  						        dropOffLocationID: "1316", // Cork airport code
+  						        pinnedVehicleID: "1892038", // Vehicle RefID
+  						        passengers: nil)
+  
+   ```
+   {: title="Standalone (deeplink)" }
+  
   ``` swift
 
   // Refreshes the Ground Transportation in path search.
@@ -139,6 +157,31 @@ Present Stand Alone:
 
 </dl>
 
+Present Stand Alone with Deeplinking :
+
+This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather then the regular initial search screen. 
+Optionally, if a vehicle refId is provided, this will be become the pinned item in the list. 
+If a user backs out of the list, it will return the user to the Cartrawler search.
+
+- If the pickup are not valid or not present (or out of date) the SDK will fallback to regular standalone search 
+- If the vehicle refId is not valid (or out of date), the list will be shown without the vehicle being pinned.
+- If the parameters are valid but no search results are returned by cartrawler system, the SDK will fallback to regular standalone search.
+
+<dl>
+
+  <dt>presentingViewController</dt><dd>Your view controller from which the SDK will be presented.</dd>
+  <dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
+  <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
+  <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
+  <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>pickupLocationID</dt><dd>A required OTA Location ID for pickup location.</dd>
+  <dt>dropOffLocationID</dt><dd>A required OTA Location ID for dropoff location.</dd>
+  <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
+  <dt>dropOffDate</dt><dd>A required Drop-off Date.</dd>
+  <dt>pinnedVehicleID</dt><dd>An optional refId to highlight pinned vehicle to top of list. Returned by the abandonment deeplink.</dd>
+
+</dl>
+
 Add In Path Card - See code to right for available methods and callbacks for in path
 
 <dl>
@@ -148,7 +191,7 @@ Add In Path Card - See code to right for available methods and callbacks for in 
   <dt>customerCountry</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>airportCode</dt><dd>An optional IATA code.</dd>
-  <dt>pickupDate</dt><dd>An required Pickup Date.</dd>
+  <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
   <dt>pickupDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
   <dt>flightNumber</dt><dd>An optional Flight Number, such as "Flight 123".</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
@@ -183,7 +226,7 @@ InPath Delegate (RENTAL):
 <dt>pickupAirportIATACode</dt>
 <dd>An required IATA code for pickup airport.</dd>
 <dt>dropoffAirportIATACode</dt>
-<dd>An required IATA code for dropoff airport.</dd>
+<dd>A required IATA code for dropoff airport.</dd>
 <dt>pickupDateTime</dt>
 <dd>Date and time for required service.</dd>
 <dt>currencyCode</dt>
