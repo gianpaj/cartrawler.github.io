@@ -8,10 +8,12 @@ right_code: >-
 
   source 'https://github.com/CocoaPods/Specs.git'
   source 'https://github.com/cartrawler/cartrawler-ios-pods'
+
   platform :ios, '9.0'
 
+
   target 'CarTrawlerPartner' do
-    pod 'CarTrawlerSDK', '~> 6.9.0'
+    pod 'CarTrawlerSDK', '~> 7.0.0'
   end
 
   ~~~
