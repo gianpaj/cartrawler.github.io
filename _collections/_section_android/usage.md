@@ -58,6 +58,32 @@ right_code: >
                      .setPickupTime(pickupDateTime = GregorianCalendar())
                      .setVisitorId(visitorId = "123")
                      .startRentalInPath(activity = this, requestCode = 123)
+  ~~~
+
+  {: title="Rental (Standalone deeplink)" }
+  ~~~java      
+
+     //Standalone with deeplinknig to Vehicle list
+         try {
+           CartrawlerSDK.Builder()
+                     .setRentalStandAloneClientId(clientId = "1234")
+                     .setAccountId(accountId = "123")
+                     .setCountry(twoLetterISOCountry = "IE")
+                     .setCurrency(currency = "EUR")
+                     .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
+                     .setFlightNumberRequired(required = true)
+                     .setLogging(logging = true)
+                     .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
+                     .setOrderId(orderId = "123")
+                     .setPassenger(ctPassenger = cartrawlerSDKPassenger)
+                     .setVisitorId(visitorId = "123")
+                     .setPickupLocation(iataAirportCode = "YXJ")
+                     .setPickupLocationId(locationId = 1234)
+                     .setDroppOffLocationId(locationId = 1234)
+                     .setDropOffTime(dropOffDateTime = GregorianCalendar())
+                     .setPickupTime(pickupDateTime = GregorianCalendar())
+                     .setPinnedVehicle(refId = "123")
+                     .startRentalStandalone(activity = this, requestCode = 123)
             } catch (cartrawlerSDKIncorrectArgument: CartrawlerSDK.IncorrectArgument) {
               cartrawlerSDKIncorrectArgument.printStackTrace()
             }
@@ -125,6 +151,39 @@ Rental (Standalone)
     <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
     <dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd>
     </dl>
+    
+Rental (Standalone with Deeplinking) 
+
+This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather then the regular initial search screen. 
+Optionally, if a vehicle refId is provided, this will be become the pinned item in the list. 
+If a user backs out of the list, it will return the user to the Cartrawler search.
+
+- If the pickup are not valid or not present (or out of date) the SDK will fallback to regular standalone search 
+- If the vehicle refId is not valid (or out of date), the list will be shown without the vehicle being pinned.
+- If the parameters are valid but no search results are returned by cartrawler system, the SDK will fallback to regular standalone search.
+
+<dl>
+
+  <dl>
+      <dt>setRentalStandAloneClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
+      <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
+      <dt>setCountry</dt><dd>An optional country code to used switch between languages </dd>
+      <dt>setCurrency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
+      <dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd>
+      <dt>setFlightNumberRequired</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd>
+      <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
+      <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
+      <dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
+      <dt>setPassenger</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
+      <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
+      <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>
+      <dt>setPickupLocationId</dt><dd>A required OTA Location ID for pickup location.</dd>
+      <dt>setDropOffLocationId</dt><dd>A required OTA Location ID for dropoff location.</dd>
+      <dt>setPickupTime</dt><dd>Pick up date time for required service.</dd>
+      <dt>setPinnedVehicle</dt><dd>An optional refId to highlight pinned vehicle to top of list. Returned by the abandonment deeplink.</dd>
+      <dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd>
+      </dl>
+
 
 Rental (InPath):
 
