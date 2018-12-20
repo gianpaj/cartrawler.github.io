@@ -61,9 +61,10 @@ right_code: >
   ~~~
 
   {: title="Rental (Standalone deeplink)" }
+  
   ~~~java      
 
-     //Standalone with deeplinknig to Vehicle list
+     //Standalone with deeplinking to Vehicle list
          try {
            CartrawlerSDK.Builder()
                      .setRentalStandAloneClientId(clientId = "1234")
@@ -162,8 +163,6 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
 - If the vehicle refId is not valid (or out of date), the list will be shown without the vehicle being pinned.
 - If the parameters are valid but no search results are returned by cartrawler system, the SDK will fallback to regular standalone search.
 
-<dl>
-
   <dl>
       <dt>setRentalStandAloneClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
       <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
@@ -183,7 +182,6 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
       <dt>setPinnedVehicle</dt><dd>An optional refId to highlight pinned vehicle to top of list. Returned by the abandonment deeplink.</dd>
       <dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd>
       </dl>
-
 
 Rental (InPath):
 
