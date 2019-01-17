@@ -151,13 +151,13 @@ Present Stand Alone:
 
 Present Stand Alone with Deeplinking :
 
-This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather then the regular initial search screen.
+This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather than the regular initial search screen.
 Optionally, if a vehicle refId is provided, this will be become the pinned item in the list.
 If a user backs out of the list, it will return the user to the Cartrawler search.
 
-- If the pickup are not valid or not present (or out of date) the SDK will fallback to regular standalone search
-- If the vehicle refId is not valid (or out of date), the list will be shown without the vehicle being pinned.
-- If the parameters are valid but no search results are returned by cartrawler system, the SDK will fallback to regular standalone search.
+- If the pickup and drop off dates are invalid, out of date, or not present the SDK will fallback to regular standalone search.
+- If the vehicle refId is invalid (or out of date), the list will be shown without the vehicle being pinned.
+- If the parameters are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
 
 <dl>
 
@@ -170,7 +170,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
   <dt>dropOffLocationID</dt><dd>An optional OTA Location ID for drop off location.</dd>
   <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
   <dt>dropOffDate</dt><dd>A required Drop-off Date.</dd>
-  <dt>pinnedVehicleID</dt><dd>An optional refId to highlight pinned vehicle to top of list. Returned by the abandonment deeplink.</dd>
+  <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
 
 </dl>
 
@@ -184,9 +184,9 @@ Add In Path Card - See code to right for available methods and callbacks for in 
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>airportCode</dt><dd>An optional IATA code.</dd>
   <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
-  <dt>pickupDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
+  <dt>dropOffDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
   <dt>flightNumber</dt><dd>An optional Flight Number, such as "Flight 123".</dd>
-  <dt>passengers</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
+  <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>A delegate for in path callbacks</dd>
 
 </dl>
@@ -216,13 +216,13 @@ InPath Delegate (RENTAL):
 <dt>clientID</dt>
 <dd>Your client ID, required to use the CarTrawler InPath Delegate (RENTAL).</dd>
 <dt>pickupAirportIATACode</dt>
-<dd>An required IATA code for pickup airport.</dd>
+<dd>A required IATA code for pickup airport.</dd>
 <dt>dropoffAirportIATACode</dt>
 <dd>A required IATA code for dropoff airport.</dd>
 <dt>pickupDateTime</dt>
 <dd>Date and time for required service.</dd>
 <dt>currencyCode</dt>
-<dd>An required currency code, such as "USD". Default is "EUR" if not provided.</dd>
+<dd>A required currency code, such as "USD". Default is "EUR" if not provided.</dd>
 <dt>languageCode</dt>
 <dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
 <dt>countryCode</dt>

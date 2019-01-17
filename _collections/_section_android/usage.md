@@ -125,7 +125,7 @@ Rental (Standalone)
     <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
     <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
     <dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
-    <dt>setPassenger</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
+    <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
     <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
     <dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd>
     </dl>
@@ -136,9 +136,9 @@ This is a variant on the standalone flow whereby the vehicle list is shown based
 Optionally, if a vehicle refId is provided, this will be become the pinned item in the list. 
 If a user backs out of the list, it will return the user to the Cartrawler search.
 
-- If the pickup are not valid or not present (or out of date) the SDK will fallback to regular standalone search 
-- If the vehicle refId is not valid (or out of date), the list will be shown without the vehicle being pinned.
-- If the parameters are valid but no search results are returned by cartrawler system, the SDK will fallback to regular standalone search.
+- If the pickup and drop off dates are invalid, out of date, or not present the SDK will fallback to regular standalone search.
+- If the vehicle refId is invalid (or out of date), the list will be shown without the vehicle being pinned.
+- If the parameters are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
 
   <dl>
       <dt>setRentalStandAloneClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
@@ -150,7 +150,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
       <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
       <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
       <dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
-      <dt>setPassenger</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
+      <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
       <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
       <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>
       <dt>setPickupLocationId</dt><dd>A required OTA Location ID for pickup location.</dd>
@@ -163,7 +163,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
 Rental (InPath):
 
 <dl>
-    <dt>CartrawlerSDKPassenger	</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
+    <dt>CartrawlerSDKPassenger	</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
     <dt>setRentalInPathClientId	</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
     <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
     <dt>setCountry</dt><dd>An optional country code to used switch between languages </dd>
@@ -173,7 +173,7 @@ Rental (InPath):
     <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
     <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
     <dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
-    <dt>setPassenger</dt><dd>An optional Array of Passengers , the first one will be the main passenger.</dd>
+    <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
     <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>
     <dt>setPickupTime</dt><dd>Pick up date time for required service.</dd>
     <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
