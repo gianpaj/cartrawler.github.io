@@ -46,24 +46,6 @@ right_code: |-
 
   ``` swift
 
-  // Refreshes the Ground Transportation in path search.
-  // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
-  // The SDK must be initialised, and the In Path card added before calling this method
-  func refreshGroundTransportation(){
-  }
-
-  // Returns Ground Transportation card to the client
-  func getGroundTransportationCard() -> UIView{
-  }
-
-  // Removes an added Ground Transportation if selected
-  func removeGroundTransportation(){
-  }
-
-  ```
-  {: title="InPath Delegate (GROUND TRANSPORTATION)" }
-  ``` swift
-
   // Returns Rental Card to the client
   func getRentalCard()-> UIView {
   }
