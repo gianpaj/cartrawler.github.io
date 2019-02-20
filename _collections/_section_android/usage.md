@@ -103,6 +103,7 @@ right_code: >
             <item name="CTSecondaryColor">#FF01579B</item>
             <item name="colorAccent">#FF2E7D32</item>
             <item name="CTAccentColor">#FF2E7D32</item>
+            <item name="CTPrimaryLightColor">#4BA4B5</item>
       </style>
   ~~~
 
