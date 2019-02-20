@@ -36,6 +36,7 @@ right_code: |-
     languageCode: "EN",
     pickupDate: Date(),
     dropOffDate: Date(),
+    IATACode: "DUB",
     pickupLocationID: "11", // Dublin airport code
     dropOffLocationID: "1316", // Cork airport code
     pinnedVehicleID: "1892038", // Vehicle RefID
@@ -189,7 +190,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>pickupLocationID</dt><dd>A required OTA Location ID for pickup location.</dd>
   <dt>dropOffLocationID</dt><dd>An optional OTA Location ID for drop off location.</dd>
-  <dt>IATACode></dt><dd>An optional IATA code for pickup location</dd>
+  <dt>IATACode</dt><dd>An optional IATA code for pickup location</dd>
   <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
   <dt>dropOffDate</dt><dd>A required Drop-off Date.</dd>
   <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
