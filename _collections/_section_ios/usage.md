@@ -6,6 +6,9 @@ description:
 right_code: |-
   ``` swift
 
+  import CarTrawlerSDK
+
+  // In application(_:didFinishLaunchingWithOptions:)
   CarTrawlerSDK.sharedInstance().initialiseSDK(
     with: nil,
     customParameters: nil,
@@ -14,6 +17,8 @@ right_code: |-
   ```
   {: title="App Delegate" }
   ``` swift
+
+  import CarTrawlerSDK
 
   CarTrawlerSDK.sharedInstance().presentStandAlone(
     from: self,
@@ -28,15 +33,17 @@ right_code: |-
 
   ``` swift
 
+  import CarTrawlerSDK
+
   CarTrawlerSDK.sharedInstance().presentStandAlone(
     from: self,
     clientID: "105614",
     countryCode: "IE",
     currencyCode: "EUR",
     languageCode: "EN",
-    pickupDate: Date(),
-    dropOffDate: Date(),
-    IATACode: "DUB",
+    pickupDate: Date(timeIntervalSinceNow: TimeInterval(2629746)), // next month
+    dropOffDate: Date(timeIntervalSinceNow: TimeInterval(2888946)), // next month + 3 days
+    iataCode: "DUB",
     pickupLocationID: "11", // Dublin airport code
     dropOffLocationID: "1316", // Cork airport code
     pinnedVehicleID: "1892038", // Vehicle RefID
@@ -46,6 +53,7 @@ right_code: |-
    {: title="Standalone (deeplink)" }
 
   ``` swift
+  import CarTrawlerSDK
 
   // Returns Rental Card to the client
   func getRentalCard()-> UIView {
@@ -65,6 +73,8 @@ right_code: |-
 
   {: title="InPath Delegate (RENTAL)"}
   ``` swift
+
+  import CarTrawlerSDK
 
   // Required. Called when user wants to add in path booking to their flight booking.
   func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle) {
@@ -119,6 +129,8 @@ right_code: |-
 
   {: title="Delegate" }
   ``` swift
+
+  import CarTrawlerSDK
 
   // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
   // The SDK must be initialised, and a CTBestDailyRateParams object with the necessary parameters must be set before calling this method
