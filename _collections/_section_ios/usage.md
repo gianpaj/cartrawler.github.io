@@ -41,8 +41,8 @@ right_code: |-
     countryCode: "IE",
     currencyCode: "EUR",
     languageCode: "EN",
-    pickupDate: Date(timeIntervalSinceNow: TimeInterval(2629746)), // next month
-    dropOffDate: Date(timeIntervalSinceNow: TimeInterval(2888946)), // next month + 3 days
+    pickupDate: Date(timeIntervalSinceNow: 2629746), // next month
+    dropOffDate: Date(timeIntervalSinceNow: 2888946), // next month + 3 days
     iataCode: "DUB",
     pickupLocationID: "11", // Dublin airport code
     dropOffLocationID: "1316", // Cork airport code
@@ -134,18 +134,20 @@ right_code: |-
 
   // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
   // The SDK must be initialised, and a CTBestDailyRateParams object with the necessary parameters must be set before calling this method
-  let params = CTBestDailyRateParams()
-  params.delegate = self
-  params.clientID = “12345”
-  params.countryCode = “IE”
-  params.currencyCode = “EUR”
-  params.languageCode = “EN”
-  params.iataCode = “DUB”
-  params.pickupDate = Date()
-  params.dropOffDate = Date()
-        
-  CarTrawlerSDK.sharedInstance().requestBestDailyRate(params)
 
+  let params = CTBestDailyRateParams()
+
+  params.delegate = self
+  params.clientID = "12345"
+  params.countryCode = "IE"
+  params.currencyCode = "EUR"
+  params.languageCode = "EN"
+  params.iataCode = "DUB"
+  params.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
+  params.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
+
+  CarTrawlerSDK.sharedInstance().requestBestDailyRate(params)
+        
   ```
 
   {: title="Best Daily Rates" }
