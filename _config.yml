@@ -3,7 +3,7 @@
 
 title: CarTrawler
 description: CarTrawler Native SDK Documentation
-url: 
+url:
 google_analytics_key:
 permalink: pretty
 
@@ -20,6 +20,10 @@ collections:
   section_android:
     title: Android
     position: 3
+    product: nativesdk
+  section_release_notes:
+    title: Release notes
+    position: 4
     product: nativesdk
   ondemand_ios:
     title: iOS
