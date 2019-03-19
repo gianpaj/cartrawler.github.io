@@ -106,18 +106,16 @@ right_code: >
             <item name="CTPrimaryLightColor">#4BA4B5</item>
       </style>
 
-    //Theming Changes: SDK version 8.0
+   //Theming Changes: SDK version 8.0
    //CTSecondaryColor and CTAAccentColor have changed names, to CTPrimaryDarkColor and CTCTAColor and we strongly recommend partners to move to new color naming convenions (defaults color will be applied otherwise). We have introduced additional theming attributes.
   
       <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
           <item name="colorPrimary">@color/MainBlue</item>
           <item name="colorPrimaryDark">@color/DarkBlue</item>
           <item name="colorAccent">@color/MainYellow</item>
-
           <item name="CTPrimaryColor">@color/MainBlue</item>
           <item name="CTPrimaryDarkColor">@color/DarkBlue</item>// Was CTSecondaryColor
           <item name="CTPrimaryLightColor">@color/BrightBlue</item>
-
           <item name="CTCTAColor">@color/MainYellow</item> // Was CTAccentColor (default: colorAccent)
           <item name="CTCTATextColor">@color/DarkBlue</item> // New color (default: white
 
