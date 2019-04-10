@@ -13,7 +13,7 @@ right_code: >-
 
 
   target 'CarTrawlerPartner' do
-    pod 'CarTrawlerSDK', '~> 8.2.0'
+    pod 'CarTrawlerSDK', '~> 8.3.0'
   end
 
   ~~~

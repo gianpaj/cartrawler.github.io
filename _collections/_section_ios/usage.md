@@ -103,7 +103,7 @@ right_code: |-
   }
 
   // Called when best daily rate fails
-  func didFailToReceiveBestDailyRate() {
+  func didFailToReceiveBestDailyRate(error: Error) {
   }
 
   // Create Ground Transportation payment payload
@@ -147,7 +147,7 @@ right_code: |-
   params.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
 
   CarTrawlerSDK.sharedInstance().requestBestDailyRate(params)
-        
+
   ```
 
   {: title="Best Daily Rates" }
@@ -155,7 +155,7 @@ right_code: |-
 
    ```
 
-   
+
 ---
 
 
@@ -167,13 +167,12 @@ The steps to use the SDK are:
 Initialisation of the SDK
 
 <dl>
-
 <dt>style</dt><dd>An optional style object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
 <dt>customParameters</dt><dd>A dictionary of parameters, custom to a particular partner, see below for options.</dd>
 <dt>production</dt><dd>A boolean to switch between endpoints, true is production, false is test.</dd>
 </dl>
 
-Present Stand Alone:
+<h5>Present Stand Alone</h5>
 
 <dl>
 
@@ -219,9 +218,10 @@ Add In Path Card - See code to right for available methods and callbacks for in 
   <dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
   <dt>customerCountry</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
-  <dt>airportCode</dt><dd>An optional IATA code.</dd>
+  <dt>IATACode</dt><dd>An optional IATA code.</dd>
   <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
-  <dt>dropOffDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
+  <dt>returnDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
+  <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
   <dt>flightNumber</dt><dd>An optional Flight Number, such as "Flight 123".</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>A delegate for in path callbacks</dd>
@@ -270,11 +270,11 @@ InPath Delegate (RENTAL):
 <dd>Your class that will handle callback methods</dd>
 </dl>
 
-Request Best Daily Rates: 
+Request Best Daily Rates:
 
-The best daily rates API has been exposed independently of the CarTrawler SDK workflows (inPath & Standalone). This will return the best recommended rate for an individual vehicle at a specific location. 
+The best daily rates API has been exposed independently of the CarTrawler SDK workflows (inPath & Standalone). This will return the best recommended rate for an individual vehicle at a specific location.
 
-After initializing the SDK, please create a CTBestDailyRateParams object and initialize it with the following parameters: 
+After initializing the SDK, please create a CTBestDailyRateParams object and initialize it with the following parameters:
 <dl>
 <dt>delegate</dt>
 <dd>a delegate for receiving the best daily rate response</dd>
@@ -300,6 +300,6 @@ After initializing the SDK, please create a CTBestDailyRateParams object and ini
 <dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 </dl>
 
-Calling the requestBestDailyRate function will trigger a best daily rate request based on the provided IATA or PickupLocationCode and pickup and dropoff dates. 
+Calling the requestBestDailyRate function will trigger a best daily rate request based on the provided IATA or PickupLocationCode and pickup and dropoff dates.
 
-The best daily rate (price and currency) will be returned in the CarTrawlerSDKDelegate function didReceiveBestDailyRate. 
+The best daily rate (price and currency) will be returned in the CarTrawlerSDKDelegate function didReceiveBestDailyRate.

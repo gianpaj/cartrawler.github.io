@@ -6,14 +6,13 @@ description: 'Customising the CarTrawler iOS SDK'
 right_code: |-
   ``` swift
 
-  let style = CTStyle(
-    primaryColor: UIColor.black,
-    primaryLightColor: UIColor.grey,
-    primaryDarkColor: UIColor.white,
-    ctaColor: UIColor.red,
-    ctaFontColor: UIColor.white
-  )
-  style.secondaryCtaColor = UIColor.red
+  let style = CTStyle(theme: .dark,
+               primaryColor: UIColor.gray)
+  style.primaryLightColor = UIColor.lightGray
+  style.primaryDarkColor = UIColor.darkGray
+  style.ctaColor = UIColor.blue
+  style.ctaFontColor = UIColor.white
+  style.secondaryCtaColor = UIColor.black
   style.secondaryCtaFontColor = UIColor.white
 
   ```  
@@ -25,6 +24,7 @@ Theming is achieved by creating a CTStyle object and initializing the SDK with i
 
 The CTStyle class has the following properties:
 
+theme<br />
 primaryColor<br />
 primaryLightColor (optional)<br />
 primaryDarkColor (optional)<br />
