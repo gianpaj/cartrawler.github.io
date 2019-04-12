@@ -6,14 +6,14 @@ description: 'Customising the CarTrawler iOS SDK'
 right_code: |-
   ``` swift
 
-  let style = CTStyle(theme: .dark,
-               primaryColor: UIColor.gray)
-  style.primaryLightColor = UIColor.lightGray
-  style.primaryDarkColor = UIColor.darkGray
-  style.ctaColor = UIColor.blue
-  style.ctaFontColor = UIColor.white
-  style.secondaryCtaColor = UIColor.black
-  style.secondaryCtaFontColor = UIColor.white
+  let style = CTStyle(theme: .dark,  // .dark or .light
+             primaryColor: UIColor.gray)
+  style.primaryLightColor = UIColor.lightGray // Optional, default light generated based on primary color
+  style.primaryDarkColor = UIColor.darkGray // Optional, default dark generated based on primary color
+  style.ctaColor = UIColor.blue // Optional, default iOS blue RGB(0,122,255)
+  style.ctaFontColor = UIColor.white  // Optional, default white or dark based on theme
+  style.secondaryCtaColor = UIColor.black // Optional, default primary color
+  style.secondaryCtaFontColor = UIColor.white // Optional, default white or dark based on theme
 
   ```  
   {: title="CTStyle" }
