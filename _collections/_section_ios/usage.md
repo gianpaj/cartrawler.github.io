@@ -53,25 +53,21 @@ right_code: |-
    {: title="Standalone (deeplink)" }
 
   ``` swift
-  import CarTrawlerSDK
-
-  // Returns Rental Card to the client
-  func getRentalCard()-> UIView {
-  }
-
-  // Refreshes the in path search.
-  // This will trigger a new best daily rate fetch, and the subsequent delegate callbacks
-  // The SDK must be initialised, and the In Path card added before calling this method
-  func refreshInPath(){
-  }
-
-  // Removes an added vehicle if selected
-  func removeVehicle(){
-  }
+  CarTrawlerSDK.sharedInstance().initialiseInPath(withClientID: "105614",
+                                                        currency: "EUR",
+                                                        customerCountry: "IE",
+                                                        languageCode: "EN",
+                                                        iataCode: "DUB",
+                                                        pickupDate: Date(timeIntervalSinceNow: 86400),
+                                                        return: nil,
+                                                        pinnedVehicleID: nil, // New parameter for abandonment flow
+                                                        flightNumber: "111",
+                                                        passengers: nil,
+                                                        delegate: self)
 
   ```
 
-  {: title="InPath Delegate (RENTAL)"}
+  {: title="InPath Delegate"}
   ``` swift
 
   import CarTrawlerSDK
