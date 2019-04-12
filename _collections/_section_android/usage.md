@@ -92,7 +92,7 @@ right_code: >
 
   {: title="Rental (InPath)" }
 
-  ~~~xml
+  ~~~java
         
      //SDK versions below 8.0 & 8.1: Ceate a theme that extends the CTAppTheme and implement the colorPrimaryDark,         colorPrimary and colorAccent attributes.  See example below:
   <style name="YourThemeExtendingCTAppTheme" parent="CTAppTheme">
@@ -142,9 +142,10 @@ right_code: >
     <item name="CTSecondaryActionColor">#EC028E</item>
     <item name="CTSecondaryActionTextColor">@color/General_White</item>
   </style>
+  
   ~~~
-
   {: title="Theme" }
+
 ---
 
 Usage of the SDK is&nbsp;demonstrated to the right, the parameters are as follows:
