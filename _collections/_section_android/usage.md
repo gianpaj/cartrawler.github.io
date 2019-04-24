@@ -22,7 +22,7 @@ right_code: >
                   .startRentalStandalone(activity = this, requestCode = 123)
   ~~~
 
-  {: title="Usage" }
+  {: title="Standalone" }
 
   ~~~java      
 
@@ -60,7 +60,7 @@ right_code: >
                      .startRentalInPath(activity = this, requestCode = 123)
   ~~~
 
-  {: title="Rental (Standalone deeplink)" }
+  {: title="Inpath" }
   
   ~~~java      
 
@@ -90,7 +90,7 @@ right_code: >
             }
   ~~~
 
-  {: title="Rental (InPath)" }
+  {: title="Standalone (deeplink)" }
 
   ~~~java
         
