@@ -149,75 +149,24 @@ right_code: >
 
 ---
 
-Usage of the SDK is&nbsp;demonstrated to the right, the parameters are as follows:
+Usage of the SDK is demonstrated to the right, the parameters are as follows:
 
-<dl>
-Rental (Standalone)
-</dl>
+##### Rental (Standalone)
 
-<dl>
-    <dt>setRentalStandAloneClientId	</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
-    <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
-    <dt>setCountry</dt><dd>An optional country code to used switch between languages </dd>
-    <dt>setCurrency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
-    <dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd>
-    <dt>setFlightNumberRequired</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd>
-    <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
-    <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
-    <dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
-    <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
-    <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
-    <dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd>
-    </dl>
-    
-Rental (Standalone with Deeplinking) 
+<dl><dt>setRentalStandAloneClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd><dt>setCountry</dt><dd>An optional country code to used switch between languages</dd><dt>setCurrency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd><dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd><dt>setFlightNumberRequired</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd><dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd><dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd><dt>setOrderId</dt><dd>A String value that represents the Order ID</dd><dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd><dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd><dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd></dl>
 
-This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather then the regular initial search screen. 
-Optionally, if a vehicle refId is provided, this will be become the pinned item in the list. 
-If a user backs out of the list, it will return the user to the Cartrawler search.
+Rental (Standalone with Deeplinking)
 
-- If the pickup and drop off dates are invalid, out of date, or not present the SDK will fallback to regular standalone search.
-- If the vehicle refId is invalid (or out of date), the list will be shown without the vehicle being pinned.
-- If the parameters are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
+This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather then the regular initial search screen. Optionally, if a vehicle refId is provided, this will be become the pinned item in the list. If a user backs out of the list, it will return the user to the Cartrawler search.
 
-  <dl>
-      <dt>setRentalStandAloneClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
-      <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
-      <dt>setCountry</dt><dd>An optional country code to used switch between languages </dd>
-      <dt>setCurrency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
-      <dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd>
-      <dt>setFlightNumberRequired</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd>
-      <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
-      <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
-      <dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
-      <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
-      <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
-      <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>
-      <dt>setPickupLocationId</dt><dd>A required OTA Location ID for pickup location.</dd>
-      <dt>setDropOffLocationId</dt><dd>A required OTA Location ID for dropoff location.</dd>
-      <dt>setPickupTime</dt><dd>Pick up date time for required service.</dd>
-      <dt>setPinnedVehicle</dt><dd>An optional refId to highlight pinned vehicle to top of list. Returned by the abandonment deeplink.</dd>
-      <dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd>
-      </dl>
+* If the pickup and drop off dates are invalid, out of date, or not present the SDK will fallback to regular standalone search.
+* If the vehicle refId is invalid (or out of date), the list will be shown without the vehicle being pinned.
+* If the parameters are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
+
+  <dl><dt>setRentalStandAloneClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd><dt>setCountry</dt><dd>An optional country code to used switch between languages</dd><dt>setCurrency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd><dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd><dt>setFlightNumberRequired</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd><dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd><dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd><dt>setOrderId</dt><dd>A String value that represents the Order ID</dd><dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd><dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd><dt>setPickupLocation</dt><dd>An optional IATA code.</dd><dt>setPickupLocationId</dt><dd>A required OTA Location ID for pickup location.</dd><dt>setDropOffLocationId</dt><dd>A required OTA Location ID for dropoff location.</dd><dt>setPickupTime</dt><dd>Pick up date time for required service.</dd><dt>setPinnedVehicle</dt><dd>An optional refId to highlight pinned vehicle to top of list. Returned by the abandonment deeplink.</dd><dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd></dl>
 
 Rental (InPath):
 
-<dl>
-    <dt>CartrawlerSDKPassenger	</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
-    <dt>setRentalInPathClientId	</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
-    <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
-    <dt>setCountry</dt><dd>An optional country code to used switch between languages </dd>
-    <dt>setCurrency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
-    <dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd>
-    <dt>setFlightNumberRequired</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd>
-    <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
-    <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
-    <dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
-    <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
-    <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>
-    <dt>setPickupTime</dt><dd>Pick up date time for required service.</dd>
-    <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
-    <dt>startRentalInPath</dt><dd>Start Rental InPath activity.</dd>
-    </dl>
+<dl><dt>CartrawlerSDKPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd><dt>setRentalInPathClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd><dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd><dt>setCountry</dt><dd>An optional country code to used switch between languages</dd><dt>setCurrency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd><dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd><dt>setFlightNumberRequired</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd><dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd><dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd><dt>setOrderId</dt><dd>A String value that represents the Order ID</dd><dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd><dt>setPickupLocation</dt><dd>An optional IATA code.</dd><dt>setPickupTime</dt><dd>Pick up date time for required service.</dd><dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd><dt>startRentalInPath</dt><dd>Start Rental InPath activity.</dd></dl>
 
 You will need to create a theme that extends the **CTAppTheme** and set the values for the **colorPrimaryDark**, **colorPrimary** and **colorAccent** attributes. **android:statusBarColor** can also be set to update the status bar color. (see Theme tab on the right)
