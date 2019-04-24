@@ -172,7 +172,7 @@ Initialisation of the SDK
 
 <dl>
 
-  <dt>presentingViewController</dt><dd>Your view controller from which the SDK will be presented.</dd>
+  <dt>presentStandAlone</dt><dd>Your view controller from which the SDK will be presented.</dd>
   <dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
@@ -192,7 +192,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
 
 <dl>
 
-  <dt>presentingViewController</dt><dd>Your view controller from which the SDK will be presented.</dd>
+  <dt>presentStandAlone</dt><dd>Your view controller from which the SDK will be presented.</dd>
   <dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
