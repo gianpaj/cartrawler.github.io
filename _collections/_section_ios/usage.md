@@ -177,6 +177,7 @@ Initialisation of the SDK
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 
 </dl>
 
@@ -197,13 +198,13 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
-  <dt>pickupLocationID</dt><dd>A required OTA Location ID for pickup location.</dd>
-  <dt>dropOffLocationID</dt><dd>An optional OTA Location ID for drop off location.</dd>
-  <dt>IATACode</dt><dd>An optional IATA code for pickup location</dd>
   <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
   <dt>dropOffDate</dt><dd>A required Drop-off Date.</dd>
+  <dt>IATACode</dt><dd>An optional IATA code for pickup location</dd>
+  <dt>pickupLocationID</dt><dd>A required OTA Location ID for pickup location.</dd>
+  <dt>dropOffLocationID</dt><dd>An optional OTA Location ID for drop off location.</dd>
   <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
-
+  <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 </dl>
 
 Add In Path Card - See code to right for available methods and callbacks for in path
@@ -243,11 +244,11 @@ Custom Attributes:
   <dd>A String value that represents the Visitor ID </dd>
 </dl>
 
-InPath Delegate (RENTAL):
+InPath Delegate:
 
 <dl>
 <dt>clientID</dt>
-<dd>Your client ID, required to use the CarTrawler InPath Delegate (RENTAL).</dd>
+<dd>Your client ID, required to use the CarTrawler InPath Delegate.</dd>
 <dt>pickupAirportIATA...</dt>
 <dd>A required IATA code for pickup airport.</dd>
 <dt>dropoffAirportIATA...</dt>
