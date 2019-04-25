@@ -248,9 +248,9 @@ InPath Delegate (RENTAL):
 <dl>
 <dt>clientID</dt>
 <dd>Your client ID, required to use the CarTrawler InPath Delegate (RENTAL).</dd>
-<dt>pickupAirportIATACode</dt>
+<dt>pickupAirportIATA...</dt>
 <dd>A required IATA code for pickup airport.</dd>
-<dt>dropoffAirportIATACode</dt>
+<dt>dropoffAirportIATA...</dt>
 <dd>A required IATA code for dropoff airport.</dd>
 <dt>pickupDateTime</dt>
 <dd>Date and time for required service.</dd>
