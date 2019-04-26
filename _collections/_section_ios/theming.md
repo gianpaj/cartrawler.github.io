@@ -37,4 +37,4 @@ We recommend using a light and dark variant of your primary colour for the produ
 
 If you do not wish to set the four optional properties manually, the CarTrawler SDK will create the colours for you.
 
-For more information please see our <a href="pickupAirportIATACode">style guide</a>.
+For more information please see our <a href="https://projects.invisionapp.com/share/FGQ4MIYEJ5P#/screens">style guide</a>.
