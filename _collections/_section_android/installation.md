@@ -36,7 +36,8 @@ right_code: >-
        implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
        implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     
-       //Glide   implementation 'com.github.bumptech.glide:glide:4.8.0'
+       //Glide   
+       implementation 'com.github.bumptech.glide:glide:4.8.0'
     
        //Constraint layout
        implementation 'com.android.support.constraint:constraint-layout:1.1.2'
@@ -48,9 +49,6 @@ right_code: >-
        implementation "android.arch.lifecycle:livedata:1.1.1"
        implementation 'android.arch.persistence.room:runtime:1.1.1'
     
-       //Kotlin
-       implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.60"
-      
        repositories {
           maven {
               url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
