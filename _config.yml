@@ -21,9 +21,13 @@ collections:
     title: Android
     position: 3
     product: nativesdk
+  section_style_guide:
+    title: Style Guide
+    position: 4
+    product: nativesdk
   section_release_notes:
     title: Release notes
-    position: 4
+    position: 5
     product: nativesdk
   ondemand_ios:
     title: iOS
