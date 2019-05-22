@@ -72,7 +72,6 @@ right_code: |-
    
 ---  
 
-Color principles for the CarTrawler SDK are based on the iOS Human Interface Design Guidelines.
 Theming is achieved by creating a CTStyle object and initializing the SDK with it.
 
 The CTStyle class has the following properties:
