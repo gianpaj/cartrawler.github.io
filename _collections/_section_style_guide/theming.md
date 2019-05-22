@@ -88,5 +88,3 @@ secondaryCtaFontColor (optional)
 We recommend using a light and dark variant of your primary colour for the product, which is useful for creating contrast between UI elements, such as a navigation bar and secondary panel bar.
 
 If you do not wish to set the four optional properties manually, the CarTrawler SDK will create the colours for you.
-
-For more information please see our <a href="https://projects.invisionapp.com/share/FGQ4MIYEJ5P#/screens">style guide</a>.
