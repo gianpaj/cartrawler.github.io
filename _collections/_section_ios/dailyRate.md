@@ -1,5 +1,5 @@
 ---
-title: Best Daily Rate
+title: Best Rate APIs
 position: 4
 type: iOS
 description:
