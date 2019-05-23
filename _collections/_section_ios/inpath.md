@@ -31,7 +31,7 @@ right_code: |-
 
   ```
 
-  {: title="InPath Delegate"}
+  {: title="Inpath Initialisation"}
   ``` swift
 
   import CarTrawlerSDK
