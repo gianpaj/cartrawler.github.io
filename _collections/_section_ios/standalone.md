@@ -50,7 +50,7 @@ right_code: |-
     passengers: nil)
 
    ```
-   {: title="Standalone (deeplink)" }
+   {: title="Deeplink" }
 
   ``` swift
 
