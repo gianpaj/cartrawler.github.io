@@ -4,64 +4,6 @@ position: 4
 type: Android
 description:
 right_code: >
-  ~~~java
-  
-    //Standalone (Rental)
-           CartrawlerSDK.Builder()
-                  .setRentalStandAloneClientId(clientId = "1234")
-                  .setAccountId(accountId = "123")
-                  .setCountry(twoLetterISOCountry = "IE")
-                  .setCurrency(currency = "EUR")
-                  .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
-                  .setFlightNumberRequired(required = true)
-                  .setLogging(logging = true)
-                  .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
-                  .setOrderId(orderId = "123")
-                  .setPassenger(ctPassenger = cartrawlerSDKPassenger)
-                  .setVisitorId(visitorId = "123")
-                  .startRentalStandalone(activity = this, requestCode = 123)
-  ~~~
-
-  {: title="Standalone" }
-
-  ~~~java      
-
-     //Passenger
-            new CartrawlerSDKPassenger(
-              "firstname",
-                             "lastName",
-                             "email",
-                             "phoneCountryCode",
-                             "phoneNumber",
-                             "Address",
-                             "City",
-                             "Postcode",
-                             "Country",
-                             "Flight Number",
-                             "Age");
-
-     //InPath
-         try {
-           CartrawlerSDK.Builder()
-                     .setRentalInPathClientId(clientId = "1234")
-                     .setAccountId(accountId = "123")
-                     .setCountry(twoLetterISOCountry = "IE")
-                     .setCurrency(currency = "EUR")
-                     .setDropOffTime(dropOffDateTime = GregorianCalendar())
-                     .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
-                     .setFlightNumberRequired(required = true)
-                     .setLogging(logging = true)
-                     .setLoyalty(loyaltyProgramId = "LoyaltyId", membershipNumber = "123")
-                     .setOrderId(orderId = "123")
-                     .setPassenger(ctPassenger = cartrawlerSDKPassenger)
-                     .setPickupLocation(iataAirportCode = "YXJ")
-                     .setPickupTime(pickupDateTime = GregorianCalendar())
-                     .setVisitorId(visitorId = "123")
-                     .startRentalInPath(activity = this, requestCode = 123)
-  ~~~
-
-  {: title="Inpath" }
-  
   ~~~java      
 
    CartrawlerSDK.Builder()
