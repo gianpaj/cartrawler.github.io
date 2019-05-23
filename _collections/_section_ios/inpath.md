@@ -31,7 +31,7 @@ right_code: |-
 
   ```
 
-  {: title="Inpath Initialisation"}
+  {: title="Initialisation"}
   ``` swift
 
   import CarTrawlerSDK

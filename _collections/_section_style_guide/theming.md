@@ -1,6 +1,6 @@
 ---
-title: Theming
-position: 1
+title: Usage
+position: 2
 type: 
 description: 'Customising the CarTrawler SDK'
 right_code: |-

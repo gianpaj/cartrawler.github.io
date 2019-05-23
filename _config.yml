@@ -22,7 +22,7 @@ collections:
     position: 3
     product: nativesdk
   section_style_guide:
-    title: Style Guide
+    title: Theming
     position: 4
     product: nativesdk
   section_release_notes:
