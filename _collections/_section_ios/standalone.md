@@ -86,7 +86,7 @@ Initialisation of the SDK
 
 </dl>
 
-Present Stand Alone with Deeplinking :
+<h5>Present Standalone with Deeplinking</h5>
 
 This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather than the regular initial search screen.
 Optionally, if a vehicle refId is provided, this will be become the pinned item in the list.
