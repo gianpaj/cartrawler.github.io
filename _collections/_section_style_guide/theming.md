@@ -75,10 +75,19 @@ Theming is achieved by creating the CTStyle (iOS) and CTAppTheme (Android) objec
 
 The style objects have the following properties:
 
-theme<br>primaryColor<br>primaryLightColor (optional)<br>primaryDarkColor (optional)<br>ctaColor (optional)<br>ctaFontColor (optional)<br>secondaryCtaColor (optional)<br>secondaryCtaFontColor (optional)
+theme
+<br>primaryColor
+<br>primaryLightColor (optional)
+<br>primaryDarkColor (optional)<br>ctaColor (optional)
+<br>ctaFontColor (optional)
+<br>secondaryCtaColor (optional)
+<br>secondaryCtaFontColor (optional)
 
 By Default, the colour for text and icons on colour backgrounds are white for native SDK. If your brand colours are a bright colour (high luminosity), it's recommended you change to a dark text theme for legibility of text and colours.
-
-&nbsp;
+<picture>
+  <source media="(max-width: 799px)" srcset="/uploads/theming-example.png">
+  <source media="(min-width: 800px)" srcset="/uploads/theming-example.png">
+  <img src="/uploads/theming-example.png">
+</picture>
 
 If you do not wish to set the four optional properties manually, the CarTrawler SDK will create the colours for you (Note: this is currently only an iOS feature within the SDK)
