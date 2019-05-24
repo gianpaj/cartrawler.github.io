@@ -11,7 +11,7 @@ We recommend meeting WCAG AA Level for background colours, text and icons. For c
 
 Our components with colour use white as the default overlay text colour. If your brand colour does not meet the recommended contrast ration with the white text, we recommend using dark text to meet the contrast ration.
 
-![](/uploads/wcag.png){: width="1714" height="478"}
+&nbsp;
 
 ##### Font Colours on Light Backgrounds
 
