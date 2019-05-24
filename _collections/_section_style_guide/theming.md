@@ -69,6 +69,6 @@ theme<br>primaryColor<br>primaryLightColor (optional)<br>primaryDarkColor (optio
 
 By Default, the colour for text and icons on colour backgrounds are white for native SDK. If your brand colours are a bright colour (high luminosity), it's recommended you change to a dark text theme for legibility of text and colours.
 
-![](/uploads/theming-example.png){: width="1480" height="632"}
+&nbsp;
 
 If you do not wish to set the four optional properties manually, the CarTrawler SDK will create the colours for you (Note: this is currently only an iOS feature within the SDK)
