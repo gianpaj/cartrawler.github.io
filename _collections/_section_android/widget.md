@@ -9,8 +9,8 @@ right_code: >
 ---
 
 
-In the Widget library we have four new Widgets classes, see images to seee how they would appear in your App.
-These can be added to your layouts, dynamically or directly via in XML, as per standard Android guidelines.
+In the Widget library we have four new Widgets classes, see images to see how they would appear in your App.
+These can be added to your layouts dynamically or directly via in XML as per standard Android guidelines.
 
 1. cartrawler.core.ui.views.partner.CTSimpleWidget
 2. cartrawler.core.ui.views.partner.CTSimpleAddedWidget
@@ -18,8 +18,8 @@ These can be added to your layouts, dynamically or directly via in XML, as per s
 4. cartrawler.core.ui.views.partner.CTVehicleWidget
 
 These widgets can be combined to show different state of the basket, in an flight booking scenario, 
-you might want to display a widget, to advertise you can add a rental car to you your basket, 
-at various points in your flow. For example you could show the CTSimpleWidget
+you might want to display a widget to advertise you can add a rental car to you your basket 
+at various points in your flow. For example you could show the following CTSimpleWidget:
 
 <picture>
   <source media="(max-width: 799px)" srcset="/uploads/Simple_Loaded_State_Generic.png">
@@ -28,7 +28,7 @@ at various points in your flow. For example you could show the CTSimpleWidget
 </picture>
 
 
-You can add a click listener to this CTSimpleWidget that will start the in path flow , using the standard View.OnClickListener
+You can add a click listener to this CTSimpleWidget that will start the inpath or standalone flow , using the standard View.OnClickListener
 
 You may decide when onActivityResult is called following the completion of the inpath flow (Activity), you will show that a
 rental car has beed added, by using displaying the view CTSimpleAddedWidget or alternatively CTVehicleWidget
@@ -47,7 +47,8 @@ OR
   <img src="/uploads/Pricing_Added_State_Generic.png">
 </picture>
 
-In order to use the CTVehicleWidget, you will need pass it Vehicle Object, that is returned following the cartrawler flow
+In order to use the CTVehicleWidget, you will need pass it Vehicle Object, that is returned following the cartrawler flow, see example below
+on how you would achieve this:
 
     ~~java
   
