@@ -131,7 +131,29 @@ these can be completely tailored to your own brand styling.
 
 See Graphic below which calls which style applys to which widget
 
+
+    <picture>
+      <source media="(max-width: 799px)" srcset="/uploads/Pricing_Loaded_State_Generic_style.png">
+      <source media="(min-width: 800px)" srcset="/uploads/Pricing_Loaded_State_Generic_style.png">
+      <img src="/uploads/Pricing_Loaded_State_Generic_style.png">
+    </picture>
     
-   
+    <picture>
+      <source media="(max-width: 799px)" srcset="/uploads/Simple_Added_State_Generic_style.png">
+      <source media="(min-width: 800px)" srcset="/uploads/Simple_Added_State_Generic_style.png">
+      <img src="/uploads/Simple_Added_State_Generic.png">
+    </picture>
     
+    <picture>
+      <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_State_Generic_style.png">
+      <source media="(min-width: 800px)" srcset="/uploads/Pricing_Added_State_Generic_style.png">
+      <img src="/uploads/Pricing_Added_State_Generic.png">
+    </picture>
+    
+    <picture>
+      <source media="(max-width: 799px)" srcset="/uploads/Simple_Loaded_State_Generic_style.png">
+      <source media="(min-width: 800px)" srcset="/uploads/Simple_Loaded_State_Generic_style.png">
+      <img src="/uploads/Simple_Loaded_State_Generic_style.png">
+    </picture>
+
     
