@@ -133,27 +133,27 @@ See Graphics below which describes which style applies to which widget
 
 
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Loaded_State_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Loaded_State_Generic_style.png">
-  <img src="/uploads/Pricing_Loaded_State_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Loaded_Generic_style.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Loaded_Generic_style.png">
+  <img src="/uploads/Pricing_Loaded_Generic_style.png">
 </picture>
 
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Simple_Added_State_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Simple_Added_State_Generic_style.png">
-  <img src="/uploads/Simple_Added_State_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Simple_Added_Generic_style.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Simple_Added_Generic_style.png">
+  <img src="/uploads/Simple_Added_Generic_style.png">
 </picture>
 
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_State_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Added_State_Generic_style.png">
-  <img src="/uploads/Pricing_Added_State_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_Generic_style.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Added_Generic_style.png">
+  <img src="/uploads/Pricing_Added_Generic_style.png">
 </picture>
 
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Simple_Loaded_State_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Simple_Loaded_State_Generic_style.png">
-  <img src="/uploads/Simple_Loaded_State_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Simple_Loaded_Generic_style.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Simple_Loaded_Generic_style.png">
+  <img src="/uploads/Simple_Loaded_Generic_style.png">
 </picture>
 
     
