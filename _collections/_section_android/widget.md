@@ -68,27 +68,27 @@ In order to use the CTBestPriceWidget, you will need to set the price on the wid
 for example this can be done in onReceiveBestDailyRate (when the price is returned from the API)
 
                 
-                 builder.getBestDailyRates(
-                                    this, object : CartrawlerSDK.BestDailyRatesListener {
-                
-                                @SuppressLint("SetTextI18n")
-                                override fun onNoResults(type: Int) {
-                                    hideLoading()
-                                    rentalPrice.text = "No Results"
-                                }
-                
-                                override fun onError(type: Int, connectionError: CartrawlerSDK.ConnectionError) {
-                                    hideLoading()
-                                    Log.e("Builder", connectionError.message, connectionError)
-                                    rentalPrice.text = connectionError.message
-                                }
-                
-                                @SuppressLint("SetTextI18n")
-                                override fun onReceiveBestDailyRate(type: Int, price: Double, currency: String) {
-                                    hideLoading()
-                                    ctBestPrice.setPrice("$currency $price")
-                                }
-                            }, CartrawlerSDK.Builder.FLAG_RENTAL)
+    builder.getBestDailyRates(
+            this, object : CartrawlerSDK.BestDailyRatesListener {
+
+        @SuppressLint("SetTextI18n")
+        override fun onNoResults(type: Int) {
+            hideLoading()
+            rentalPrice.text = "No Results"
+        }
+
+        override fun onError(type: Int, connectionError: CartrawlerSDK.ConnectionError) {
+            hideLoading()
+            Log.e("Builder", connectionError.message, connectionError)
+            rentalPrice.text = connectionError.message
+        }
+
+        @SuppressLint("SetTextI18n")
+        override fun onReceiveBestDailyRate(type: Int, price: Double, currency: String) {
+            hideLoading()
+            ctBestPrice.setPrice("$currency $price")
+        }
+    }, CartrawlerSDK.Builder.FLAG_RENTAL)
                 
 
 <picture>
