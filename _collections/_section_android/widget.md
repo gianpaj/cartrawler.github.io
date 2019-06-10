@@ -17,9 +17,9 @@ These can be added to your layouts dynamically or directly via in XML as per sta
 3. cartrawler.core.ui.views.partner.CTBestPriceWidget
 4. cartrawler.core.ui.views.partner.CTVehicleWidget
 
-These widgets can be combined to show different state of the basket, in an flight booking scenario, 
-you might want to display a widget to advertise you can add a rental car to you your basket 
-at various points in your flow. For example you could show the following CTSimpleWidget:
+These widgets can be combined to show different state of the basket, in a flight booking scenario, 
+you might want to display a widget to advertise you can add a rental car to your basket at various points in the flow. 
+For example you could show the following CTSimpleWidget:
 
 <picture>
   <source media="(max-width: 799px)" srcset="/uploads/Simple_Loaded_State_Generic.png">
@@ -39,7 +39,7 @@ rental car has beed added, by using displaying the view CTSimpleAddedWidget or a
   <img src="/uploads/Simple_Added_State_Generic.png">
 </picture>
 
-OR
+**OR**
 
 <picture>
   <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_State_Generic.png">
@@ -47,7 +47,7 @@ OR
   <img src="/uploads/Pricing_Added_State_Generic.png">
 </picture>
 
-In order to use the CTVehicleWidget, you will need pass it Vehicle Object, that is returned following the cartrawler flow, see example below
+In order to use the CTVehicleWidget, you will need pass it Vehicle Object, that is returned following the Cartrawler flow, see example below
 on how you would achieve this:
 
     ~~java
@@ -65,7 +65,7 @@ on how you would achieve this:
     ~~~
     
 In order to use the CTBestPriceWidget, you will need to set the price on the widget, 
-for example this can be done in onReceiveBestDailyRate (when the price is returned from the API)
+for example this can be done in onReceiveBestDailyRate (when the price is returned from the API).
 
                 
     builder.getBestDailyRates(
@@ -129,7 +129,7 @@ these can be completely tailored to your own brand styling.
     
         </style>
 
-See Graphics below which describes which style applies to which widget
+See Graphics below for descriptions on which style applies to which widget
 
 
 <picture>
@@ -155,5 +155,3 @@ See Graphics below which describes which style applies to which widget
   <source media="(min-width: 800px)" srcset="/uploads/Simple_Loaded_Generic_style.png">
   <img src="/uploads/Simple_Loaded_Generic_style.png">
 </picture>
-
-    
