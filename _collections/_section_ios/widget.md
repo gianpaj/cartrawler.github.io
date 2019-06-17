@@ -13,30 +13,30 @@ The CarTrawler iOS SDK comes prepackaged with four widgets.<br /> When consideri
 
 <h4>CTSimpleWidget</h4>
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Simple_Loaded_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Simple_Loaded_Generic_style.png">
-  <img src="/uploads/Simple_Loaded_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Simple_Loaded_Generic_iOS.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Simple_Loaded_Generic_iOS.png">
+  <img src="/uploads/Simple_Loaded_Generic_iOS.png">
 </picture><br />
 
 <h4>CTSimpleAddedWidget</h4>
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Simple_Added_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Simple_Added_Generic_style.png">
-  <img src="/uploads/Simple_Added_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Simple_Added_Generic_iOS.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Simple_Added_Generic_iOS.png">
+  <img src="/uploads/Simple_Added_Generic_iOS.png">
 </picture><br />
 
 <h4>CTBestPriceWidget</h4>
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Loaded_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Loaded_Generic_style.png">
-  <img src="/uploads/Pricing_Loaded_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Loaded_Generic_iOS.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Loaded_Generic_iOS.png">
+  <img src="/uploads/Pricing_Loaded_Generic_iOS.png_iOS">
 </picture><br />
 
 <h4>CTVehicleWidget</h4>
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Added_Generic_style.png">
-  <img src="/uploads/Pricing_Added_Generic_style.png">
+  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_Generic_iOS.png">
+  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Added_Generic_iOS.png">
+  <img src="/uploads/Pricing_Added_Generic_IOS.png_iOS">
 </picture><br />
 
 ***Setup and Usage***
@@ -47,7 +47,11 @@ To implement the widgets, you must first create an instance of CTWidgetStyle and
 The next step is to create an instance of CTWidgetContainer and pass in the following: status (.simple, .simpleAdded, .bestPrice, or .vehicle), style (your CTWidgetStyle object), and a delegate. 
 We recommend adding the widget container to a stackView, like so: 
 
-    exampleStackView.insertArrangedSubview(self.widgetContainer!, at: 0)
+    let widgetStyle = CTWidgetStyle()
+    let widgetContainer = CarTrawlerSDK.sharedInstance().getWidget(status: .simple,
+                                                                       style: widgetStyle,
+                                                                       delegate: self)
+    self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
 
 
 Your widget’s status can be changed at any time by calling setStatus on the container:
@@ -60,6 +64,7 @@ Your widget’s status can be changed at any time by calling setStatus on the co
 When you make a best bestDailyRates request, the price is returned to you in the delegate callback didRecieveBestDailyRate. You can set the widget’s price in your function body: 
 
     func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
+        let price = String(format: "%@ %.2f", currency, price.floatValue)
         self.widgetContainer?.setPrice(price)
     }
 
