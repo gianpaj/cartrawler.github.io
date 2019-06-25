@@ -81,7 +81,7 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
     override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
        if (resultCode == Activity.RESULT_OK) {
            if (requestCode == 123) {
-                openCreditCardProcessor(data!!.getStringExtra(CartrawlerSDK.RESERVATION))
+                yourMethod(data!!.getStringExtra(CartrawlerSDK.RESERVATION))
             }      
     }
     
