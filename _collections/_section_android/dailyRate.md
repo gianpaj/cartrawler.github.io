@@ -46,4 +46,4 @@ We expose a method on the builder to retrieve the best rate for the products use
 
 A BestDailyRatesListener is past into the getBestDailyRates method and will call the relevant methods once the relevant events have happen. 
  
- A flag parameter is used to specify which products are required.
+A flag parameter is used to specify which products are required.
