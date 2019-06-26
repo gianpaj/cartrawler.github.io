@@ -5,7 +5,6 @@ type: iOS
 description:
 right_code: |-
   ``` swift
-
   import CarTrawlerSDK
 
   // In application(_:didFinishLaunchingWithOptions:)
@@ -13,44 +12,43 @@ right_code: |-
     with: nil,
     customParameters: nil,
     production: false)
-
   ```
   {: title="App Delegate" }
-  ``` swift
 
+  ``` swift
   import CarTrawlerSDK
 
-  CarTrawlerSDK.sharedInstance().presentStandAlone(
-    from: self,
-    clientID: "105614",
-    countryCode: "IE",
-    currencyCode: "EUR",
-    languageCode: "EN",
-    passengers: nil)
+  // Create a context for standAlone flow
+  let context = CTContext(clientID: "105614", flow: .standAlone)
+  context.countryCode = "IE"
+  context.currencyCode = "EUR"
+  context.languageCode = "EN"
+  CarTrawlerSDK.sharedInstance().setContext(context)
 
+  // Present standAlone flow from a UIViewController
+  CarTrawlerSDK.sharedInstance().present(from: self.view flow: .standAlone)
   ```
   {: title="Standalone" }
 
   ``` swift
-
   import CarTrawlerSDK
 
-  CarTrawlerSDK.sharedInstance().presentStandAlone(
-    from: self,
-    clientID: "105614",
-    countryCode: "IE",
-    currencyCode: "EUR",
-    languageCode: "EN",
-    pickupDate: Date(timeIntervalSinceNow: 2629746), // next month
-    dropOffDate: Date(timeIntervalSinceNow: 2888946), // next month + 3 days
-    iataCode: "DUB",
-    pickupLocationID: "11", // Dublin airport code
-    dropOffLocationID: "1316", // Cork airport code
-    pinnedVehicleID: "1892038", // Vehicle RefID
-    passengers: nil)
+  // Create a context for standAlone flow
+  let context = CTContext(clientID: "105614", flow: .standAlone)
+  context.countryCode = "IE"
+  context.currencyCode = "EUR"
+  context.languageCode = "EN"
+  context.pickupLocationID = "11" // Dublin airport code
+  context.dropOffLocationID = "1316" // Cork airport code
+  context.pinnedVehicleID = "1892038" // Vehicle RefID
+  context.pickupDate = Date(timeIntervalSinceNow: 2629746), // next month
+  context.dropOffDate = Date(timeIntervalSinceNow: 2888946), // next month + 3 days
+  CarTrawlerSDK.sharedInstance().setContext(context)
 
-   ```
-   {: title="Deeplink" }
+  // Present standAlone flow from a UIViewController
+  CarTrawlerSDK.sharedInstance().present(from: self.view flow: .standAlone)
+  ```
+  {: title="Deeplink" }
 
   ``` swift
 
