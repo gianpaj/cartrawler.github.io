@@ -6,7 +6,7 @@ description:
 right_code:
 ---
 
-Following the inpath process, a payload is returned in JSON Format, this JSON can later be used to make a reservation with our backend system.
+Following the Inpath process, a payload is returned in JSON Format, this JSON can later be used to make a reservation with our backend system.
 
 The OTA message will contain a list of placeholder fields which are preset to default values.
 It is expected that these fields are overridden with meaningful booking data and the message is processed directly with our endpoint. 
