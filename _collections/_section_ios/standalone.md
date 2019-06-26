@@ -45,6 +45,24 @@ right_code: |-
   {: title="Deeplink" }
 
   ``` swift
+  import CarTrawlerSDK
+
+  let passenger = CTPassenger(firstName: "Ryan",
+                              lastName: "O'Connor",
+                              addressLine1: "DunDrum",
+                              addressLine2: "Dublin 14",
+                              city: "Dublin",
+                              postcode: "Dublin 14",
+                              countryCode: "IE",
+                              age: 25,
+                              email: "ryan.oconnor@cartrawler.com",
+                              phone: "0838880000",
+                              phoneCountryPrefix: "353",
+                              isPrimaryDriver: true)
+  ```
+  {: title="Passenger" }
+
+  ``` swift
 
    ```
 
