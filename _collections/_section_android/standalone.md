@@ -50,6 +50,26 @@ right_code: >
   ~~~
   
   {: title="Deeplink" }
+  
+  
+  ~~~java
+     //CartrawlerSDKPassenger
+      data class CartrawlerSDKPassenger(val firstName: String?, // First Name
+                                        val lastName: String?, // Surname
+                                        val email: String?,
+                                        val phoneCountryCode: String?, // 3 digit phone country code
+                                        val phoneNumber: String?, //  Phone number in national format
+                                        val address: String?, // Address line
+                                        val city: String?, // City
+                                        val postcode: String?, // Post Code
+                                        val country: String?, // Country ISO code, e.g. IE, FR, DE
+                                        val flightNumber: String?, // Flight number
+                                        var age: String?) : Parcelable { // Driver Age , "30"
+           
+    ~~~
+    
+    
+    {: title="CartrawlerSDKPassenger" }
 
 ---
 
