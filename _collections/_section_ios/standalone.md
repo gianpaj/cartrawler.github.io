@@ -23,10 +23,7 @@ right_code: |-
   context.countryCode = "IE"
   context.currencyCode = "EUR"
   context.languageCode = "EN"
-  CarTrawlerSDK.sharedInstance().setContext(context)
-
-  // Present standAlone flow from a UIViewController
-  CarTrawlerSDK.sharedInstance().present(from: self.view flow: .standAlone)
+  CarTrawlerSDK.sharedInstance().present(from: self.view, context: context)
   ```
   {: title="Standalone" }
 
@@ -43,10 +40,7 @@ right_code: |-
   context.pinnedVehicleID = "1892038" // Vehicle RefID
   context.pickupDate = Date(timeIntervalSinceNow: 2629746), // next month
   context.dropOffDate = Date(timeIntervalSinceNow: 2888946), // next month + 3 days
-  CarTrawlerSDK.sharedInstance().setContext(context)
-
-  // Present standAlone flow from a UIViewController
-  CarTrawlerSDK.sharedInstance().present(from: self.view flow: .standAlone)
+  CarTrawlerSDK.sharedInstance().present(from: self.view, context: context)
   ```
   {: title="Deeplink" }
 
@@ -61,9 +55,10 @@ right_code: |-
 The steps to use the SDK are:
 
 1. Initialise the SDK in App Delegate
-2. Present the SDK in either stand alone or in path mode
+2. Initialise the CTContext object with the parameters required
+3. Present the SDK
 
-Initialisation of the SDK
+<h5>Initialisation of the SDK</h5>
 
 <dl>
 <dt>style</dt><dd>An optional style object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
@@ -71,20 +66,20 @@ Initialisation of the SDK
 <dt>production</dt><dd>A boolean to switch between endpoints, true is production, false is test.</dd>
 </dl>
 
-<h5>Present Stand Alone</h5>
+<h5>Initialing CTContext for Standalone</h5>
+
+To initialise standalone flow, it is necessary to instanciate a CTContext object and set the context in the SDK.
 
 <dl>
-
-  <dt>presentStandAlone</dt><dd>Your view controller from which the SDK will be presented.</dd>
-  <dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
+  <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
+  <dt>flow</dt><dd>A <b>required</b> Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
-
 </dl>
 
-<h5>Present Standalone with Deeplinking</h5>
+<h5>Initialising CTContext for Standalone with Deeplinking</h5>
 
 This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather than the regular initial search screen.
 Optionally, if a vehicle refId is provided, this will be become the pinned item in the list.
@@ -95,17 +90,26 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
 - If the parameters are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
 
 <dl>
-
-  <dt>presentStandAlone</dt><dd>Your view controller from which the SDK will be presented.</dd>
-  <dt>clientID</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
+  <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
+  <dt>flow</dt><dd>A <b>required</b> Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
-  <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
-  <dt>dropOffDate</dt><dd>A required Drop-off Date.</dd>
-  <dt>IATACode</dt><dd>An optional IATA code for pickup location</dd>
-  <dt>pickupLocationID</dt><dd>A required OTA Location ID for pickup location.</dd>
+  <dt>pickupDate</dt><dd>A <b>required</b> Pickup Date.</dd>
+  <dt>dropOffDate</dt><dd>A <b>required</b> Drop-off Date.</dd>
+  <dt>pickupLocation</dt><dd>An IATA code for pickup location. <b>If is set, won't be used pickupLocationID and dropOffLocationID</b></dd>
+  <dt>pickupLocationID</dt><dd>An <b>required (if pickupLocation is not set)</b> OTA Location ID for pickup location.</dd>
   <dt>dropOffLocationID</dt><dd>An optional OTA Location ID for drop off location.</dd>
   <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 </dl>
+
+<h5>Presenting standalone</h5>
+
+After the initialisation of CTContext object filled with your parameters, is needed to use the presentation method:
+
+```swift
+let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+self.carTrawlerSDK.present(from: viewController, context: context)
+```
+
