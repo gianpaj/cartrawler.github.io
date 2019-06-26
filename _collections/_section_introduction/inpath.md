@@ -6,7 +6,7 @@ description:
 right_code:
 ---
 
-Following the inpath process a payload is returned in JSON Format, this json can later be used to make a reservation with our backend system, when its appropriate in the partner app. 
+Following the inpath process a payload is returned in JSON Format, this json can later be used to make a reservation with our backend system (see our OTA docs for more information), when its appropriate in the partner app. 
 However their are placeholder fields that need to be populated prior to doing the reservation:
 
 
