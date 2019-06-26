@@ -1,6 +1,6 @@
 ---
-title: Widget
-position: 3
+title: Widgets
+position: 5
 type: Android
 description:
 right_code: >

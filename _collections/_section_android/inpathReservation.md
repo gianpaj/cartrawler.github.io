@@ -1,6 +1,6 @@
 ---
-title: Inpath Process
-position: 3
+title: Inpath (Reservation process)
+position: 4
 type:
 description:
 right_code:
@@ -11,7 +11,7 @@ Following the Inpath process, a payload is returned in JSON Format, this JSON ca
 The OTA message will contain a list of placeholder fields which are preset to default values.
 It is expected that these fields are overridden with meaningful booking data and the message is processed directly with our endpoint. 
 
-Full details on reservation endpoint and our API in general can be found in our <a href="http://docs.cartrawler.com/docs/xml/">API Docs</a>. (If unsure of API crendentials please contact us)
+Full details on reservation endpoint and our API in general can be found in our <a href="http://docs.cartrawler.com/docs/xml/">API Docs</a>.
 
 **Payload Structure**
 

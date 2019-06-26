@@ -1,6 +1,6 @@
 ---
 title: API Query Params
-position: 4
+position: 6
 type: iOS
 description:
 right_code: |-

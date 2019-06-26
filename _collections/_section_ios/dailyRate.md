@@ -1,6 +1,6 @@
 ---
-title: Best Rate API
-position: 5
+title: Best Rates API
+position: 7
 type: iOS
 description:
 right_code: |-
@@ -23,7 +23,7 @@ right_code: |-
   
     CarTrawlerSDK.sharedInstance().requestBestDailyRate(params)
   ```
-  {: title="Best Daily Rates" }
+  {: title="Best Rates API" }
 
   ``` swift
   // Called when best daily rate received

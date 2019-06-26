@@ -1,6 +1,6 @@
 ---
 title: Vehicles API
-position: 5
+position: 7
 type: Android
 description:
 right_code: >
@@ -40,7 +40,7 @@ right_code: >
 
   ~~~
 
-  {: title="Best Rate APIs" }
+  {: title="Vehicles APIs" }
 
 ---
 
