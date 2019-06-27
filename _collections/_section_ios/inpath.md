@@ -60,7 +60,6 @@ right_code: |-
     "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
   }
 
-  ``` swift
   // Called when best daily rate received, setContext: method will trigger this request automatically
   func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
   }
@@ -69,8 +68,6 @@ right_code: |-
   func didFailToReceiveBestDailyRate(error: Error) {
   }
   ```
-  ```
-
   {: title="Delegate" }
   ``` swift
 

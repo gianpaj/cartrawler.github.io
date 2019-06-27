@@ -23,6 +23,7 @@ right_code: |-
   context.countryCode = "IE"
   context.currencyCode = "EUR"
   context.languageCode = "EN"
+  context.delegate = self
   CarTrawlerSDK.sharedInstance().present(from: self.view, context: context)
   ```
   {: title="Standalone" }
@@ -40,9 +41,20 @@ right_code: |-
   context.pinnedVehicleID = "1892038" // Vehicle RefID
   context.pickupDate = Date(timeIntervalSinceNow: 2629746), // next month
   context.dropOffDate = Date(timeIntervalSinceNow: 2888946), // next month + 3 days
+  context.delegate = self
   CarTrawlerSDK.sharedInstance().present(from: self.view, context: context)
   ```
   {: title="Deeplink" }
+
+  ``` swift
+  import CarTrawlerSDK
+
+  // Optional. Called after payment has made, return the reservation details
+  func didReceive(_ reservationDetails: CTReservationDetails) {
+        
+  }
+  ```
+  {: title="Delegate" }
 
   ``` swift
   import CarTrawlerSDK
@@ -95,6 +107,7 @@ To initialise standalone flow, it is necessary to instanciate a CTContext object
   <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
+  <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
 </dl>
 
 <h5>Initialising CTContext for Standalone with Deeplinking</h5>
@@ -120,6 +133,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
   <dt>dropOffLocationID</dt><dd>An optional OTA Location ID for drop off location.</dd>
   <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
+  <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
 </dl>
 
 <h5>Presenting standalone</h5>
@@ -131,3 +145,65 @@ let viewController = UIViewController() // Your view controller from which the S
 self.carTrawlerSDK.present(from: viewController, context: context)
 ```
 
+<h5>Reservation Retrieval from Standalone Process</h5>
+
+If a user booked a car during the standalone process, we will use the delegate to pass the callback informations.
+The reservation object is accessed via the return delegate method didReceive(reservationDetails:)
+
+CarTrawlerSDKDelegate method called after a user booked a vehicle:
+```swift
+  func didReceive(_ reservationDetails: CTReservationDetails) {
+      // Reservation object
+      print("\(reservationDetails)")
+  }
+```
+
+CTReservationDetails description objects:
+```swift
+class CTReservationDetails: NSObject {
+  let status: String // In this scernario it will be confirmed
+  let customerGivenName: String // first name
+  let customerSurname: String // Surname
+  let resID: String // Reservation ID
+  let pickUpDateTime: Date //The date & time of pickup
+  let returnDateTime: Date  //The date & time of pickup 
+  let pickUpLocation: CTLocationDetails //Location details of pickup
+  let returnLocation: CTLocationDetails //Location details of pickup
+  let insurance: CTInsuranceDetails? // Insurance, null if none attached
+  let rentalInfo: RentalInfo?) // Information on reservation costs
+}
+
+class CTLocationDetails: NSObject (
+  let atAirport: Boolean // Location at Airport? (boolean)
+  let iataCode: String  // IATA Code (if airport)
+  let code: Int  // Unique Location Code (code type is internal to Cartrawler)
+  let name: String // Text description of location
+  let address: CTAddress // Postal address of location
+  let phoneNumber: String // Vendor contact number
+)
+
+class CTInsuranceDetails: NSObject (
+  let upSell: Boolean
+  let company: String // Insurance company name
+  let insuranceID: String // Code of offered insurance product
+  let cost: Double // base cost
+  let currency: String // base currency
+  let costCharge: Double // Cost converted into charged currency (presented currency)
+  let currencyCharge: String // the presented currency to the customer
+  let companyLogo: URL // a link to the company logo
+  let companyPolicyURL: URL // a link to the policy terms and conditions
+  let text: String // A marketing description of the insurance (markup)
+)
+
+class CTRentalInfo: NSObject (
+  let cost: Double // base cost
+  let currency: String // base currency
+  let customerCost: Double // /cost in the currency of the customer
+  let customerCurrency: String // the presented currency to the customer
+)
+
+class CTAddress: NSObject (
+  let addressLine: String // Post adddress of location
+  let countryNameCode: String // 2 letter country code.
+)
+```
