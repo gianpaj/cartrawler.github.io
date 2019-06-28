@@ -111,7 +111,7 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
        val status: String,// In this scernario it will be confirmed
        val givenName: String, // first name
        val surname: String, // Surname
-       val resid: String, // Reservation ID
+       val resId: String, // Reservation ID
        val pickUpDateTime: GregorianCalendar, //The date & time of pickup
        val returnDateTime: GregorianCalendar,  //The date & time of pickup 
        val pickupLocation: LocationDetails, //Location details of pickup
