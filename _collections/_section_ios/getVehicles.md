@@ -37,6 +37,32 @@ right_code: |-
   ```
   {: title="Delegate" }
 
+  ```swift
+  class CTVehicleDetails: NSObject {
+    let modelName: String // Model of vehicle
+    let vehicleImageURL: URL // URL to image of vehicle
+    let supplierImageURL: URL // Logo URL of supplier 
+    let category: String // Category of vehicle 
+    let supplier: String // Supplier of vehicle
+    let pricePerDayWithCurrency: String // Price per day with currency
+    let totalPriceWithCurrency: String // Total price with currency
+    let currencyCode: String // CurrencyCode of price
+    let supplierRating: NSNumber // Supplier rating
+    let pricePerDay: NSNumber // Price per day
+    let totalPrice: NSNumber // Total price
+    let seats: NSNumber // Number of seats
+    let bags: NSNumber // Number of bags
+    let doors: NSNumber // Number of doors
+    let transmission: String // Type of transmission 
+    let isAircon: Bool // Has it got aircon
+  }
+  ```
+  {: title="CTVehicleDetails" }
+  
+  ```swift
+  
+  ```
+
 
 ---
 <h5>Request Vehicles</h5>
@@ -50,3 +76,25 @@ For the sort type can be either:
 - .recommended, which returns the cartrawler recommended cars.
 
 A list of vehicle objects (CTVehicleDetails) will be returned in the CarTrawlerSDKDelegate function didReceiveVehicles.
+
+The vehicle object takes the following form:
+```swift
+class CTVehicleDetails: NSObject {
+  let modelName: String // Model of vehicle
+  let vehicleImageURL: URL // URL to image of vehicle
+  let supplierImageURL: URL // Logo URL of supplier 
+  let category: String // Category of vehicle 
+  let supplier: String // Supplier of vehicle
+  let pricePerDayWithCurrency: String // Price per day with currency
+  let totalPriceWithCurrency: String // Total price with currency
+  let currencyCode: String // CurrencyCode of price
+  let supplierRating: NSNumber // Supplier rating
+  let pricePerDay: NSNumber // Price per day
+  let totalPrice: NSNumber // Total price
+  let seats: NSNumber // Number of seats
+  let bags: NSNumber // Number of bags
+  let doors: NSNumber // Number of doors
+  let transmission: String // Type of transmission 
+  let isAircon: Bool // Has it got aircon
+}
+```
