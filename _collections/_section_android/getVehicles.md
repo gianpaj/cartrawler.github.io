@@ -49,3 +49,25 @@ We expose a method on the builder to retrieve the vehicle list based on a sort t
 
 
 A VehiclesListener is past into the getVehicles method and the SDK will call the relevant methods once the relevant events have happen.
+
+The vehicle object takes the following form:
+
+    @Parcelize
+    data class Vehicle @JvmOverloads constructor(
+            val logo: String, // URL to image of car
+            val model: String, // Name of model
+            val image: String, //
+            val seats: String, // Number of Seats localized format
+            val bags: String, // Number of Bags localized format
+            val doors: String, // Number of Doors localized format
+            val transmission: String, // Type of transmission
+            val isAircon: Boolean, // Has it got aircon
+            val price: Double, // price
+            val pricePerDay: Double = price, // price per Day
+            val currencyCode: String, // currencyCode of price
+            val category: String? = null, // category of car
+            val supplier: String? = null, // supplier of car
+            val supplierRating: String? =null,  // supplier rating
+            val supplierImageURL:String? = null // Image of the supplier URL
+        ): Parcelable
+
