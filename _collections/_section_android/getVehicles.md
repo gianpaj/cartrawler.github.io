@@ -52,11 +52,13 @@ A VehiclesListener is past into the getVehicles method and the SDK will call the
 
 The vehicle object takes the following form:
 
+    package cartrawler.core.ui.views.partner
+
     @Parcelize
     data class Vehicle @JvmOverloads constructor(
-            val logo: String, // URL to image of car
-            val model: String, // Name of model
-            val image: String, //
+            val logo: String, // Logo name of supplier
+            val model: String, // Model of car
+            val image: String, // URL to image of car
             val seats: String, // Number of Seats localized format
             val bags: String, // Number of Bags localized format
             val doors: String, // Number of Doors localized format
