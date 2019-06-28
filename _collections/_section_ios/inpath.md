@@ -4,8 +4,8 @@ position: 3
 type: iOS
 description:
 right_code: |-
+  
   ``` swift
-
   import CarTrawlerSDK
 
   // In application(_:didFinishLaunchingWithOptions:)
@@ -13,27 +13,34 @@ right_code: |-
     with: nil,
     customParameters: nil,
     production: false)
-
   ```
   {: title="App Delegate" }
-  ``` swift
-  CarTrawlerSDK.sharedInstance().initialiseInPath(withClientID: "105614",
-                                                        currency: "EUR",
-                                                        customerCountry: "IE",
-                                                        languageCode: "EN",
-                                                        iataCode: "DUB",
-                                                        pickupDate: Date(timeIntervalSinceNow: 86400),
-                                                        return: nil,
-                                                        pinnedVehicleID: nil, // New parameter for abandonment flow
-                                                        flightNumber: "111",
-                                                        passengers: nil,
-                                                        delegate: self)
 
+  ``` swift
+  import CarTrawlerSDK
+
+  // Create a context for inPath flow
+  let context = CTContext(clientID: "105614", flow: .inPath)
+  context.countryCode = "IE"
+  context.currencyCode = "EUR"
+  context.languageCode = "EN"
+  context.pickupLocation = "DUB"
+  context.pickupDate = Date(timeIntervalSinceNow: 86400)
+  context.flightNumber = "FL1234"
+  context.delegate = self
+
+  // Will trigger a first automatically bestDailyRate request
+  CarTrawlerSDK.sharedInstance().setContext(context)
   ```
+  {: title="Initialisation" }
 
-  {: title="Initialisation"}
+  ```swift
+  let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+  self.carTrawlerSDK.presentInPath(from: viewController)
+  ```
+  {: title="Presentation" }
+
   ``` swift
-
   import CarTrawlerSDK
 
   // Required. Called when user wants to add in path booking to their flight booking.
@@ -53,27 +60,18 @@ right_code: |-
     "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
   }
 
-  // Called when the in path card is tapped. We suggest to present the in path flow at this time.
-  func didTapCrossSellCard() {
-    CarTrawlerSDK.sharedInstance().presentInPath(from: self)
-  }
-
-  // Called when best daily rate received
+  // Called when best daily rate received, setContext: method will trigger this request automatically
   func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
   }
 
   // Called when best daily rate fails
   func didFailToReceiveBestDailyRate(error: Error) {
   }
-
   ```
-
   {: title="Delegate" }
-  
   ``` swift
 
    ```
-
 
 ---
 
@@ -81,9 +79,11 @@ right_code: |-
 The steps to use the SDK are:
 
 1. Initialise the SDK in App Delegate
-2. Present the SDK in either standalone or inpath mode
+2. Initialise the CTContext object with the parameters required
+3. Set the InPath context on the SDK, to trigger the initial requests
+3. Present the SDK
 
-Initialisation of the SDK
+<h5>Initialisation of the SDK</h5>
 
 <dl>
 <dt>style</dt><dd>An optional style object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
@@ -91,26 +91,7 @@ Initialisation of the SDK
 <dt>production</dt><dd>A boolean to switch between endpoints, true is production, false is test.</dd>
 </dl>
 
-<h5>Add Inpath Card</h5>
-See code to right for available methods and callbacks for in path
-
-<dl>
-
-  <dt>containerView</dt><dd>Your view from which your application will display the in path widget.</dd>
-  <dt>currency</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
-  <dt>customerCountry</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
-  <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
-  <dt>IATACode</dt><dd>An optional IATA code.</dd>
-  <dt>pickupDate</dt><dd>A required Pickup Date.</dd>
-  <dt>returnDate</dt><dd>An optional Return Date, default will be PickupDate + 3 days.</dd>
-  <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
-  <dt>flightNumber</dt><dd>An optional Flight Number, such as "Flight 123".</dd>
-  <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
-  <dt>delegate</dt><dd>A delegate for in path callbacks</dd>
-
-</dl>
-
-Custom Attributes:
+<h5>Custom Parameters</h5>
 
 <dl>
   <dt>loyaltyEnabled</dt>
@@ -121,33 +102,50 @@ Custom Attributes:
   <dd>A String value that represents the membershipID, it will be pre populated in the Payment Form. Example: "123"</dd>
   <dt>flightNumberRequired</dt>
   <dd>A boolean key to enable Flight Number as a required field in the Payment Form. Default : 1 </dd>
-  <dt>ORDERID</dt>
-  <dd>A String value that represents the Order ID</dd>
-  <dt>MyAccountId</dt>
-  <dd>A String value that represents the Account ID</dd>
-  <dt>VisitorId</dt>
-  <dd>A String value that represents the Visitor ID </dd>
 </dl>
 
-InPath Delegate:
+
+<h5>Initialising CTContext for Inpath</h5>
+
+Allows a customer to reserve a car rental product to accompany their flight, this product forms part of the customer’s  flight itenary. 
+See code to right for available methods and callbacks for in path.
 
 <dl>
-<dt>clientID</dt>
-<dd>Your client ID, required to use the CarTrawler InPath Delegate.</dd>
-<dt>pickupAirportIATA...</dt>
-<dd>A required IATA code for pickup airport.</dd>
-<dt>dropoffAirportIATA...</dt>
-<dd>A required IATA code for dropoff airport.</dd>
-<dt>pickupDateTime</dt>
-<dd>Date and time for required service.</dd>
-<dt>currencyCode</dt>
-<dd>A required currency code, such as "USD". Default is "EUR" if not provided.</dd>
-<dt>languageCode</dt>
-<dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
-<dt>countryCode</dt>
-<dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
-<dt>passengerQuantity</dt>
-<dd>Quantity of passengers</dd>
-<dt>delegate</dt>
-<dd>Your class that will handle callback methods</dd>
+  <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
+  <dt>flow</dt><dd>A <b>required</b> Must be <b>.inPath</b>.</dd>
+  <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
+  <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
+  <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>pickupDate</dt><dd>A <b>required</b> Pickup Date.</dd>
+  <dt>dropOffDate</dt><dd>A <b>required</b> Drop-off Date.</dd>
+  <dt>pickupLocation</dt><dd>An <b>required</b> IATA code for pickup location.</dd>
+  <dt>dropOffLocation</dt><dd>An optional IATA code for dropoff location.</dd>
+  <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
+  <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
+  <dt>delegate</dt><dd>Your class that will handle callback methods</dd>
 </dl>
+
+<h5>Set the InPath context on the SDK</h5>
+```swift
+  // Create a context for inPath flow
+  let context = CTContext(clientID: "105614", flow: .inPath)
+  context.countryCode = "IE"
+  context.currencyCode = "EUR"
+  context.languageCode = "EN"
+  context.pickupLocation = "DUB"
+  context.pickupDate = Date(timeIntervalSinceNow: 86400)
+  context.flightNumber = "FL1234"
+  context.delegate = self
+
+  // Will trigger a first automatically bestDailyRate request
+  CarTrawlerSDK.sharedInstance().setContext(context)
+```
+
+<h5>Presenting Inpath</h5>
+
+After the initialisation of inPath flow using and setting a CTContext object filled with your parameters, is needed to use the presentation method:
+
+```swift
+let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+self.carTrawlerSDK.presentInPath(from: viewController)
+```

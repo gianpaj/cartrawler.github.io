@@ -1,23 +1,46 @@
 ---
-title: Inpath Process
-position: 3
+title: Inpath (Reservation process)
+position: 4
 type:
 description:
 right_code:
 ---
 
-Following the inpath process a payload is returned in JSON Format, this json can later be used to make a reservation with our backend system (see our OTA docs for more information), when its appropriate in the partner app. 
-However their are placeholder fields that need to be populated prior to doing the reservation:
+Following the Inpath process, a payload is returned in JSON Format, this JSON can later be used to make a reservation with our backend system.
 
+The OTA message will contain a list of placeholder fields which are preset to default values.
+It is expected that these fields are overridden with meaningful booking data and the message is processed directly with our OTA_VehResRQ endpoint. 
 
-Payload Structure 
-This is the payload structure that is passed back via call backs in our native SDK. A placeholder tag will only be present in the case that input data is not supplied for that tag. For example if the users country name code is empty/null on input, this will be replaced with the placeholder tag
+Full details on using the OTA_VehResRQ endpoint and our API in general can be found in our <a href="http://docs.cartrawler.com/docs/xml/">API Docs</a>.
 
-Placeholder Fields
-[FIRSTNAME], [SURNAME], [TELEPHONE], [EMAIL], [ADDRESSLINE1], [CITY], [POSTCODE], [COUNTRYNAMECODE]
+**Payload Structure**
 
-Notes on field formats:
-COUNTRYNAMECODE - address line country code
+This is the payload structure that is passed back via call backs in our native SDK. A placeholder tag will only be present in the case that input data is not supplied for that tag. 
+
+For example if the users country name code is empty/null on input, this will be replaced with the placeholder tag
+
+**Placeholder Fields**
+
+Passenger details
+<dl>
+<dt>[FIRSTNAME]</dt><dd>Passengers firstname</dd>
+<dt>[SURNAME]</dt><dd>Passengers surname</dd>
+<dt>[TELEPHONE]</dt><dd>Passengers telephone number</dd>
+<dt>[EMAIL]</dt><dd>Passengers email address</dd>
+<dt>[ADDRESSLINE1]</dt><dd>Passengers address</dd>
+<dt>[CITY]</dt><dd>Passengers city</dd>
+<dt>[POSTCODE]</dt><dd> Passengers postcode</dd>
+<dt>[COUNTRYNAMECODE]</dt><dd>Address line country code</dd>
+</dl>
+
+Credit Card Payment
+<dl>
+<dt>[CARDCODE]</dt><dd>e.g. VI = Visa, MC = Mastercard</dd>
+<dt>[CARDNUMBER]</dt><dd>Credit card number</dd>
+<dt>[EXPIREDATE]</dt><dd>expiry date of credit card in format MMYY (MM being Month, YY being Year)</dd>
+<dt>[SERIESCODE]</dt><dd>Credit card verification value</dd>
+<dt>[CARDHOLDERNAME]</dt><dd>Credit card holder name</dd>
+</dl>
 
 Example JSON Payload:
 

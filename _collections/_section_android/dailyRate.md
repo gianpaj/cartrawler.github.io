@@ -1,6 +1,6 @@
 ---
-title: Best Rate APIs
-position: 4
+title: Best Rates API
+position: 6
 type: Android
 description:
 right_code: >
@@ -38,7 +38,7 @@ right_code: >
 
   ~~~
 
-  {: title="Best Rate APIs" }
+  {: title="Best Rates API" }
 
 ---
 
