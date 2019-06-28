@@ -1,6 +1,6 @@
 ---
-title: Widget
-position: 3
+title: Widgets
+position: 5
 type: Android
 description:
 right_code: >
@@ -52,12 +52,12 @@ on how you would achieve this:
 
     ~~java
   
-    override fun ç(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
        if (resultCode == Activity.RESULT_OK) {
            if (requestCode == 123) {
                	// Set the widget to the added state
                ctVehicleWidget.setVehicle(data.getParcelableExtra(CartrawlerSDK.VEHICLE))
-                
+              
            }
        }
     }

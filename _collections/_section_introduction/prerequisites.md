@@ -17,4 +17,4 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 **Workflows**
 * Standalone - Allows the customer to reserve a car rental product independently from the flight.
 * Standalone deeplink - Variant on the standalone flow whereby customer is presented with the vehicle list based on the pickup and dropoff parameters passed to the SDK, rather than the regular initial search screen.
-* Inpath Rental - Allows a customer to reserve a car rental product to accompany their flight, this product forms part of the customer’s  flight itenary. 
+* Inpath - Allows a customer to reserve a car rental product to accompany their flight, this product forms part of the customer’s  flight itenary. 
