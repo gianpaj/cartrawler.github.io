@@ -146,6 +146,19 @@ The steps to use the SDK are:
 <dt>production</dt><dd>A boolean to switch between endpoints, true is production, false is test.</dd>
 </dl>
 
+<h5>Custom Parameters</h5>
+
+<dl>
+  <dt>loyaltyEnabled</dt>
+  <dd>A boolean key to enable loyalty field in the payment form</dd>
+  <dt>customProgramID</dt>
+  <dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
+  <dt>membershipID</dt>
+  <dd>A String value that represents the membershipID, it will be pre populated in the Payment Form. Example: "123"</dd>
+  <dt>flightNumberRequired</dt>
+  <dd>A boolean key to enable Flight Number as a required field in the Payment Form. Default: 0 (optional field)</dd>
+</dl>
+
 <h5>Initialing CTContext for Standalone</h5>
 
 To initialise standalone flow, it is necessary to instanciate a CTContext object and set the context in the SDK.
