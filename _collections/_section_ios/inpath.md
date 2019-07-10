@@ -91,20 +91,6 @@ The steps to use the SDK are:
 <dt>production</dt><dd>A boolean to switch between endpoints, true is production, false is test.</dd>
 </dl>
 
-<h5>Custom Parameters</h5>
-
-<dl>
-  <dt>loyaltyEnabled</dt>
-  <dd>A boolean key to enable loyalty field in the payment form</dd>
-  <dt>customProgramID</dt>
-  <dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
-  <dt>membershipID</dt>
-  <dd>A String value that represents the membershipID, it will be pre populated in the Payment Form. Example: "123"</dd>
-  <dt>flightNumberRequired</dt>
-  <dd>A boolean key to enable Flight Number as a required field in the Payment Form. Default : 1 </dd>
-</dl>
-
-
 <h5>Initialising CTContext for Inpath</h5>
 
 Allows a customer to reserve a car rental product to accompany their flight, this product forms part of the customer’s  flight itenary. 
