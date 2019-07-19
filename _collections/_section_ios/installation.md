@@ -2,7 +2,7 @@
 title: Installation
 position: 0
 type: iOS
-description: 'Supports iOS 9, iOS 10 and iOS 11'
+description: 'Supports iOS versions 9, 10, 11 and 12'
 right_code: >-
   ~~~ ruby
 
