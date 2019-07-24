@@ -35,6 +35,7 @@ right_code: >-
        implementation 'com.squareup.retrofit2:retrofit:2.3.0'
        implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
        implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+       implementation 'com.squareup.retrofit2:adapter-rxjava:2.6.0'
     
        //Glide   
        implementation 'com.github.bumptech.glide:glide:4.8.0'
