@@ -48,28 +48,43 @@ We expose a method on the builder to retrieve the vehicle list based on a sort t
 - FLAG_BEST_PRICE, which returns the cheapest cars in the list or FLAG_RECOMMENDED, which returns the cartrawler recommended cars.
 
 
-A VehiclesListener is past into the getVehicles method and the SDK will call the relevant methods once the relevant events have happen.
+A VehiclesListener is past into the getVehicleDetails method and the SDK will call the relevant methods once the relevant events have happen.
 
 The vehicle object takes the following form:
 
-    package cartrawler.core.ui.views.partner
-
-    @Parcelize
-    data class Vehicle @JvmOverloads constructor(
-            val logo: String, // Logo name of supplier
-            val model: String, // Model of car
-            val image: String, // URL to image of car
-            val seats: String, // Number of Seats localized format
-            val bags: String, // Number of Bags localized format
-            val doors: String, // Number of Doors localized format
-            val transmission: String, // Type of transmission
-            val isAircon: Boolean, // Has it got aircon
-            val price: Double, // price
-            val pricePerDay: Double = price, // price per Day
-            val currencyCode: String, // currencyCode of price
-            val category: String? = null, // category of car
-            val supplier: String? = null, // supplier of car
-            val supplierRating: String? =null,  // supplier rating
-            val supplierImageURL:String? = null // Image of the supplier URL
-        ): Parcelable
+       @Parcelize
+       data class VehicleDetails(
+           //OTA
+            val referenceId: String,
+            val name: String,
+            val orSimilar: String,
+            val code: String,
+            val vehicleAssetNumber: String,
+            val pictureURL: String,
+            val passengerQuantity: Int,
+            val doorCount: Int?,
+            val baggageQuantity: Int
+            val fuelType: String,
+            val driveType: Stringl,
+            val airConditionInd: Boolean,
+            val transmissionType: String,
+            val size: String,
+            val category: String,
+       
+            //Supplier
+            val supplier: String,
+            val supplierRating: Double,
+            val supplierImageURL: String,
+       
+            //Widget localization values
+            val passengersText: String,
+            val baggageText: String?,
+            val doorsCountText: String,
+            val transmissionText: String,
+       
+            //Price
+            val price: Double,
+            val pricePerDay: Double,
+            val currencyCode: String
+       ) : Parcelable
 

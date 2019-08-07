@@ -56,7 +56,7 @@ on how you would achieve this:
        if (resultCode == Activity.RESULT_OK) {
            if (requestCode == 123) {
                	// Set the widget to the added state
-               ctVehicleWidget.setVehicle(data.getParcelableExtra(CartrawlerSDK.VEHICLE))
+               ctVehicleWidget.setVehicle(data.getParcelableExtra(CartrawlerSDK.VEHICLE_DETAILS))
               
            }
        }

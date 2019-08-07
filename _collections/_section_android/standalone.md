@@ -117,7 +117,8 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
        val pickupLocation: LocationDetails, //Location details of pickup
        val returnLocation: LocationDetails, //Location details of pickup
        val insurance: Insurance, // Insurance, null if none attached
-       val rentalInfo: RentalInfo) // Information on reservation costs
+       val rentalInfo: RentalInfo, // Information on reservation costs
+       val vehicle: VehicleDetails) // Information on the selected vehicle
       
         data class LocationDetails (
            val atAirport: Boolean, // Location at Airport? (boolean)
@@ -152,6 +153,42 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
            val addressLine: String, // Post adddress of location
            val countryNameCode: String // 2 letter country code.
        )
+       
+       @Parcelize
+       data class VehicleDetails(
+           //OTA
+            val referenceId: String,
+            val name: String,
+            val orSimilar: String,
+            val code: String,
+            val vehicleAssetNumber: String,
+            val pictureURL: String,
+            val passengerQuantity: Int,
+            val doorCount: Int?,
+            val baggageQuantity: Int
+            val fuelType: String,
+            val driveType: Stringl,
+            val airConditionInd: Boolean,
+            val transmissionType: String,
+            val size: String,
+            val category: String,
+       
+            //Supplier
+            val supplier: String,
+            val supplierRating: Double,
+            val supplierImageURL: String,
+       
+            //Widget localization values
+            val passengersText: String,
+            val baggageText: String?,
+            val doorsCountText: String,
+            val transmissionText: String,
+       
+            //Price
+            val price: Double,
+            val pricePerDay: Double,
+            val currencyCode: String
+       ) : Parcelable
     }
     
     
