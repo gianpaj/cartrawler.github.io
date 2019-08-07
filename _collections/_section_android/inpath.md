@@ -1,7 +1,7 @@
 ---
 title: Inpath
 position: 3
-type: Android
+type: Androidimage = "https://ota-cars.imgix.net/otaimages/renault/clio_3dr_nologo.jpg?w=180&dpr=2",
 description:
 right_code: >
   
@@ -65,3 +65,17 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 <dt>setPickupTime</dt><dd>Pick up date time for required service.</dd>
 <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
 <dt>startRentalInPath</dt><dd>Start Rental InPath activity.</dd></dl>
+
+
+<h5>Payload Retrieval from Inpath Process</h5>
+
+If a user selected a car during the in path process, the onActivityForResult will be fired.
+The Payload object is accessed via the return intent by onActivityForResult:
+returnIntent.getStringExtra(CartrawlerSDK.PAYLOAD)
+    
+    override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
+       if (resultCode == Activity.RESULT_OK) {
+           if (requestCode == 123) {
+                openCreditCardProcessor(data!!.getStringExtra(CartrawlerSDK.PAYLOAD))
+            }      
+    }
