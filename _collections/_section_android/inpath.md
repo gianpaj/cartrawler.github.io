@@ -67,15 +67,63 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 <dt>startRentalInPath</dt><dd>Start Rental InPath activity.</dd></dl>
 
 
-<h5>Payload Retrieval from Inpath Process</h5>
+<h5>Retrieval of objects from Inpath Process</h5>
 
-If a user selected a car during the in path process, the onActivityForResult will be fired.
-The Payload object is accessed via the return intent by onActivityForResult:
-returnIntent.getStringExtra(CartrawlerSDK.PAYLOAD)
+
+If a user selected a car during the in path process, the onActivityForResult will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
+
+These objects are accessed via the return intent by onActivityForResult
     
+    getStringExtra(CartrawlerSDK.PAYLOAD) // Returns a JSON String
+    
+    getParcelableExtra(CartrawlerSDK.VEHICLE_DETAILS) // Returns a VehicleDetails Object
+    
+    getSerializableExtra(CartrawlerSDK.FEES) // Returns a Payment Object
+        
+        
     override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
        if (resultCode == Activity.RESULT_OK) {
            if (requestCode == 123) {
                 openCreditCardProcessor(data!!.getStringExtra(CartrawlerSDK.PAYLOAD))
             }      
     }
+    
+    
+The json payload object is returned so that the partner can process the payment/reservation with a cartrawler payment end point at a different time and point in the partners basket flow. This JSON playload object is passed to this endpoint. 
+Further details can be found in our OTA developer docs. (Also see inpath reservation section)
+
+The CartrawlerSDK.FEES object:
+
+    cartrawler.core.data.external.Payment {
+          
+          public String currency; // The currency of the fees
+
+          public Double payNowAmount; // The pay now amount
+          public Double payAtDeskAmount; // The pay at desk amount
+          public Double bookingFeeAmount; // The booking fee amount
+      
+          public String insuranceName; // The insurance name
+          public Double insuranceAmount; The insurance amount
+          
+          public String authTotal; The total amount to be authorized against the customers credit card.
+     }
+     
+     
+     
+     
+The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calcuated by cartrawler using paynow, insurance, and bookingfee amounts when applicable.
+ 
+Notes on other attributes:
+
+If insurance is selected, insuranceAmount will be non-zero. The insuranceName will non-null when insuranceAmount is non-zero. 
+The insuranceName is the title of the insurance.
+If the user has selected extras, the total amount of extra fees will set in payAtDeskAmount.
+payNowAmount is the total amount for only the car element (excludes extras,  bookingfee and insurance)
+bookingFeeAmount is a cartrawler fee which is separate to the payNowAmount. The authTotal is calculated by the cartrawler system by adding the payNowAmount, bookingFeeAmount (if present) and insuranceFee (if present).
+
+
+
+
+
+
+
