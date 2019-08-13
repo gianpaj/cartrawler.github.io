@@ -103,9 +103,9 @@ The CartrawlerSDK.FEES object:
           public Double bookingFeeAmount; // The booking fee amount
       
           public String insuranceName; // The insurance name
-          public Double insuranceAmount; The insurance amount
+          public Double insuranceAmount; //The insurance amount
           
-          public String authTotal; The total amount to be authorized against the customers credit card.
+          public String authTotal; //The total amount to be authorized against the customers credit card.
      }
      
      
