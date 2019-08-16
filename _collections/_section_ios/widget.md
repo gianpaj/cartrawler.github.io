@@ -3,9 +3,52 @@ title: Widgets
 position: 5
 type: iOS
 description:
-right_code: >
+right_code: |-
+  ```swift
+    let widgetStyle = CTWidgetStyle()
+    let widgetContainer = CarTrawlerSDK.sharedInstance()
+    .getWidget(status: .simple,
+    style: widgetStyle,
+    delegate: self)
+    self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
+  ```
+  {: title="Initialisation" }
 
-  {: title="Widget" }
+  ```swift
+    func didTapView(_ container: CTWidgetContainer) {
+      // Widget view tapped
+    }
+    
+    func didTapRemoveButton(_ container: CTWidgetContainer) {
+      // Widget remove button tapped
+    }
+    
+    func didTapAddCarHire(_ container: CTWidgetContainer) {
+      // Widget 'Car Hire' button tapped
+    }
+    
+    func vehicleSelected(_ vehicle: CTVehicleDetails) {
+      // Vehicle selected by user
+    }
+  ```
+  {: title="CTWidgetContainerDelegate" }
+  
+  ``` swift
+  // Set price label value
+  func setPrice(String)
+
+  // Set vehicle details for CTVehicleWidget
+  func setVehicle(CTVehicleDetails)
+
+  // Set vehicle visible status: .simple, .simpleAddedCar, .bestPrice or .vehicle
+  func setStatus(CTWidgetStatus)
+  ```
+  {: title="CTWidgetContainer" }
+  
+  ```swift
+  
+  ```
+
 ---
 
 
@@ -47,12 +90,13 @@ To implement the widgets, you must first create an instance of CTWidgetStyle and
 The next step is to create an instance of CTWidgetContainer and pass in the following: status (.simple, .simpleAdded, .bestPrice, or .vehicle), style (your CTWidgetStyle object), and a delegate. 
 We recommend adding the widget container to a stackView, like so: 
 
+```swift
     let widgetStyle = CTWidgetStyle()
     let widgetContainer = CarTrawlerSDK.sharedInstance().getWidget(status: .simple,
                                                                        style: widgetStyle,
                                                                        delegate: self)
     self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
-
+```
 
 Your widget’s status can be changed at any time by calling setStatus on the container:
 
@@ -63,21 +107,22 @@ Your widget’s status can be changed at any time by calling setStatus on the co
 
 When you make a best bestDailyRates request, the price is returned to you in the delegate callback didRecieveBestDailyRate. You can set the widget’s price in your function body: 
 
+```swift
     func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
         let price = String(format: "%@ %.2f", currency, price.floatValue)
         self.widgetContainer?.setPrice(price)
     }
-
+```
 <br />
 <h5>Setting the CTVehicleWidget vehicle</h5>
 
 When a user has completed the CarTrawler inPath flow and added a vehicle, the vehicle will be returned to you in the vehicleSelected delegate callback. Using the below code, you could switch a best price widget into a populated vehicle widget: 
-    
-    func vehicleSelected(_ vehicle: CTWidgetVehicle) {
+```swift  
+    func vehicleSelected(_ vehicle: CTVehicleDetails) {
         self.widgetContainer?.setVehicle(vehicle)
         self.widgetContainer?.setStatus(.vehicle)
     }
-
+```
 <br />
 <h5>Handling user interaction</h5> 
   
