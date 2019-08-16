@@ -91,7 +91,8 @@ right_code: |-
     let pickUpLocation: CTLocationDetails //Location details of pickup
     let returnLocation: CTLocationDetails //Location details of pickup
     let insurance: CTInsuranceDetails? // Insurance, null if none attached
-    let rentalInfo: RentalInfo?) // Information on reservation costs
+    let rentalInfo: CTRentalInfo?) // Information on reservation costs
+    let vehicleDetails: CTVehicleDetails // Information on reserved vehicle
   }
 
   class CTLocationDetails: NSObject (
@@ -121,6 +122,33 @@ right_code: |-
     let currency: String // base currency
     let customerCost: Double // /cost in the currency of the customer
     let customerCurrency: String // the presented currency to the customer
+  )
+
+  class CTVehicleDetails: NSObject (
+    let referenceId: String // vehicle reference ID 
+    let name: String // vehicle name
+    let orSimilar: String // localised "or similar" text
+    let code: String // vehicle code 
+    let vehicleAssetNumber: String // vehicle asset number
+    let pictureURL: URL // vehicle image url 
+    let passengerQuantity: Int // vehicle number of passengers
+    let doorCount: Int // vehicle number of doors 
+    let baggageQuantity: Int // vehicle number of bags
+    let fuelType: String // vehicle fuel type
+    let driveType: String // vehicle drive type
+    let airConditionInd: bool // vehicle is airconditioning included
+    let transmissionType: String // vehicle transmission type 
+    let size: String // ota size number
+    let supplier: String // vehicle supplier name
+    let supplierRating: NSNumber // vehicle supplier rating
+    let supplierImageURL: URL // vehicle supplier logo
+    let passengersText: String // localised "passengers" text
+    let baggageText: String // localised "baggage" text
+    let doorsCountText: String // localised "doors" text
+    let transmissionText: String // localised "transmission" text
+    let price: NSNumber // vehicle price
+    let pricePerDay: NSNumber // vehicle price per day
+    let currencyCode: String // vehicle price currency code
   )
 
   class CTAddress: NSObject (
