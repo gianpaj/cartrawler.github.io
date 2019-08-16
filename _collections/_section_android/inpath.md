@@ -103,9 +103,9 @@ The CartrawlerSDK.FEES object:
           public Double bookingFeeAmount; // The booking fee amount
       
           public String insuranceName; // The insurance name
-          public Double insuranceAmount; The insurance amount
+          public Double insuranceAmount; //The insurance amount
           
-          public String authTotal; The total amount to be authorized against the customers credit card.
+          public String authTotal; //The total amount to be authorized against the customers credit card.
      }
      
      
@@ -113,17 +113,17 @@ The CartrawlerSDK.FEES object:
      
 The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calcuated by cartrawler using paynow, insurance, and bookingfee amounts when applicable.
  
-Notes on other attributes:
+**Notes on other attributes:**
 
-If insurance is selected, insuranceAmount will be non-zero. The insuranceName will non-null when insuranceAmount is non-zero. 
-The insuranceName is the title of the insurance.
-If the user has selected extras, the total amount of extra fees will set in payAtDeskAmount.
-payNowAmount is the total amount for only the car element (excludes extras,  bookingfee and insurance)
-bookingFeeAmount is a cartrawler fee which is separate to the payNowAmount. The authTotal is calculated by the cartrawler system by adding the payNowAmount, bookingFeeAmount (if present) and insuranceFee (if present).
+*Insurance*
+* If insurance is selected, insuranceAmount will be non-zero.
+* The insuranceName will non-null when insuranceAmount is non-zero.
+* The insuranceName is the title of the insurance.
 
+*Extras*
+* If the user has selected extras, the total amount of extra fees will set in payAtDeskAmount. <br>
 
-
-
-
-
-
+*Totals*
+* payNowAmount is the total amount for only the car element (excludes extras,  bookingfee and insurance)
+* bookingFeeAmount is a cartrawler fee which is separate to the payNowAmount.
+* The authTotal is calculated by the cartrawler system by adding the payNowAmount, bookingFeeAmount (if present) and insuranceFee (if present).
