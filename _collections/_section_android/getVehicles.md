@@ -29,6 +29,10 @@ right_code: >
                    sortType = CartrawlerSDK.Builder.FLAG_BEST_PRICE or CartrawlerSDK.Builder.FLAG_RECOMMENDED,
                    vehiclesListener = object : CartrawlerSDK.VehiclesListener{
                        override fun onReceiveVehicles(vehicles: List<Vehicle>) {
+                       //Deprecated please use onReceiveVehicleDetails instead
+                       }
+                       
+                       override fun onReceiveVehicleDetails(vehicleDetails: List<VehicleDetails>) {
                        }
    
                        override fun onError(type: Int, connectionError: CartrawlerSDK.ConnectionError) {
