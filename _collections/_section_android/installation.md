@@ -113,6 +113,7 @@ right_code: >-
 4. Include activity cartrawler.core.base.CartrawlerActivity (see Manifest tab on the right).
 5. If you are using proguard, update the proguard config as shown on the right.
 
+**Clear Storage**
 
 Note: The apps storage (database of recent searches, and bookings) can be cleared prior to starting the cartrawler flow, the following API can be used to clear the storage.
         
@@ -121,6 +122,4 @@ Note: The apps storage (database of recent searches, and bookings) can be cleare
 This is a static method that can be called directly from the CartrawlerSDK class, e.g
 
         CartrawlerSDK.clearStorage(activity)
-
-
        
