@@ -91,20 +91,20 @@ right_code: |-
     let pickUpLocation: CTLocationDetails //Location details of pickup
     let returnLocation: CTLocationDetails //Location details of pickup
     let insurance: CTInsuranceDetails? // Insurance, null if none attached
-    let rentalInfo: CTRentalInfo?) // Information on reservation costs
+    let rentalInfo: CTRentalInfo? // Information on reservation costs
     let vehicleDetails: CTVehicleDetails // Information on reserved vehicle
   }
 
-  class CTLocationDetails: NSObject (
+  class CTLocationDetails: NSObject {
     let atAirport: Boolean // Location at Airport? (boolean)
     let iataCode: String  // IATA Code (if airport)
     let code: Int  // Unique Location Code (code type is internal to Cartrawler)
     let name: String // Text description of location
     let address: CTAddress // Postal address of location
     let phoneNumber: String // Vendor contact number
-  )
+  }
 
-  class CTInsuranceDetails: NSObject (
+  class CTInsuranceDetails: NSObject {
     let upSell: Boolean
     let company: String // Insurance company name
     let insuranceID: String // Code of offered insurance product
@@ -115,16 +115,24 @@ right_code: |-
     let companyLogo: URL // a link to the company logo
     let companyPolicyURL: URL // a link to the policy terms and conditions
     let text: String // A marketing description of the insurance (markup)
-  )
+  }
 
-  class CTRentalInfo: NSObject (
+  class CTRentalInfo: NSObject {
     let cost: Double // base cost
     let currency: String // base currency
     let customerCost: Double // /cost in the currency of the customer
     let customerCurrency: String // the presented currency to the customer
-  )
+  }
 
-  class CTVehicleDetails: NSObject (
+  class CTAddress: NSObject {
+    let addressLine: String // Post adddress of location
+    let countryNameCode: String // 2 letter country code.
+  }
+  ```
+  {: title="CTReservationDetails" }
+
+  ``` swift
+  class CTVehicleDetails: NSObject {
     let referenceId: String // vehicle reference ID 
     let name: String // vehicle name
     let orSimilar: String // localised "or similar" text
@@ -136,7 +144,7 @@ right_code: |-
     let baggageQuantity: Int // vehicle number of bags
     let fuelType: String // vehicle fuel type
     let driveType: String // vehicle drive type
-    let airConditionInd: bool // vehicle is airconditioning included
+    let airConditionInd: Bool // vehicle is airconditioning included
     let transmissionType: String // vehicle transmission type 
     let size: String // ota size number
     let supplier: String // vehicle supplier name
@@ -149,14 +157,9 @@ right_code: |-
     let price: NSNumber // vehicle price
     let pricePerDay: NSNumber // vehicle price per day
     let currencyCode: String // vehicle price currency code
-  )
-
-  class CTAddress: NSObject (
-    let addressLine: String // Post adddress of location
-    let countryNameCode: String // 2 letter country code.
-  )
+  }
   ```
-  {: title="CTReservationDetails" }
+  {: title="CTVehicleDetails" }
   
   ```swift
   

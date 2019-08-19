@@ -39,22 +39,30 @@ right_code: |-
 
   ```swift
   class CTVehicleDetails: NSObject {
-    let modelName: String // Model of vehicle
-    let vehicleImageURL: URL // URL to image of vehicle
-    let supplierImageURL: URL // Logo URL of supplier 
-    let category: String // Category of vehicle 
-    let supplier: String // Supplier of vehicle
-    let pricePerDayWithCurrency: String // Price per day with currency
-    let totalPriceWithCurrency: String // Total price with currency
-    let currencyCode: String // CurrencyCode of price
-    let supplierRating: NSNumber // Supplier rating
-    let pricePerDay: NSNumber // Price per day
-    let totalPrice: NSNumber // Total price
-    let seats: NSNumber // Number of seats
-    let bags: NSNumber // Number of bags
-    let doors: NSNumber // Number of doors
-    let transmission: String // Type of transmission 
-    let isAircon: Bool // Has it got aircon
+    let referenceId: String // vehicle reference ID 
+    let name: String // vehicle name
+    let orSimilar: String // localised "or similar" text
+    let code: String // vehicle code 
+    let vehicleAssetNumber: String // vehicle asset number
+    let pictureURL: URL // vehicle image url 
+    let passengerQuantity: Int // vehicle number of passengers
+    let doorCount: Int // vehicle number of doors 
+    let baggageQuantity: Int // vehicle number of bags
+    let fuelType: String // vehicle fuel type
+    let driveType: String // vehicle drive type
+    let airConditionInd: Bool // vehicle is airconditioning included
+    let transmissionType: String // vehicle transmission type 
+    let size: String // ota size number
+    let supplier: String // vehicle supplier name
+    let supplierRating: NSNumber // vehicle supplier rating
+    let supplierImageURL: URL // vehicle supplier logo
+    let passengersText: String // localised "passengers" text
+    let baggageText: String // localised "baggage" text
+    let doorsCountText: String // localised "doors" text
+    let transmissionText: String // localised "transmission" text
+    let price: NSNumber // vehicle price
+    let pricePerDay: NSNumber // vehicle price per day
+    let currencyCode: String // vehicle price currency code
   }
   ```
   {: title="CTVehicleDetails" }
@@ -80,21 +88,29 @@ A list of vehicle objects (CTVehicleDetails) will be returned in the CarTrawlerS
 The vehicle object takes the following form:
 ```swift
 class CTVehicleDetails: NSObject {
-  let modelName: String // Model of vehicle
-  let vehicleImageURL: URL // URL to image of vehicle
-  let supplierImageURL: URL // Logo URL of supplier 
-  let category: String // Category of vehicle 
-  let supplier: String // Supplier of vehicle
-  let pricePerDayWithCurrency: String // Price per day with currency
-  let totalPriceWithCurrency: String // Total price with currency
-  let currencyCode: String // CurrencyCode of price
-  let supplierRating: NSNumber // Supplier rating
-  let pricePerDay: NSNumber // Price per day
-  let totalPrice: NSNumber // Total price
-  let seats: NSNumber // Number of seats
-  let bags: NSNumber // Number of bags
-  let doors: NSNumber // Number of doors
-  let transmission: String // Type of transmission 
-  let isAircon: Bool // Has it got aircon
+  let referenceId: String // vehicle reference ID 
+  let name: String // vehicle name
+  let orSimilar: String // localised "or similar" text
+  let code: String // vehicle code 
+  let vehicleAssetNumber: String // vehicle asset number
+  let pictureURL: URL // vehicle image url 
+  let passengerQuantity: Int // vehicle number of passengers
+  let doorCount: Int // vehicle number of doors 
+  let baggageQuantity: Int // vehicle number of bags
+  let fuelType: String // vehicle fuel type
+  let driveType: String // vehicle drive type
+  let airConditionInd: Boolean // vehicle is airconditioning included
+  let transmissionType: String // vehicle transmission type 
+  let size: String // ota size number
+  let supplier: String // vehicle supplier name
+  let supplierRating: NSNumber // vehicle supplier rating
+  let supplierImageURL: URL // vehicle supplier logo
+  let passengersText: String // localised "passengers" text
+  let baggageText: String // localised "baggage" text
+  let doorsCountText: String // localised "doors" text
+  let transmissionText: String // localised "transmission" text
+  let price: NSNumber // vehicle price
+  let pricePerDay: NSNumber // vehicle price per day
+  let currencyCode: String // vehicle price currency code
 }
 ```
