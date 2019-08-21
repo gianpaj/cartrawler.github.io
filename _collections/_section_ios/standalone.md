@@ -96,7 +96,7 @@ right_code: |-
   }
 
   class CTLocationDetails: NSObject {
-    let atAirport: Boolean // Location at Airport? (boolean)
+    let atAirport: Bool // Location at Airport? (boolean)
     let iataCode: String  // IATA Code (if airport)
     let code: Int  // Unique Location Code (code type is internal to Cartrawler)
     let name: String // Text description of location
@@ -105,7 +105,7 @@ right_code: |-
   }
 
   class CTInsuranceDetails: NSObject {
-    let upSell: Boolean
+    let upSell: Bool
     let company: String // Insurance company name
     let insuranceID: String // Code of offered insurance product
     let cost: Double // base cost
@@ -154,6 +154,8 @@ right_code: |-
     let baggageText: String // localised "baggage" text
     let doorsCountText: String // localised "doors" text
     let transmissionText: String // localised "transmission" text
+    let sizeText: String // localised "size" text
+    let categortyText: String // localised category
     let price: NSNumber // vehicle price
     let pricePerDay: NSNumber // vehicle price per day
     let currencyCode: String // vehicle price currency code
