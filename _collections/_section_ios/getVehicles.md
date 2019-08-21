@@ -60,6 +60,8 @@ right_code: |-
     let baggageText: String // localised "baggage" text
     let doorsCountText: String // localised "doors" text
     let transmissionText: String // localised "transmission" text
+    let sizeText: String // localised "size" text
+    let categortyText: String // localised category
     let price: NSNumber // vehicle price
     let pricePerDay: NSNumber // vehicle price per day
     let currencyCode: String // vehicle price currency code
@@ -99,7 +101,7 @@ class CTVehicleDetails: NSObject {
   let baggageQuantity: Int // vehicle number of bags
   let fuelType: String // vehicle fuel type
   let driveType: String // vehicle drive type
-  let airConditionInd: Boolean // vehicle is airconditioning included
+  let airConditionInd: Bool // vehicle is airconditioning included
   let transmissionType: String // vehicle transmission type 
   let size: String // ota size number
   let supplier: String // vehicle supplier name
@@ -109,6 +111,8 @@ class CTVehicleDetails: NSObject {
   let baggageText: String // localised "baggage" text
   let doorsCountText: String // localised "doors" text
   let transmissionText: String // localised "transmission" text
+  let sizeText: String // localised "size" text
+  let categortyText: String // localised category
   let price: NSNumber // vehicle price
   let pricePerDay: NSNumber // vehicle price per day
   let currencyCode: String // vehicle price currency code
