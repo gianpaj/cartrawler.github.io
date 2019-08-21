@@ -171,7 +171,6 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
             val airConditionInd: Boolean,
             val transmissionType: String,
             val size: String,
-            val category: String,
        
             //Supplier
             val supplier: String,
@@ -183,6 +182,8 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
             val baggageText: String?,
             val doorsCountText: String,
             val transmissionText: String,
+            val categoryText: String,
+            val sizeText: String
        
             //Price
             val price: Double,

@@ -73,7 +73,6 @@ The vehicle object takes the following form:
             val airConditionInd: Boolean,
             val transmissionType: String,
             val size: String,
-            val category: String,
        
             //Supplier
             val supplier: String,
@@ -85,6 +84,8 @@ The vehicle object takes the following form:
             val baggageText: String?,
             val doorsCountText: String,
             val transmissionText: String,
+            val categoryText: String,
+            val sizeText: String
        
             //Price
             val price: Double,
