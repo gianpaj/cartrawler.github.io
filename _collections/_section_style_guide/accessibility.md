@@ -28,7 +28,7 @@ Colour is applied sparingly to text in the Native SDK to ensure WCAG AA level st
 
 ##### Font Colours on Colour Backgrounds
 
-Bt default, light or dark text should be used on colour backgrounds. Light text should be used on colour backgrounds when the contrast ratio meets the WCAG recommended 4.5:1 for normal text and 3:1 for large text.
+Light or dark text should be used on colour backgrounds. Light text should be used on colour backgrounds when the contrast ratio meets the WCAG recommended 4.5:1 for normal text and 3:1 for large text.
 <picture>
   <source media="(max-width: 799px)" srcset="/uploads/font-colours---background.png">
   <source media="(min-width: 800px)" srcset="/uploads/font-colours---background.png">
