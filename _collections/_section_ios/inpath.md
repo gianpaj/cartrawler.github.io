@@ -44,7 +44,7 @@ right_code: |-
   import CarTrawlerSDK
 
   // Required. Called when user wants to add in path booking to their flight booking.
-  func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle) {
+  func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle, payment: Payment) {
     print("\(request)")
 
     print("Total \(vehicle.totalCost)")
@@ -58,6 +58,11 @@ right_code: |-
     "*** PAYLATER: \(vehicle.payLaterPrice)\n" ,
     "*** PAYDESK: \(vehicle.payAtDeskPrice)\n" ,
     "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
+
+    print("*** Payment ***")
+    print("authTotal: \(payment.authTotal)")
+    print("authCurrency: \(payment.authCurrency)")
+    
   }
 
   // Called when best daily rate received, setContext: method will trigger this request automatically
