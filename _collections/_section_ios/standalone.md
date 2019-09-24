@@ -44,11 +44,8 @@ right_code: |-
   context.pinnedVehicleID = "1892038" // Vehicle RefID
   context.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
   context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
-  context.delegate = self
 
-  let viewController = UIViewController() // Your view controller from which the SDK will be presented.
-
-  CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+  CarTrawlerSDK.sharedInstance().present(from: self, context: context)
   ```
   {: title="Deeplink" }
 
