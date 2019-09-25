@@ -21,7 +21,7 @@ right_code: |-
   let context = CTContext(clientID: "105614", flow: .standAlone)
   context.countryCode = "IE"
   context.currencyCode = "EUR"
-  context.languageCode = "EN"
+  context.languageCode = "en"
 
   CarTrawlerSDK.sharedInstance().present(from: self, context: context)
   ```
