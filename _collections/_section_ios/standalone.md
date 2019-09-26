@@ -18,16 +18,12 @@ right_code: |-
   ``` swift
   import CarTrawlerSDK
 
-  // Create a context for standAlone flow
   let context = CTContext(clientID: "105614", flow: .standAlone)
   context.countryCode = "IE"
   context.currencyCode = "EUR"
-  context.languageCode = "EN"
-  context.delegate = self
-  
-  let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+  context.languageCode = "en"
 
-  CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+  CarTrawlerSDK.sharedInstance().present(from: self, context: context)
   ```
   {: title="Standalone" }
 
@@ -45,9 +41,9 @@ right_code: |-
   context.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
   context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
   context.delegate = self
-
+  
   let viewController = UIViewController() // Your view controller from which the SDK will be presented.
-
+  
   CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
   ```
   {: title="Deeplink" }
