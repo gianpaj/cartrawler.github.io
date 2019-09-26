@@ -76,19 +76,21 @@ right_code: |-
   ```
   {: title="CTPassenger" }
 
-  ``` swift
+  ``` sift
   class CTReservationDetails: NSObject {
     let status: String // In this scernario it will be confirmed
-    let customerGivenName: String // first name
-    let customerSurname: String // Surname
+    let givenName: String // First name
+    let surname: String // Surname
     let resID: String // Reservation ID
+    let resuID: String // Hashed customer email
+    let email: String // Customer email
     let pickUpDateTime: Date //The date & time of pickup
     let returnDateTime: Date  //The date & time of pickup 
     let pickUpLocation: CTLocationDetails //Location details of pickup
     let returnLocation: CTLocationDetails //Location details of pickup
     let insurance: CTInsuranceDetails? // Insurance, null if none attached
-    let rentalInfo: CTRentalInfo? // Information on reservation costs
-    let vehicleDetails: CTVehicleDetails // Information on reserved vehicle
+    let rentalInfo: RentalInfo? // Information on reservation costs
+    let vehicleDetails: CTVehicleDetails // Information on booked vehicle
   }
 
   class CTLocationDetails: NSObject {
