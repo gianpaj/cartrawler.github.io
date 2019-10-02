@@ -112,6 +112,7 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
        val givenName: String, // first name
        val surname: String, // Surname
        val resId: String, // Reservation ID
+       val resuid: String, // resuid, use this along with the resId to retrieve the booking later
        val pickUpDateTime: GregorianCalendar, //The date & time of pickup
        val returnDateTime: GregorianCalendar,  //The date & time of pickup 
        val pickupLocation: LocationDetails, //Location details of pickup
