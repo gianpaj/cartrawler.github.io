@@ -44,7 +44,7 @@ After initializing the SDK, please create a CTAPIQueryParams object and initiali
 <dt>countryCode</dt>
 <dd>A country code, such as "US". Default is the device location if not provided.</dd>
 <dt>currencyCode</dt>
-<dd>A currency code, such as "USD". Default is "EUR" if not provided.</dd>
+<dd>An optional currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
 <dt>languageCode</dt>
 <dd>A language code. Default is "EN" if not provided.</dd>
 <dt>pickupDate</dt>
