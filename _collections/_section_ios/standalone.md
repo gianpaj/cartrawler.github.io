@@ -203,7 +203,7 @@ To initialise standalone flow, it is necessary to instanciate a CTContext object
   <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
   <dt>flow</dt><dd>A <b>required</b> Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
-  <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
+  <dt>currencyCode</dt><dd>An optional currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
@@ -223,7 +223,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
   <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
   <dt>flow</dt><dd>A <b>required</b> Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
-  <dt>currencyCode</dt><dd>An optional currency code, such as "USD". Default is "EUR" if not provided.</dd>
+  <dt>currencyCode</dt><dd>An optional currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>pickupDate</dt><dd>A <b>required</b> Pickup Date.</dd>
   <dt>dropOffDate</dt><dd>A <b>required</b> Drop-off Date.</dd>
