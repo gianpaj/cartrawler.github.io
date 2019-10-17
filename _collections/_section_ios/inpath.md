@@ -62,7 +62,7 @@ right_code: |-
     print("*** Payment ***")
     print("authTotal: \(payment.authTotal)")
     print("authCurrency: \(payment.authCurrency)")
-    
+  
   }
 
   // Called when best daily rate received, setContext: method will trigger this request automatically
@@ -74,6 +74,40 @@ right_code: |-
   }
   ```
   {: title="Delegate" }
+
+  ``` swift
+  class CTInPathVehicle: NSObject {
+    let firstName: String // First name
+    let lastName: String // Last name
+    let vehicleName: String // Vehicle name
+    let vehicleOrSimilar: String // localized "or similar" text
+    let vendorName: String // Vendor name
+    let vehicleImageURL: URL // vehicle image url
+    let vendorImageURL: URL // vendorImageURL
+    let pickUpLocationName: String // Pickup location name
+    let dropOffLocationName: String // Drop off location name
+    let pickupDate: Date // Pick up date
+    let dropoffDate: Date // Drop off date
+    let extrasIncludedForFree: Array // Array of included extras
+    let extrasPayableAtDesk: Array // Array of extras payable at desk
+    let isBuyingInsurance: Bool // is buying insurance
+    let insuranceCost: Number // Insurance cost
+  }
+
+  class CTExtraEquipment: NSObject {
+    let qty: Integer // Quantity of the extra
+    let isIncludedInRate: Bool  // If the extra is included 
+    let isTaxInclusive: Bool  // If extra is tax inclusive 
+    let chargeAmount: Number // Cost of extra
+    let currencyCode: String // Currency code of extra
+    let equipType: String // Raw extra type code
+    let equipmentType: CTExtraEquipmentType // Extra type
+    let name: String // Name of extra
+    let equipDescription: String // Description of extra
+  }
+  ```
+  {: title="CTInPathVehicle" }
+
   ``` swift
 
    ```
