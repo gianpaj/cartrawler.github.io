@@ -16,7 +16,7 @@ right_code: >-
     
        //Car trawler dependencies
     
-       implementation "com.cartrawler.android:payment-card:0.2.5"
+       implementation "com.cartrawler.android:payment-card:0.3.0"
     
        implementation "com.cartrawler.android:car-rental:+" //please use the version number sent to you by the CT team
     
