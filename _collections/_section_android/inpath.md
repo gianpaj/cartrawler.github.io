@@ -119,6 +119,20 @@ The CartrawlerSDK.TRIP_DETAILS object:
             var pickupLocation: @RawValue LocationDetails? = null,
             var returnLocation: @RawValue LocationDetails? = null,
             var extras: List<Extra>) : Parcelable
+            
+            
+    @Parcelize
+    data class Extra (
+            var amount: Double? = null,
+            var currencyCode: String? = null,
+            var name: String? = null,
+            var description: String? = null,
+            var type: String? = null, // the CT Code we use
+            var selected: Int? = null, // the number of selected extras or qty
+            var includedInRate: Boolean? = null // Is this an extra selected by the user or already part of rate
+    ): Parcelable
+            
+            
      
      
 The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calcuated by cartrawler using paynow, insurance, and bookingfee amounts when applicable.
