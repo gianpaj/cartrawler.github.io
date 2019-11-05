@@ -42,6 +42,11 @@ Credit Card Payment
 <dt>[CARDHOLDERNAME]</dt><dd>Credit card holder name</dd>
 </dl>
 
+Additional Flight Information
+<dl>
+<dt>[BOOKINGREF]</dt><dd>Flight PNR or Booking reference</dd>
+</dl>
+
 Example JSON Payload:
 
     {
@@ -56,9 +61,12 @@ Example JSON Payload:
             "@Type": "16",
             "@ID": "787697",
             "@ID_Context": "CARTRAWLER"
-          
-        
-      },
+           },
+           "@ISOCurrency": "EUR",
+             "RequestorID": {
+              "@ID": "IE1234",
+              "@ID_Context": "[BOOKINGREF]"
+            },
       "VehResRQCore": {
         "@Status": "All",
         "VehRentalCore": {
