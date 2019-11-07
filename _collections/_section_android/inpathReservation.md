@@ -97,11 +97,11 @@ Example JSON Payload:
             },
             "Address": {
               "@Type": "2",
-              "[ADDRESSLINE1]",
-               "CityName": "[CITY]",
-               "PostalCode": "[POSTCODE]”,
-               "CountryName": {
-                "@Code": "[COUNTRYNAMECODE]"
+              "AddressLine": ["[ADDRESSLINE1]"],
+              "CityName": "[CITY]",
+              "PostalCode": "[POSTCODE]”,
+              "CountryName": {
+              "@Code": "[COUNTRYNAMECODE]"
               
             },
             "CitizenCountryName": {
