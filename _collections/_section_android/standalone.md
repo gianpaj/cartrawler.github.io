@@ -86,7 +86,7 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 <dt>setFlightNumberRe...</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd>
 <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
 <dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
-<dt>setOrderId</dt><dd>A String value that represents the Order ID</dd>
+<dt>setOrderId</dt><dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234</dd>
 <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
 <dt>startRentalStandalone</dt><dd>Start Rental standalone activity.</dd></dl>
