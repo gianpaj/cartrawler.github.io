@@ -42,6 +42,11 @@ Credit Card Payment
 <dt>[CARDHOLDERNAME]</dt><dd>Credit card holder name</dd>
 </dl>
 
+Additional Flight Information
+<dl>
+<dt>[BOOKINGREF]</dt><dd>Flight PNR or Booking reference</dd>
+</dl>
+
 Example JSON Payload:
 
 ```
