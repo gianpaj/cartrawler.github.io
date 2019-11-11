@@ -44,103 +44,155 @@ Credit Card Payment
 
 Example JSON Payload:
 
-    {
-      "@xmlns": "http://www.opentravel.org/OTA/2003/05",
-      "@Version": "1.002",
-      "@Target": "Production",
-      "@PrimaryLangID": "EN",
-      "POS": {
-        "Source": {
-          "@ISOCurrency": "EUR",
-          "RequestorID": {
-            "@Type": "16",
-            "@ID": "787697",
-            "@ID_Context": "CARTRAWLER"
-          
-        
-      },
-      "VehResRQCore": {
+```
+{
+    "@xmlns": "http://www.opentravel.org/OTA/2003/05",
+    "@Version": "3.000",
+    "@Target": "Test",
+    "@PrimaryLangID": "en",
+    "POS": {
+        "Source": [
+            {
+                "@ERSP_UserID": "MO",
+                "@ISOCurrency": "EUR",
+                "RequestorID": {
+                    "@Type": "16",
+                    "@ID": "787697",
+                    "@ID_Context": "CARTRAWLER"
+                }
+            },
+            {
+                "RequestorID": {
+                    "@Type": "16",
+                    "@ID": "[BOOKINGREF]",
+                    "@ID_Context": "ORDERID"
+                }
+            }
+        ]
+    },
+    "VehResRQCore": {
         "@Status": "All",
         "VehRentalCore": {
-          "@PickUpDateTime": "2017-09-20T10:00:00",
-          "@ReturnDateTime": "2017-09-25T21:00:00",
-          "PickUpLocation": {
-            "@CodeContext": "CARTRAWLER",
-            "@LocationCode": "470"
-          },
-          "ReturnLocation": {
-            "@CodeContext": "CARTRAWLER",
-            "@LocationCode": "470"
-          
+            "@PickUpDateTime": "2019-11-12T14:26:37",
+            "@ReturnDateTime": "2019-11-15T14:26:37",
+            "PickUpLocation": {
+                "@CodeContext": "CARTRAWLER",
+                "@LocationCode": "470"
+            },
+            "ReturnLocation": {
+                "@CodeContext": "CARTRAWLER",
+                "@LocationCode": "470"
+            }
         },
         "Customer": {
-          "Primary": {
-            "PersonName": {
-              "GivenName": "[FIRSTNAME]",
-              "Surname": "[SURNAME]"
-            },
-            "Telephone": {
-              "@PhoneTechType": "1",
-              "@PhoneNumber": "[TELEPHONE]"
-            },
-            "Email": {
-              "@EmailType": "2",
-              "#text": "[EMAIL]"
-            },
-            "Address": {
-              "@Type": "2",
-              "AddressLine": ["[ADDRESSLINE1]"],
-              "CityName": "[CITY]",
-              "PostalCode": "[POSTCODE]”,
-              "CountryName": {
-              "@Code": "[COUNTRYNAMECODE]"
-              
-            },
-            "CitizenCountryName": {
-              "@Code": "IE"
-            
-          
+            "Primary": {
+                "PersonName": {
+                    "GivenName": "[FIRSTNAME]",
+                    "Surname": "[SURNAME]"
+                },
+                "Telephone": [
+                    {
+                        "@PhoneTechType": "1",
+                        "@CountryAccessCode": "353",
+                        "@PhoneNumber": "[TELEPHONE]"
+                    }
+                ],
+                "Email": {
+                    "@EmailType": "2",
+                    "#text": "[EMAIL]"
+                },
+                "Address": {
+                    "@Type": "2",
+                    "AddressLine": ["[ADDRESSLINE1]"],
+                    "CityName": "[CITY]",
+                    "PostalCode": "[POSTCODE]",
+                    "CountryName": {
+                        "@Code": "[COUNTRYNAMECODE]"
+                    }
+                },
+                "CitizenCountryName": {
+                    "@Code": "IE"
+                }
+            }
         },
         "DriverType": {
-          "@Age": "30"
-        
-      },
-      "VehResRQInfo": {
+            "@Age": "24"
+        }
+    },
+    "VehResRQInfo": {
         "@PassengerQty": "1",
         "ArrivalDetails": {
-          "@TransportationCode": "14",
-          "@Number": "FR",
-          "OperatingCompany": "123"
+            "@TransportationCode": "14",
+            "@Number": "1234",
+            "OperatingCompany": "RY"
         },
         "RentalPaymentPref": {
-          "PaymentCard": {
-            "@CardType": "1",
-            "@CardCode": "[CARDCODE]",
-            "@CardNumber": "[CARDNUMBER]",
-            "@ExpireDate": "[EXPIREDATE]",
-            "@SeriesCode": "[SERIESCODE]",
-            "CardHolderName": "[CARDHOLDERNAME]"
-          
+            "PaymentCard": {
+                "@CardCode": "[CARDCODE]",
+                "@ExpireDate": "[EXPIREDATE]",
+                "CardHolderName": "[CARDHOLDERNAME]",
+                "CardNumber": {
+                    "PlainText": "[CARDNUMBER]"
+                },
+                "SeriesCode": {
+                    "PlainText": "[SERIESCODE]"
+                },
+                "ThreeDomainSecurity": {
+                    "Gateway": {
+                        "@ECI": "[ECI]"
+                    },
+                    "Results": {
+                        "@CAVV": "[CAVV]",
+                        "@TransactionID": "[TRANSACTIONID]",
+                        "@XID": "[XID]"
+                    }
+                },
+                "TPA_Extensions": {
+                    "ThreeDsVersion": "[THREEDSVERSION]"
+                }
+            }
         },
         "Reference": {
-          "@Type": "16",
-          "@ID": "419488971",
-          "@ID_Context": "CARTRAWLER",
-          "@DateTime": "2017-07-18T15:46:42.148+01:00",
-          "@URL": "7ef64533-7ca7-4c45-ad27-c3066fd817d4.36"
+            "@Type": "16",
+            "@ID": "1284794686",
+            "@ID_Context": "CARTRAWLER",
+            "@DateTime": "2019-11-11T14:26:38.290Z",
+            "@URL": "9c537843-fbdc-4c86-910b-28b159c237c2.64"
         },
         "TPA_Extensions": {
-          "Reference": {
-            "@Type": "16",
-            "@ID": "AXA.0F09I30F09I4",
-            "@ID_Context": "INSURANCE",
-            "@Amount": "12.12",
-            "@CurrencyCode": "EUR",
-            "@URL": "http://www.cartrawler.com/res/conditions/insurance/CT_AXA_TC_GB.pdf"
-          },
-          "Window": {
-            "@engine": "Android Engine",
-            "@name": "ANDROID-V1",
-            "@region": "en-us",
-            "@svn": "1.4.9-14"
+            "Reference": {
+                "@Type": "16",
+                "@ID": "AXA.2317317.64",
+                "@ID_Context": "INSURANCE",
+                "@Amount": "49.56",
+                "@CurrencyCode": "EUR",
+                "@URL": "http://www.cartrawler.com/res/conditions/insurance/CT_AXA_TC_IE.pdf"
+            },
+            "Window": {
+                "@name": "IOS-V3",
+                "@engine": "IOS-V3",
+                "@device": "MOBILEIOS",
+                "@svn": "9.1.0"
+            },
+            "Tracking": {
+                "CustomerID": "901573475928606",
+                "SessionID": "601573475732337",
+                "EngineLoadID": "601573475732337",
+                "QueryID": "901573475930192"
+            },
+            "Persona": {
+                "Characteristic": [
+                    {
+                        "@Name": "MyAccountId",
+                        "@Value": "er89952d1333"
+                    },
+                    {
+                        "@Name": "VisitorId",
+                        "@Value": ""
+                    }
+                ]
+            }
+        }
     }
+}
+```
