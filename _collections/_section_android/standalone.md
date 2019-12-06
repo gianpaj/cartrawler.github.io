@@ -66,7 +66,7 @@ right_code: >
                                         val flightNumber: String?, // Flight number
                                         var age: String?) : Parcelable { // Driver Age , "30"
            
-    ~~~
+  ~~~
     
     
     {: title="CartrawlerSDKPassenger" }
@@ -96,6 +96,8 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 
 If a user booked a car during the standalone process, the onActivityForResult will be fired.
 The reservation object is accessed via the return intent by onActivityForResult:
+
+```kotlin
 returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
     
     override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -192,7 +194,7 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
             val currencyCode: String
        ) : Parcelable
     }
-    
+```    
     
 <h5>Present Standalone with Deeplinking</h5>
 
