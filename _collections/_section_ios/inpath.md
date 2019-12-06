@@ -92,6 +92,7 @@ right_code: |-
     let extrasPayableAtDesk: Array // Array of extras payable at desk
     let isBuyingInsurance: Bool // is buying insurance
     let insuranceCost: Number // Insurance cost
+    let vehicleCharges: Array // Array of Vehicle Charges
   }
 
   class CTExtraEquipment: NSObject {
@@ -104,6 +105,16 @@ right_code: |-
     let equipmentType: CTExtraEquipmentType // Extra type
     let name: String // Name of extra
     let equipDescription: String // Description of extra
+  }
+
+  class CTVehicleCharge: NSObject {
+    let chargeDescription: String // The localized description
+    let isIncludedInRate: Bool  // If the charge is included (this case always true)
+    let isTaxInclusive: Bool  // If charge is tax inclusive 
+    let amount: Number // Cost of charge
+    let currencyCode: String // Currency code of charge
+    let purpose: String // Purpose code of the charge
+    let calculation: CTVehicleChargeCalculation // .beforePickup
   }
   ```
   {: title="CTInPathVehicle" }
