@@ -108,6 +108,7 @@ The CartrawlerSDK.FEES object:
           public Double insuranceAmount; //The insurance amount
           
           public String authTotal; //The total amount to be authorized against the customers credit card.
+          pubic  String authCurrency; // The currency code of the authTotal
      }
      
 The CartrawlerSDK.TRIP_DETAILS object:
@@ -118,7 +119,8 @@ The CartrawlerSDK.TRIP_DETAILS object:
             var returnDateTime: String? = null,
             var pickupLocation: @RawValue LocationDetails? = null,
             var returnLocation: @RawValue LocationDetails? = null,
-            var extras: List<Extra>) : Parcelable
+            var vehicleCharges: List<VehicleCharge> // The list of Vehicle Charges (0 or more)
+            var extras: List<Extra>) : Parcelable // The list of extras (0 or more)
             
             
     @Parcelize
@@ -131,9 +133,19 @@ The CartrawlerSDK.TRIP_DETAILS object:
             var selected: Int? = null, // the number of selected extras or qty
             var includedInRate: Boolean? = null // Is this an extra selected by the user or already part of rate
     ): Parcelable
-            
-            
-     
+    
+    @Parcelize
+    class VehicleCharge (
+        var chargeDescription: String? = null, // The localized description
+        var taxInclusive: String? = null, // Is tax included?
+        var includedInRate: String? = null, // In this inpath payload use case this is always 'true'
+        var purpose: String? = null, // Internal Purpose code
+        var calculation: String? = null, // Reserved as "BeforePickup"
+        var amount: Double? = null, // The amount of charge
+        var currencyCode: String? = null // The currencyCode of the charge
+    )  : Parcelable
+
+          
      
 The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calcuated by cartrawler using paynow, insurance, and bookingfee amounts when applicable.
  
