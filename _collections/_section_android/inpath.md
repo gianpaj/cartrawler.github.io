@@ -73,7 +73,8 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 If a user selected a car during the in path process, the onActivityForResult will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
 
 These objects are accessed via the return intent by onActivityForResult
-    
+
+```kotlin   
     getStringExtra(CartrawlerSDK.PAYLOAD) // Returns a JSON String
     
     getParcelableExtra(CartrawlerSDK.VEHICLE_DETAILS) // Returns a VehicleDetails Object
@@ -89,13 +90,13 @@ These objects are accessed via the return intent by onActivityForResult
                 openCreditCardProcessor(data!!.getStringExtra(CartrawlerSDK.PAYLOAD))
             }      
     }
-    
+```    
     
 The json payload object is returned so that the partner can process the payment/reservation with a cartrawler payment end point at a different time and point in the partners basket flow. This JSON playload object is passed to this endpoint. 
 Further details can be found in our OTA developer docs. (Also see inpath reservation section)
 
 The CartrawlerSDK.FEES object:
-
+```kotlin
     cartrawler.core.data.external.Payment {
           
           public String currency; // The currency of the fees
@@ -110,9 +111,10 @@ The CartrawlerSDK.FEES object:
           public String authTotal; //The total amount to be authorized against the customers credit card.
           pubic  String authCurrency; // The currency code of the authTotal
      }
-     
+```
+    
 The CartrawlerSDK.TRIP_DETAILS object:
-
+```kotlin
     @Parcelize
     data class TripDetails(
             var pickUpDateTime: String? = null,
@@ -144,7 +146,7 @@ The CartrawlerSDK.TRIP_DETAILS object:
         var amount: Double? = null, // The amount of charge
         var currencyCode: String? = null // The currencyCode of the charge
     )  : Parcelable
-
+```
           
      
 The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calcuated by cartrawler using paynow, insurance, and bookingfee amounts when applicable.
