@@ -4,7 +4,8 @@ position: 8
 type: Android
 description:
 right_code: |-
-  ```val  builder = CartrawlerSDK.Builder()
+  ~~~java
+  val  builder = CartrawlerSDK.Builder()
                          .setRentalInPathClientId(clientId)
                          .setEnvironment(prod)
                          .setLogging(loggingValue)
@@ -45,15 +46,11 @@ right_code: |-
                              }
      
                          })
-  ```
-  {: title="RequestReservationDetails" }
-  
-  ```swift
-  
-  ```
-
+  ~~~
+  {: title="Reservations API" }
 
 ---
+
 <h5>Get Booking Reservation</h5>
 
 Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resuid. 
